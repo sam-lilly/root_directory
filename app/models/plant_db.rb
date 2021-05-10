@@ -1,0 +1,3 @@
+class PlantDb < ApplicationRecord
+
+end
