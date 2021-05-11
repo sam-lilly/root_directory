@@ -1,21 +1,12 @@
-// import React from 'react';
-// import { Provider } from 'react-redux';
-
-// const App = ({ store }) => {
-
-//     return (
-//         <Provider store={store}>
-//             <>
-//                 <div>
-//                     <p>this is the app .jsx</p>
-//                     {/* <Container /> */}
-//                 </div>
-//             </>
-//         </Provider>
-//     )
+import React from 'react';
+import GreetingContainer from './greeting/greeting_container';
+        
+const App = () => (
+    <div>
+        <h1>Root Directory</h1>
+        <GreetingContainer />
+    </div>
+)
 
 
-
-// }
-
-// export default App;
+export default App;

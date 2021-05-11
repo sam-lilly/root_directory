@@ -21,7 +21,7 @@ class Api::SessionsController < ApplicationController
         @user = current_user
 
         if @user
-            debugger
+            # debugger
             logout!
             # debugger
             render "api/users/show"
