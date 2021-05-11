@@ -1,2 +1,8 @@
-<%# <main id="root">react is broken</main> %>
-<main id="root">If You're Reading This It's Too Late [[ && React is broken :( ]]</main>
+<% if logged_in? %>
+    <script id="bootstrap-current-user" type="text/javascript">
+        window.currentUser = <%= render("api/users/user.json.jbuilder", user: current_user).html_safe %>
+    </script>
+<% end %>
+
+
+<main id="root">If You're Reading This It's Too Late [[ && React is broken 🤬 ]]</main>

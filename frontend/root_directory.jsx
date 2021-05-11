@@ -4,10 +4,26 @@ import configureStore from './store/store';
 import Root from './components/root';
 import { signup, login, logout } from './actions/session_actions'
 
+const sam = {user: {email: "sam", password: "password", first_name: "sam", last_name: "l"}};
+
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    const store = configureStore();
+    let store;
+    if (window.currentUser) {
+        const preloadedState = {
+            entities: {
+                users: { [window.currentUser.id]: window.currentUser}
+            },
+            session: { id: currentUser.id }
+        };
+        store = configureStore(preloadedState);
+        delete window.currentUser;
+    } else {
+        store = configureStore();
+    }
+    
+
     const root = document.getElementById("root");
 
     window.getState = store.getState;
