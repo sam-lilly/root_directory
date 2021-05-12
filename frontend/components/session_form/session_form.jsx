@@ -100,7 +100,7 @@ class SessionForm extends React.Component {
 
                     <div className="top-nav-right">
                         <p>Account</p>
-                        <i class="fas fa-search"></i>
+                        {/* <i className="fas fa-search"></i> */}
                     </div>
 
                 </div>
@@ -114,7 +114,7 @@ class SessionForm extends React.Component {
                         {/* above was to sign in or login with link of other */}
                         <h3 className="login-signup-header">{this.props.headerType}</h3>
 
-                        <p className="login-signup-errors">{this.renderErrors()}</p>
+                        <div className="login-signup-errors">{this.renderErrors()}</div>
 
                         <div className="session-form">
 

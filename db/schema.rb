@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_12_165052) do
+ActiveRecord::Schema.define(version: 2021_05_12_172951) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -148,14 +148,14 @@ ActiveRecord::Schema.define(version: 2021_05_12_165052) do
     t.text "dimensions", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "type", null: false
+    t.string "planter_type", null: false
     t.index ["color"], name: "index_planters_on_color"
     t.index ["material"], name: "index_planters_on_material"
     t.index ["name"], name: "index_planters_on_name"
+    t.index ["planter_type"], name: "index_planters_on_planter_type"
     t.index ["price"], name: "index_planters_on_price"
     t.index ["product_id"], name: "index_planters_on_product_id"
     t.index ["size"], name: "index_planters_on_size"
-    t.index ["type"], name: "index_planters_on_type"
   end
 
   create_table "plants", force: :cascade do |t|
@@ -164,7 +164,7 @@ ActiveRecord::Schema.define(version: 2021_05_12_165052) do
     t.string "name", null: false
     t.integer "inches", null: false
     t.float "price", null: false
-    t.string "type", null: false
+    t.string "plant_type", null: false
     t.string "size", null: false
     t.string "light", null: false
     t.string "care_level", null: false
@@ -179,10 +179,10 @@ ActiveRecord::Schema.define(version: 2021_05_12_165052) do
     t.index ["light"], name: "index_plants_on_light"
     t.index ["name"], name: "index_plants_on_name"
     t.index ["plant_db_id"], name: "index_plants_on_plant_db_id"
+    t.index ["plant_type"], name: "index_plants_on_plant_type"
     t.index ["price"], name: "index_plants_on_price"
     t.index ["product_id"], name: "index_plants_on_product_id"
     t.index ["size"], name: "index_plants_on_size"
-    t.index ["type"], name: "index_plants_on_type"
   end
 
   create_table "products", force: :cascade do |t|

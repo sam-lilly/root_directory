@@ -7720,3 +7720,416 @@ Migrating to AddValidationBackEndToTypePlanter (20210512165052)
   ↳ bin/rails:9
   [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
+  [1m[36mPlant Load (11.1ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  [1m[35m (3.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4133873110424056020)[0m
+  ↳ bin/rails:9
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to FixColumnsWithReservedWordType (20210512172951)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (9.9ms)[0m  [1m[35mALTER TABLE "plants" RENAME COLUMN "type" TO "plant_type"[0m
+  ↳ db/migrate/20210512172951_fix_columns_with_reserved_word_type.rb:4
+  [1m[35m (2.0ms)[0m  [1m[35mALTER INDEX "index_plants_on_type" RENAME TO "index_plants_on_plant_type"[0m
+  ↳ db/migrate/20210512172951_fix_columns_with_reserved_word_type.rb:4
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "planters" RENAME COLUMN "type" TO "planter_type"[0m
+  ↳ db/migrate/20210512172951_fix_columns_with_reserved_word_type.rb:5
+  [1m[35m (0.1ms)[0m  [1m[35mALTER INDEX "index_planters_on_type" RENAME TO "index_planters_on_planter_type"[0m
+  ↳ db/migrate/20210512172951_fix_columns_with_reserved_word_type.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (5.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210512172951"]]
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (5.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4133873110424056020)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Load (2.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlantDb Load (16.5ms)[0m  [1m[34mSELECT  "plant_dbs".* FROM "plant_dbs" WHERE "plant_dbs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlantDb Load (0.4ms)[0m  [1m[34mSELECT  "plant_dbs".* FROM "plant_dbs" WHERE "plant_dbs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlantDb Load (0.3ms)[0m  [1m[34mSELECT  "plant_dbs".* FROM "plant_dbs" WHERE "plant_dbs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Create (15.8ms)[0m  [1m[32mINSERT INTO "plants" ("product_id", "plant_db_id", "name", "inches", "price", "plant_type", "size", "light", "care_level", "benefits", "overview", "care", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["product_id", 1], ["plant_db_id", 1], ["name", "Monstera Test"], ["inches", 10], ["price", 150.9], ["plant_type", "test"], ["size", "large"], ["light", "medium"], ["care_level", "beginners"], ["benefits", "easy plants"], ["overview", "overview test"], ["care", "don't kill it"], ["created_at", "2021-05-12 17:38:35.777777"], ["updated_at", "2021-05-12 17:38:35.777777"]]
+  [1m[35m (40.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveStorage::Attachment Load (5.9ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Plant"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Create (27.9ms)[0m  [1m[32mINSERT INTO "plants" ("product_id", "plant_db_id", "name", "inches", "price", "plant_type", "size", "light", "care_level", "benefits", "overview", "care", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["product_id", 1], ["plant_db_id", 1], ["name", "Monstera Test"], ["inches", 10], ["price", 150.9], ["plant_type", "test"], ["size", "large"], ["light", "medium"], ["care_level", "beginners"], ["benefits", "easy plants"], ["overview", "overview test"], ["care", "don't kill it"], ["created_at", "2021-05-12 17:49:21.513102"], ["updated_at", "2021-05-12 17:49:21.513102"]]
+  [1m[35m (13.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Create (5.1ms)[0m  [1m[32mINSERT INTO "plants" ("product_id", "plant_db_id", "name", "inches", "price", "plant_type", "size", "light", "care_level", "benefits", "overview", "care", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["product_id", 1], ["plant_db_id", 1], ["name", "Monstera Test"], ["inches", 10], ["price", 150.9], ["plant_type", "test"], ["size", "large"], ["light", "medium"], ["care_level", "beginners"], ["benefits", "easy plants"], ["overview", "overview test"], ["care", "don't kill it"], ["created_at", "2021-05-12 17:50:37.633830"], ["updated_at", "2021-05-12 17:50:37.633830"]]
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveStorage::Attachment Load (4.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Plant"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mPlant Load (2.3ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  [1m[36mPlant Load (11.3ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  [1m[36mPlant Load (0.8ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" ORDER BY "plants"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPlant Load (1.1ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" ORDER BY "plants"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (2.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Plant"], ["name", "photo"], ["LIMIT", 1]]
+[36m  S3 Storage (249.6ms) [0m[32mUploaded file to key: BDDCGio2fzurjsbX7pLKPGW9 (checksum: H/M6+7K1kJcW2tShnEZZ5A==)[0m
+  [1m[35m (22.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Blob Create (23.8ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "BDDCGio2fzurjsbX7pLKPGW9"], ["filename", "monstera_test.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 163040], ["checksum", "H/M6+7K1kJcW2tShnEZZ5A=="], ["created_at", "2021-05-12 20:00:03.493610"]]
+  [1m[35m (18.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Attachment Create (41.7ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "photo"], ["record_type", "Plant"], ["record_id", 3], ["blob_id", 1], ["created_at", "2021-05-12 20:00:03.556982"]]
+  [1m[36mPlant Update (3.5ms)[0m  [1m[33mUPDATE "plants" SET "updated_at" = $1 WHERE "plants"."id" = $2[0m  [["updated_at", "2021-05-12 20:00:03.600151"], ["id", 3]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: a23715c7-38fe-495b-b805-bbc2be415749) to Async(default) with arguments: #<GlobalID:0x00007faa0e21d288 @uri=#<URI::GID gid://root-directory/ActiveStorage::Blob/1>>
+  [1m[36mActiveStorage::Blob Load (1.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a23715c7-38fe-495b-b805-bbc2be415749] Performing ActiveStorage::AnalyzeJob (Job ID: a23715c7-38fe-495b-b805-bbc2be415749) from Async(default) with arguments: #<GlobalID:0x00007faa0c3bda40 @uri=#<URI::GID gid://root-directory/ActiveStorage::Blob/1>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a23715c7-38fe-495b-b805-bbc2be415749] [36m  S3 Storage (892.4ms) [0m[34mDownloaded file from key: BDDCGio2fzurjsbX7pLKPGW9[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a23715c7-38fe-495b-b805-bbc2be415749] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a23715c7-38fe-495b-b805-bbc2be415749]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a23715c7-38fe-495b-b805-bbc2be415749]   [1m[36mActiveStorage::Blob Update (8.9ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a23715c7-38fe-495b-b805-bbc2be415749]   [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a23715c7-38fe-495b-b805-bbc2be415749] Performed ActiveStorage::AnalyzeJob (Job ID: a23715c7-38fe-495b-b805-bbc2be415749) from Async(default) in 935.14ms
+Started GET "/" for ::1 at 2021-05-12 16:11:08 -0400
+  [1m[35m (6.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/samanthalilly/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 1215ms (Views: 1213.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/plants/3" for ::1 at 2021-05-12 16:11:30 -0400
+
+ActionController::RoutingError - uninitialized constant PlantsController:
+
+Started POST "/__better_errors/34b9ab4ad9d050a7/variables" for ::1 at 2021-05-12 16:11:30 -0400
+Started GET "/plants/3" for ::1 at 2021-05-12 16:11:51 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/plants/3"):
+  
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2021-05-12 16:11:58 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 33ms (Views: 31.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-05-12 16:40:48 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 76ms (Views: 72.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-05-12 16:40:57 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 43ms (Views: 41.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-05-12 16:42:52 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 32ms (Views: 31.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for ::1 at 2021-05-12 16:43:09 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"plantlyfe@gmail.com", "password"=>"[FILTERED]", "first_name"=>"Forrest", "last_name"=>"Willow"}}
+  [1m[36mUser Load (10.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "plantlyfe@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:59
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "plantlyfe@gmail.com"], ["id", 20], ["LIMIT", 1]]
+  ↳ app/models/user.rb:59
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "AIZdcDrmmEU0sdz5JFYe_w"], ["id", 20], ["LIMIT", 1]]
+  ↳ app/models/user.rb:59
+  [1m[36mUser Update (17.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "AIZdcDrmmEU0sdz5JFYe_w"], ["updated_at", "2021-05-12 20:43:10.147662"], ["id", 20]]
+  ↳ app/models/user.rb:59
+  [1m[35m (16.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:59
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/show.json.jbuilder (1.2ms)
+Completed 200 OK in 405ms (Views: 5.8ms | ActiveRecord: 106.5ms)
+
+
+Started GET "/" for ::1 at 2021-05-12 16:45:17 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "AIZdcDrmmEU0sdz5JFYe_w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 46ms (Views: 43.2ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/api/session" for ::1 at 2021-05-12 16:45:18 -0400
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "AIZdcDrmmEU0sdz5JFYe_w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:59
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "plantlyfe@gmail.com"], ["id", 20], ["LIMIT", 1]]
+  ↳ app/models/user.rb:59
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "JwQ9-9IfHFKJjFAWjzdKRA"], ["id", 20], ["LIMIT", 1]]
+  ↳ app/models/user.rb:59
+  [1m[36mUser Update (3.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "JwQ9-9IfHFKJjFAWjzdKRA"], ["updated_at", "2021-05-12 20:45:18.977606"], ["id", 20]]
+  ↳ app/models/user.rb:59
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:59
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (1.7ms)
+Completed 200 OK in 21ms (Views: 7.4ms | ActiveRecord: 5.3ms)
+
+
+Started POST "/api/session" for ::1 at 2021-05-12 16:48:18 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"plantlyfe@gmail.com", "password"=>"[FILTERED]", "first_name"=>"Forrest", "last_name"=>"Willow"}}
+  [1m[36mUser Load (11.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "plantlyfe@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:59
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "plantlyfe@gmail.com"], ["id", 20], ["LIMIT", 1]]
+  ↳ app/models/user.rb:59
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "LakMfRN-Kj7XGtrmin46yw"], ["id", 20], ["LIMIT", 1]]
+  ↳ app/models/user.rb:59
+  [1m[36mUser Update (5.9ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "LakMfRN-Kj7XGtrmin46yw"], ["updated_at", "2021-05-12 20:48:19.251236"], ["id", 20]]
+  ↳ app/models/user.rb:59
+  [1m[35m (8.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:59
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/show.json.jbuilder (1.3ms)
+Completed 200 OK in 310ms (Views: 5.7ms | ActiveRecord: 27.3ms)
+
+
+Started DELETE "/api/session" for ::1 at 2021-05-12 16:51:36 -0400
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "LakMfRN-Kj7XGtrmin46yw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:59
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "plantlyfe@gmail.com"], ["id", 20], ["LIMIT", 1]]
+  ↳ app/models/user.rb:59
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "kLfkIeU4s7VJh3PEAFLYsA"], ["id", 20], ["LIMIT", 1]]
+  ↳ app/models/user.rb:59
+  [1m[36mUser Update (1.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "kLfkIeU4s7VJh3PEAFLYsA"], ["updated_at", "2021-05-12 20:51:36.792567"], ["id", 20]]
+  ↳ app/models/user.rb:59
+  [1m[35m (10.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:59
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (1.5ms)
+  Rendered api/users/show.json.jbuilder (5.2ms)
+Completed 200 OK in 30ms (Views: 9.1ms | ActiveRecord: 15.0ms)
+
+
+Started POST "/api/session" for ::1 at 2021-05-12 16:51:40 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"plantlyfe@gmail.com", "password"=>"[FILTERED]", "first_name"=>"Forrest", "last_name"=>"Willow"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "plantlyfe@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:59
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "plantlyfe@gmail.com"], ["id", 20], ["LIMIT", 1]]
+  ↳ app/models/user.rb:59
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "VCo6al10wltNtu04C-pdyw"], ["id", 20], ["LIMIT", 1]]
+  ↳ app/models/user.rb:59
+  [1m[36mUser Update (6.7ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "VCo6al10wltNtu04C-pdyw"], ["updated_at", "2021-05-12 20:51:41.173443"], ["id", 20]]
+  ↳ app/models/user.rb:59
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:59
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered api/users/show.json.jbuilder (1.4ms)
+Completed 200 OK in 284ms (Views: 5.0ms | ActiveRecord: 9.0ms)
+
+
+Started DELETE "/api/session" for ::1 at 2021-05-12 16:51:42 -0400
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "VCo6al10wltNtu04C-pdyw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:59
+  [1m[36mUser Exists (6.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "plantlyfe@gmail.com"], ["id", 20], ["LIMIT", 1]]
+  ↳ app/models/user.rb:59
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "F8JTwN9XYGywMiplm1w6tg"], ["id", 20], ["LIMIT", 1]]
+  ↳ app/models/user.rb:59
+  [1m[36mUser Update (11.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "F8JTwN9XYGywMiplm1w6tg"], ["updated_at", "2021-05-12 20:51:42.362692"], ["id", 20]]
+  ↳ app/models/user.rb:59
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:59
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/show.json.jbuilder (0.9ms)
+Completed 200 OK in 28ms (Views: 4.6ms | ActiveRecord: 19.6ms)
+
+
+  [1m[36mPlant Load (2.6ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  [1m[36mPlant Load (7.4ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" ORDER BY "plants"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/" for ::1 at 2021-05-12 16:57:34 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 42ms (Views: 40.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-05-12 17:03:39 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 36ms (Views: 34.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-05-12 17:03:43 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 26ms (Views: 24.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-05-12 17:04:26 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 31ms (Views: 29.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-05-12 17:04:27 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 31ms (Views: 30.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-05-12 17:04:28 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 28ms (Views: 27.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-05-12 17:06:14 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 317ms (Views: 316.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-05-12 17:06:48 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 275ms (Views: 273.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-05-12 17:08:46 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 331ms (Views: 329.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/plants" for ::1 at 2021-05-12 17:52:57 -0400
+Processing by Api::PlantsController#index as JSON
+  Rendering api/plants/index.json.jbuilder
+  [1m[36mPlant Load (26.0ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  ↳ app/views/api/plants/index.json.jbuilder:2
+  [1m[36mActiveStorage::Attachment Load (4.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Plant"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/plants/index.json.jbuilder:6
+  Rendered api/plants/index.json.jbuilder (4511.8ms)
+Completed 500 Internal Server Error in 21241ms (ActiveRecord: 86.6ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/plants/index.json.jbuilder:6:in `block in _app_views_api_plants_index_json_jbuilder___2640946757109904419_70230554022480'
+  app/views/api/plants/index.json.jbuilder:2:in `_app_views_api_plants_index_json_jbuilder___2640946757109904419_70230554022480'
+  app/controllers/api/plants_controller.rb:7:in `index'
+
+Started POST "/__better_errors/f3c790a230f8d6ce/variables" for ::1 at 2021-05-12 17:53:19 -0400
+  [1m[36mPlant Load (11.4ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  [1m[36mPlant Load (8.4ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" ORDER BY "plants"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPlant Load (9.5ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" ORDER BY "plants"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPlant Load (2.9ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" ORDER BY "plants"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPlant Load (0.8ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" ORDER BY "plants"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (1.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Plant"], ["name", "photo"], ["LIMIT", 1]]
+[36m  S3 Storage (231.6ms) [0m[32mUploaded file to key: AjBhv4Ymv6uNfrB3JWTzUgKH (checksum: H/M6+7K1kJcW2tShnEZZ5A==)[0m
+  [1m[35m (22.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Blob Create (15.3ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "AjBhv4Ymv6uNfrB3JWTzUgKH"], ["filename", "monstera_test.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 163040], ["checksum", "H/M6+7K1kJcW2tShnEZZ5A=="], ["created_at", "2021-05-12 22:05:36.783028"]]
+  [1m[35m (15.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Attachment Create (15.4ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "photo"], ["record_type", "Plant"], ["record_id", 1], ["blob_id", 2], ["created_at", "2021-05-12 22:05:36.856091"]]
+  [1m[36mPlant Update (7.7ms)[0m  [1m[33mUPDATE "plants" SET "updated_at" = $1 WHERE "plants"."id" = $2[0m  [["updated_at", "2021-05-12 22:05:36.872269"], ["id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: a8f14f84-c15e-4472-8479-97867c9f4965) to Async(default) with arguments: #<GlobalID:0x00007faac49e3920 @uri=#<URI::GID gid://root-directory/ActiveStorage::Blob/2>>
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a8f14f84-c15e-4472-8479-97867c9f4965] Performing ActiveStorage::AnalyzeJob (Job ID: a8f14f84-c15e-4472-8479-97867c9f4965) from Async(default) with arguments: #<GlobalID:0x00007faae0e09a60 @uri=#<URI::GID gid://root-directory/ActiveStorage::Blob/2>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a8f14f84-c15e-4472-8479-97867c9f4965] [36m  S3 Storage (189.9ms) [0m[34mDownloaded file from key: AjBhv4Ymv6uNfrB3JWTzUgKH[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a8f14f84-c15e-4472-8479-97867c9f4965] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a8f14f84-c15e-4472-8479-97867c9f4965]   [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a8f14f84-c15e-4472-8479-97867c9f4965]   [1m[36mActiveStorage::Blob Update (1.1ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 2]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a8f14f84-c15e-4472-8479-97867c9f4965]   [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a8f14f84-c15e-4472-8479-97867c9f4965] Performed ActiveStorage::AnalyzeJob (Job ID: a8f14f84-c15e-4472-8479-97867c9f4965) from Async(default) in 228.03ms
+  [1m[36mActiveStorage::Attachment Load (1.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Plant"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlant Load (2.2ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPlant Load (0.8ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Plant"], ["name", "photo"], ["LIMIT", 1]]
+[36m  S3 Storage (269.2ms) [0m[32mUploaded file to key: RQ33Y3oSiiGiUuhTzfuZHwZG (checksum: 1B2M2Y8AsgTpgAmY7PhCfg==)[0m
+[36m  S3 Storage (232.5ms) [0m[32mUploaded file to key: LsDwYv2XDdkDHNQoxbz8LtQs (checksum: 1B2M2Y8AsgTpgAmY7PhCfg==)[0m
+  [1m[36mPlant Destroy (7.5ms)[0m  [1m[31mDELETE FROM "plants" WHERE "plants"."id" = $1[0m  [["id", 2]]
+  [1m[36mPlant Load (0.7ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+Started GET "/api/plants" for ::1 at 2021-05-12 18:10:46 -0400
+Processing by Api::PlantsController#index as JSON
+  Rendering api/plants/index.json.jbuilder
+  [1m[36mPlant Load (38.9ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  ↳ app/views/api/plants/index.json.jbuilder:2
+  [1m[36mActiveStorage::Attachment Load (1.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Plant"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/plants/index.json.jbuilder:6
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/plants/index.json.jbuilder:6
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Plant"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/plants/index.json.jbuilder:6
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/plants/index.json.jbuilder:6
+  Rendered api/plants/index.json.jbuilder (4380.9ms)
+Completed 200 OK in 22768ms (Views: 4308.4ms | ActiveRecord: 82.4ms)
+
+
