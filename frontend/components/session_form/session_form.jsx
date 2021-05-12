@@ -50,7 +50,7 @@ class SessionForm extends React.Component {
 
     signupForm() {
         return (
-            <div>
+            <>
                 <br />
                 {/* <label>First Name: */}
                     <input 
@@ -72,7 +72,7 @@ class SessionForm extends React.Component {
                     />
                 {/* </label> */}
                 <br />
-            </div>
+            </>
         );
     };
 
@@ -86,9 +86,12 @@ class SessionForm extends React.Component {
         return (
             <div className="session-form-container">
                 <form onSubmit={this.handleSubmit} className="session-form-box">
-                    <h1>Root Directory</h1>
+                    {/* <h1>Root Directory</h1> */}
                     <br />
-                    {this.props.formType} or {this.props.navLink}
+                    {/* {this.props.formType} or {this.props.navLink} */}
+                    {/* above was to sign in or login with link of other */}
+                    <h3 className="login-signup-header">{this.props.headerType}</h3>
+
                     {this.renderErrors()}
                     <div className="session-form">
 
@@ -114,22 +117,28 @@ class SessionForm extends React.Component {
                                 className="login-input"
                             />
                         {/* </label> */}
-                        <br />
+
+                        <p className="forgot-password" onClick={this.handleDemoSubmit}>Forgot your Password?</p>
+
                         <input
                             className="session-submit"
                             type="submit"
                             value={this.props.formType}
                         />
-                    </div>
+                        <br />
+                        <p className="new-customer">{this.props.formNav}</p>
+                    {/* <div className="session-submit"> */}
+                        {/* <h2>Continue as Guest</h2> */}
 
-                    <div className="demo-user">
-                        <h2>Continue as Guest</h2>
-                        <button className="demo-user-button" onClick={this.handleDemoSubmit}>
-                            Demo User
+                        <p className="session-submit">{this.props.navLink}</p>
+
+                        <button className="session-submit" onClick={this.handleDemoSubmit}>
+                            Login As Demo User
                         </button>
 
-                    </div>
+                    {/* </div> */}
 
+                    </div>
 
                 </form>
             </div>

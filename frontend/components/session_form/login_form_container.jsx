@@ -6,8 +6,10 @@ import SessionForm from './session_form';
 
 const mSTP = ({ errors }) => ({
     errors: errors.session,
-    formType: 'login',
-    navLink: <Link to="/signup">sign up</Link>
+    formType: 'Login',
+    headerType: 'Login',
+    formNav: "New Customer?",
+    navLink: <Link to="/signup">Create Account</Link>
 });
 
 const mDTP = (dispatch) => ({

@@ -10,46 +10,116 @@ h2 {
     font-weight: 100;
 }
 
+.login-signup-header {
+    font-family: futura-pt, sans-serif;
+    font-size: 25px;
+    color: #585858;
+    text-align: center;
+    padding: 0;
+    margin: 25px 0 10px 0;
+}
+
 .session-form-container {
     // display: flex;
-    border: 5px solid red;
-    background-color: coral;
+    // flex-direction: column;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    // justify-content: center;
+    align-content: center;
+    // border: 5px solid red;
+    // background-color: coral;
 }
 
-.session-form-box {
-    // display: flex;
-    border: 5px solid orange;
-    background-color: gold;
-}
+// .session-form-box {
+//     // display: flex;
+//     border: 5px solid orange;
+//     background-color: gold;
+// }
 
-.session-form {
-    // display: flex;
-    border: 5px solid yellow;
-    background-color: tan;
-}
+// .session-form {
+//     // display: flex;
+//     flex-direction: column;
+//     border: 5px solid yellow;
+//     background-color: tan;
+// }
 
 .session-submit {
     // display: flex;
-    border: 5px solid green;
-    background-color: lightgreen;
-}
-
-.demo-user {
-    // display: flex;
-    border: 5px solid blue;
-    background-color: lightblue;
-}
-
-.login-input {
-    // display: flex;
+    // border: 5px solid green;
+    background-color: #a6ce46;
+    width: 310px;
     border: 1px solid #dfdfdf;
-    color: #555555;
+
     font-family: proxima-nova, sans-serif;
     font-style: normal;
     font-size: 12px;
     font-weight: 50;
-    padding: 5px 4px;
-    margin: 4px;
+    text-align: center;
+
+    color: #555555;
+    padding: 8px 4px;
+    margin: 3px 5px 5px 5px;
+}
+
+.session-submit:hover {
+    background-color: rgb(61, 61, 61);
+    color: white;
+}
+
+// .demo-user {
+//     // display: flex;
+//     border: 5px solid blue;
+//     background-color: lightblue;
+// }
+
+.login-input {
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+
+    // align-content: center;
+
+    border: 1px solid #dfdfdf;
+    color: #555555;
+    font-family: proxima-nova, sans-serif;
+    font-style: normal;
+    font-size: 11px;
+    font-weight: 50;
+    padding: 5px 4px 5px 4px;
+    margin: 9px 5px 9px 5px;
     // margin-right: 50px;
     width: 310px;
 }
+
+::placeholder {
+    // color: #dfdfdf;
+    color: lightgray;
+}
+
+.new-customer {
+    font-family: futura-pt, sans-serif;
+    font-size: 17px;
+    color: #3d3d3d;
+    text-align: center;
+    padding: 0;
+    margin: 32.5px 5px 15px 5px;
+}
+
+.forgot-password {
+    font-family: futura-pt, sans-serif;
+    font-size: 10px;
+    color: #669900;
+    text-align: center;
+    // border: 1px solid pink;
+    margin: 7px 5px 13px 5px;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+// need to actually download these fonts to use
