@@ -10,6 +10,36 @@ h2 {
     font-weight: 100;
 }
 
+.top-nav-bar {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    background-color: #3d3d3d;
+    color: #a2a2a2;
+}
+
+.top-nav-middle {
+    display: flex;
+    flex-direction: row;
+}
+
+.top-nav-left:hover {
+    text-decoration: underline;
+    color: #ffff
+}
+
+.top-nav-middle:hover {
+    text-decoration: underline;
+    color: #ffff
+}
+
+.top-nav-right:hover {
+    text-decoration: underline;
+    color: #ffff
+}
+
+// shopnyc is DDDDD color and is always underlined
+
 .login-signup-header {
     font-family: futura-pt, sans-serif;
     font-size: 25px;

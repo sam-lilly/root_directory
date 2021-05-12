@@ -83,64 +83,89 @@ class SessionForm extends React.Component {
         };
 
         return (
-            <div className="session-form-container">
-                <form onSubmit={this.handleSubmit} className="session-form-box">
-                    {/* <h1>Root Directory</h1> */}
-                    <br />
-                    {/* {this.props.formType} or {this.props.navLink} */}
-                    {/* above was to sign in or login with link of other */}
-                    <h3 className="login-signup-header">{this.props.headerType}</h3>
-
-                    <p className="login-signup-errors">{this.renderErrors()}</p>
-
-                    <div className="session-form">
-
-                    {signUpNameForm}
-
-                        {/* <br /> */}
-                        {/* <label>Email: */}
-                            <input 
-                                type="text"
-                                placeholder="Email Address"
-                                value={this.state.email}
-                                onChange={this.update('email')}
-                                className="login-input"        
-                            />
-                        {/* </label> */}
-                        <br />
-                        {/* <label>Password: */}
-                            <input 
-                                type="password"
-                                placeholder="Password"
-                                value={this.state.password}
-                                onChange={this.update('password')}
-                                className="login-input"
-                            />
-                        {/* </label> */}
-
-                        <p className="forgot-password" onClick={this.handleDemoSubmit}>Forgot your Password?</p>
-
-                        <input
-                            className="session-submit"
-                            type="submit"
-                            value={this.props.formType}
-                        />
-                        <br />
-                        <p className="new-customer">{this.props.formNav}</p>
-                    {/* <div className="session-submit"> */}
-                        {/* <h2>Continue as Guest</h2> */}
-
-                        <p className="session-submit">{this.props.navLink}</p>
-
-                        <button className="session-submit" onClick={this.handleDemoSubmit}>
-                            Login As Demo User
-                        </button>
-
-                    {/* </div> */}
-
+            <div>
+                <div className="top-nav-bar">
+                    
+                    <div className="top-nav-left">
+                        <p>Root :: Directory</p>
                     </div>
 
-                </form>
+                    <div className="top-nav-middle">
+                        <ul>
+                        <li>Shop NYC</li>
+                        <li>Plant Care</li>
+                        <li>Info</li>
+                        </ul>
+                    </div>
+
+                    <div className="top-nav-right">
+                        <p>Account</p>
+                        <i class="fas fa-search"></i>
+                    </div>
+
+                </div>
+
+
+                <div className="session-form-container">
+                    <form onSubmit={this.handleSubmit} className="session-form-box">
+                        {/* <h1>Root Directory</h1> */}
+                        <br />
+                        {/* {this.props.formType} or {this.props.navLink} */}
+                        {/* above was to sign in or login with link of other */}
+                        <h3 className="login-signup-header">{this.props.headerType}</h3>
+
+                        <p className="login-signup-errors">{this.renderErrors()}</p>
+
+                        <div className="session-form">
+
+                        {signUpNameForm}
+
+                            {/* <br /> */}
+                            {/* <label>Email: */}
+                                <input 
+                                    type="text"
+                                    placeholder="Email Address"
+                                    value={this.state.email}
+                                    onChange={this.update('email')}
+                                    className="login-input"        
+                                />
+                            {/* </label> */}
+                            <br />
+                            {/* <label>Password: */}
+                                <input 
+                                    type="password"
+                                    placeholder="Password"
+                                    value={this.state.password}
+                                    onChange={this.update('password')}
+                                    className="login-input"
+                                />
+                            {/* </label> */}
+
+                            <p className="forgot-password" onClick={this.handleDemoSubmit}>Forgot your Password? Login as Demo User!</p>
+
+                            <input
+                                className="session-submit"
+                                type="submit"
+                                value={this.props.formType}
+                            />
+                            <br />
+                            <p className="new-customer">{this.props.formNav}</p>
+                        {/* <div className="session-submit"> */}
+                            {/* <h2>Continue as Guest</h2> */}
+
+                            <p className="session-submit">{this.props.navLink}</p>
+
+                            <button className="session-submit" onClick={this.handleDemoSubmit}>
+                                Login As Demo User
+                            </button>
+
+                        {/* </div> */}
+
+                        </div>
+
+                    </form>
+                </div>
+
             </div>
         );
     }
