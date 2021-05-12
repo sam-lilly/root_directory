@@ -10,13 +10,8 @@ class SessionForm extends React.Component {
             last_name: ""
         };
         this.handleSubmit = this.handleSubmit.bind(this);
-        // this.demoUser = this.demoUser.bind(this);
         this.handleDemoSubmit = this.handleDemoSubmit.bind(this);
     };
-
-    // demoUser() {
-    //     this.setState({ email: "plantlyfe@gmail.com", password: "password", first_name: "Forrest", last_name: "Willow" });
-    // };
 
     update(field) {
         return e => this.setState({
@@ -57,23 +52,25 @@ class SessionForm extends React.Component {
         return (
             <div>
                 <br />
-                <label>First Name:
+                {/* <label>First Name: */}
                     <input 
                         type="text"
+                        placeholder="First Name"
                         value={this.state.first_name}
                         onChange={this.update('first_name')}
                         className="login-input"        
                     />
-                </label>
+                {/* </label> */}
                 <br />
-                <label>Last Name:
+                {/* <label>Last Name: */}
                     <input 
                         type="text"
+                        placeholder="Last Name"
                         value={this.state.last_name}
                         onChange={this.update('last_name')}
                         className="login-input"
                     />
-                </label>
+                {/* </label> */}
                 <br />
             </div>
         );
@@ -97,24 +94,26 @@ class SessionForm extends React.Component {
 
                     {signUpNameForm}
 
-                        <br />
-                        <label>Email:
+                        {/* <br /> */}
+                        {/* <label>Email: */}
                             <input 
                                 type="text"
+                                placeholder="Email Address"
                                 value={this.state.email}
                                 onChange={this.update('email')}
                                 className="login-input"        
                             />
-                        </label>
+                        {/* </label> */}
                         <br />
-                        <label>Password:
+                        {/* <label>Password: */}
                             <input 
                                 type="password"
+                                placeholder="Password"
                                 value={this.state.password}
                                 onChange={this.update('password')}
                                 className="login-input"
                             />
-                        </label>
+                        {/* </label> */}
                         <br />
                         <input
                             className="session-submit"

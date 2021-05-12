@@ -4,8 +4,6 @@ import configureStore from './store/store';
 import Root from './components/root';
 import { signup, login, logout } from './actions/session_actions'
 
-const sam = {user: {email: "sam", password: "password", first_name: "sam", last_name: "l"}};
-
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -22,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
         store = configureStore();
     }
-    
+
 
     const root = document.getElementById("root");
 
