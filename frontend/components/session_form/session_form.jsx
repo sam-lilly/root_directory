@@ -51,7 +51,6 @@ class SessionForm extends React.Component {
     signupForm() {
         return (
             <>
-                <br />
                 {/* <label>First Name: */}
                     <input 
                         type="text"
@@ -79,7 +78,7 @@ class SessionForm extends React.Component {
 
     render () {
         let signUpNameForm
-        if (this.props.formType === "signup") {
+        if (this.props.formType === "Create Account") {
             signUpNameForm = this.signupForm();
         };
 
@@ -92,7 +91,8 @@ class SessionForm extends React.Component {
                     {/* above was to sign in or login with link of other */}
                     <h3 className="login-signup-header">{this.props.headerType}</h3>
 
-                    {this.renderErrors()}
+                    <p className="login-signup-errors">{this.renderErrors()}</p>
+
                     <div className="session-form">
 
                     {signUpNameForm}
