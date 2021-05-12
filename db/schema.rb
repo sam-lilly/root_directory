@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_12_144249) do
+ActiveRecord::Schema.define(version: 2021_05_12_165052) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -148,12 +148,14 @@ ActiveRecord::Schema.define(version: 2021_05_12_144249) do
     t.text "dimensions", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "type", null: false
     t.index ["color"], name: "index_planters_on_color"
     t.index ["material"], name: "index_planters_on_material"
     t.index ["name"], name: "index_planters_on_name"
     t.index ["price"], name: "index_planters_on_price"
     t.index ["product_id"], name: "index_planters_on_product_id"
     t.index ["size"], name: "index_planters_on_size"
+    t.index ["type"], name: "index_planters_on_type"
   end
 
   create_table "plants", force: :cascade do |t|
