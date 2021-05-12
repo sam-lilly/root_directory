@@ -13,8 +13,8 @@ const App = () => (
         </header>
         
         {/* <Switch> */}
-            <AuthRoute path="/login" component={LoginFormContainer} />
-            <AuthRoute path="/signup" component={SignupFormContainer} />
+            <AuthRoute exact path="/login" component={LoginFormContainer} />
+            <AuthRoute exact path="/signup" component={SignupFormContainer} />
         {/* </Switch> */}
 
     </div>
