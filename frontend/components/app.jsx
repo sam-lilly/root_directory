@@ -26,8 +26,8 @@ const App = () => (
             <Route exact path="/plants" component={PlantIndexContainer} />
             <Route exact path="/plants/:plantId" component={PlantShowContainer} />
 
-            {/* <Route exact path="/planters" component={PlanterIndexContainer} />
-            <Route exact path="/planters/:planterId" component={PlanterShowContainer} /> */}
+            <Route exact path="/planters" component={PlanterIndexContainer} />
+            <Route exact path="/planters/:planterId" component={PlanterShowContainer} />
 
         </Switch>
 

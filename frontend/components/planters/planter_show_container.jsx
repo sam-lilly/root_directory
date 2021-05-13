@@ -1,13 +1,13 @@
-// import { connect } from 'react-redux';
-// import { fetchPlanter } from '../../actions/planter_actions';
-// import PlanterShow from './planter_show';
+import { connect } from 'react-redux';
+import { fetchPlanter } from '../../actions/planter_actions';
+import PlanterShow from './planter_show';
 
-// const mSTP = (state, ownProps) => ({
-//     planter: state.planters[ownProps.match.params.planterId]
-// })
+const mSTP = (state, ownProps) => ({
+    planter: state.entities.planters[ownProps.match.params.planterId]
+})
 
-// const mDTP = (dispatch) => ({
-//     fetchPlanter: (planter) => dispatch(fetchPlanter(planter)) 
-// })
+const mDTP = (dispatch) => ({
+    fetchPlanter: (planter) => dispatch(fetchPlanter(planter)) 
+})
 
-// export default connect (mSTP, mDTP)(PlanterShow);
+export default connect (mSTP, mDTP)(PlanterShow);

@@ -1,18 +1,18 @@
-// import React from 'react';
+import React from 'react';
 
-// class PlanterShow extends React.Component {
+class PlanterShow extends React.Component {
 
-//     constructor(props) {
-//         super(props);
-//     }
+    constructor(props) {
+        super(props);
+    }
 
-//     render () {
-//         return (
-//             <h1>this is planter show page!</h1>
-//         )
-//     }
+    render () {
+        return (
+            <h1>this is planter show page!</h1>
+        )
+    }
 
 
-// }
+}
 
-// export default PlanterShow;
+export default PlanterShow;

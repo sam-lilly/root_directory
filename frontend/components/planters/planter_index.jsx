@@ -1,19 +1,19 @@
-// import React from 'react';
+import React from 'react';
 
 
-// class PlanterIndex extends React.Component {
+class PlanterIndex extends React.Component {
     
-//     constructor(props) {
-//         super(props);
-//     }
+    constructor(props) {
+        super(props);
+    }
 
-//     render() {
-//         return (
-//             <h1>this is planter index!</h1>
-//         )
-//     }
+    render() {
+        return (
+            <h1>this is planter index!</h1>
+        )
+    }
 
 
-// }
+}
 
-// export default PlanterIndex;
+export default PlanterIndex;
