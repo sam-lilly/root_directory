@@ -8,7 +8,7 @@ import errorsReducer from './errors_reducer';
 
 const rootReducer = combineReducers({
     entities: entitiesReducer,
-    // ui,
+    // ui, good example in bench bnb
     session: sessionReducer,
     errors: errorsReducer
 })
