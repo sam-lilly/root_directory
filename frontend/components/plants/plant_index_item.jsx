@@ -10,7 +10,9 @@ class PlantIndexItem extends React.Component {
             <div>
                 <ul>
                     <li>
-                        <p>{plant.name} (if you can see this plant name, then it is working)</p>
+                        <p>{plant.name}</p>
+                        <img src={plant.photoMainUrl} />
+                        <img src={plant.photoHoverUrl} />
                     </li>
                 </ul>
             </div>

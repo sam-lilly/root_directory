@@ -2,28 +2,28 @@
 # anthurium red 4 *
 ficus audrey 4 * has care if search other ficus audrey
 monstera deliciosa 4 * has care
-calathea ornata 6 * has care
+calathea ornata 6 * has care USE
 calathea medallion 6 * has care
 
-monstera deliciosa 10 ** use this monstera DEF
+monstera deliciosa 10 ** 
 # dracanena lisa cane 10 **
-sansevieria laurentii 10 **  DEF
+sansevieria laurentii 10 ** 
 # philodendron congo rojo 10 ** 2 girls squatting no
 # pencil cactus 10 ** hipster laying
 # dracaena compacta 10 ** puppy
 # ficus audrey pole 10 ** like this girl
-philodendron hope selloum 10 ** like this girl too sitting / reading DEF
+philodendron hope selloum 10 ** USE
 # philodendron congo green 10 no
-cereus cactus (cereus peruvianus) 10 ** need cactus DEF
+cereus cactus (cereus peruvianus) 10 ** 
 
-fiddle leaf fig tree 14 *** prob need fig tree
+fiddle leaf fig tree 14 *** 
 # ficus audrey 14 *** no
 # ficus moclame 14 *** meh
-kentia palm 14 *** umbrella dude
+kentia palm 14 *** USE
 # monstera deliciosa 14 *** no
 # dracanena reflexa 14 *** sexy tatted dude
-birds of paradise 14 *** girl standing by it 
-schefflera amate 14 ***  DEF
+birds of paradise 14 *** 
+schefflera amate 14 *** USE
 
 
 1-nursery

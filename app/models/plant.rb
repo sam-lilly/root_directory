@@ -18,7 +18,9 @@ class Plant < ApplicationRecord
     validates :benefits, inclusion: { in: BENEFITS }
 
     
-    has_one_attached :photo
+    has_one_attached :photomain
+
+    has_one_attached :photohover
 
 
     # belongs_to :product,

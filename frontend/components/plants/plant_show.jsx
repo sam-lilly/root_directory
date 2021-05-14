@@ -19,7 +19,9 @@ class PlantShow extends React.Component {
         return (
             <div className="plant-show">
                 <h1>this is plant show page, hello world!</h1>
-                <p>{plant.name}</p>
+                    <p>{plant.name}</p>
+                    <img src={plant.photoMainUrl} />
+                    <img src={plant.photoHoverUrl} />
             </div>
         )
     }
