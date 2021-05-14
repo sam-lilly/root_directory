@@ -6,9 +6,19 @@ class PlanterShow extends React.Component {
         super(props);
     }
 
+    componentDidMount() {
+        this.props.fetchPlanter(this.props.match.params.planterId);
+    }
+
     render () {
+
+        let { planter } = this.props;
+
         return (
-            <h1>this is planter show page!</h1>
+            <div>
+                <h1>this is planter show page!</h1>
+                <p>{planter.name}</p>
+            </div>
         )
     }
 

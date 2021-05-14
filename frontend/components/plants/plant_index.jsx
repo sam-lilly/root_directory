@@ -13,12 +13,10 @@ class PlantIndex extends React.Component {
     }
 
     render() {
-        
+
         let { plants } = this.props;
 
-        if (!plants) {
-            return null
-        };
+        if (!plants) return null;
 
         return (
             <div>
@@ -26,7 +24,7 @@ class PlantIndex extends React.Component {
 
                 <ul>
                     {
-                        plants.map(plant => <PlantIndexItem plant={plant} key={plant.id} />)
+                        plants.map(plant => <PlantIndexItem key={plant.id} plant={plant} />)
                     }
                 </ul>
 

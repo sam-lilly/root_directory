@@ -6,9 +6,21 @@ class PlantShow extends React.Component {
         super(props);
     }
 
+    componentDidMount() {
+        this.props.fetchPlant(this.props.match.params.plantId);
+    }
+
     render () {
+
+        let { plant } = this.props;
+        
+        if (!plant) return null;
+
         return (
-            <h1>this is plant show page!</h1>
+            <div>
+                <h1>this is plant show page, hello world!</h1>
+                <p>{plant.name}</p>
+            </div>
         )
     }
 

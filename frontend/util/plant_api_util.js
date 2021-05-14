@@ -10,4 +10,4 @@ export const fetchPlant = (plantId) => (
         method: "GET",
         url: `/api/plants/${plantId}`
     })
-);
+)

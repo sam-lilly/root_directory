@@ -7,7 +7,7 @@ const mSTP = (state, ownProps) => ({
 })
 
 const mDTP = (dispatch) => ({
-    fetchPlant: (plant) => dispatch(fetchPlant(plant)) 
+    fetchPlant: (plantId) => dispatch(fetchPlant(plantId)) 
 })
 
 export default connect (mSTP, mDTP)(PlantShow);
