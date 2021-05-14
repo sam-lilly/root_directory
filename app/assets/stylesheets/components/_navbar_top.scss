@@ -1,0 +1,87 @@
+.nav-container {
+    font-family: futura-pt, sans-serif;
+    font-size: 13px;
+    display: grid;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 50px;
+    background-color: #3d3d3d;
+    color: grey;
+
+    .header-left {
+        grid-column-start: 1;
+        display: flex;
+        align-items: center;
+        margin-left: 20px;
+
+        .root-link:hover {
+            color: #b6b5b5;
+            text-decoration: underline;
+        }
+
+    }
+
+    .header-middle {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        grid-column-start: 2;
+
+        .shop-nyc {
+            color: rgb(151, 150, 150);
+            text-decoration: underline;
+            &:hover {
+                color: #b6b5b5;
+                cursor: pointer;
+            }
+        }
+
+        .plant-care:hover {
+            color: #b6b5b5;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .plant-blog:hover {
+            color: #b6b5b5;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    }
+
+    .header-right {
+        grid-column-start: 3;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-right: 20px;
+
+        .login:hover {
+            color: #b6b5b5;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .signup:hover {
+            color: #b6b5b5;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .header-group {
+            display: flex;
+            text-transform: uppercase;
+
+            .header-button:hover {
+                color: #b6b5b5;
+                cursor: pointer;
+                text-decoration: underline;
+            }
+        }
+
+    }
+
+    
+}

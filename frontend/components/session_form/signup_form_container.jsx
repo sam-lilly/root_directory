@@ -9,7 +9,9 @@ const mSTP = ({ errors }) => ({
     formType: 'Create Account',
     headerType: 'Register',
     formNav: 'Have an account?',
-    navLink: <Link to="/login">Login</Link>
+    navLink: <Link to="/login">Login</Link>,
+    navLinkInRender: "/login",
+    navText: 'Login'
 });
 
 const mDTP = (dispatch) => ({

@@ -17,7 +17,7 @@ class PlantShow extends React.Component {
         if (!plant) return null;
 
         return (
-            <div>
+            <div className="plant-show">
                 <h1>this is plant show page, hello world!</h1>
                 <p>{plant.name}</p>
             </div>

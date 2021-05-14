@@ -1,5 +1,6 @@
 import React from 'react';
 import { login } from '../../actions/session_actions';
+import { Link } from 'react-router-dom';
 
 class SessionForm extends React.Component {
     constructor(props) {
@@ -89,27 +90,6 @@ class SessionForm extends React.Component {
 
         return (
             <div>
-                <div className="top-nav-bar">
-                    
-                    <div className="top-nav-left">
-                        <p>Root :: Directory</p>
-                    </div>
-
-                    <div className="top-nav-middle">
-                        <ul>
-                        <li>Shop NYC</li>
-                        <li>Plant Care</li>
-                        <li>Info</li>
-                        </ul>
-                    </div>
-
-                    <div className="top-nav-right">
-                        <p>Account</p>
-                        {/* <i className="fas fa-search"></i> */}
-                    </div>
-
-                </div>
-
 
                 <div className="session-form-container">
                     <form onSubmit={this.handleSubmit} className="session-form-box">
@@ -157,8 +137,22 @@ class SessionForm extends React.Component {
                             <p className="new-customer">{this.props.formNav}</p>
                         {/* <div className="session-submit"> */}
                             {/* <h2>Continue as Guest</h2> */}
+                            
+                            {/* <div>
+                                <p className="session-submit">{this.props.navLink}</p>
+                            </div> */}
 
-                            <p className="session-submit">{this.props.navLink}</p>
+                            {/* <div>
+                                <p className="session-submit">{this.props.navLink}</p>
+                            </div> */}
+                            <div>
+                                <Link to={this.props.navLinkInRender}>
+                                    <div className="session-submit">
+                                        {this.props.navText}
+                                    </div>
+                                </Link>
+                                    
+                            </div>
 
                             <button className="session-submit" onClick={this.handleDemoSubmit}>
                                 Login As Demo User

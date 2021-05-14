@@ -19,7 +19,7 @@ class PlantIndex extends React.Component {
         if (!plants) return null;
 
         return (
-            <div>
+            <div className="plant-index">
                 <h1>this is plant index!</h1>
 
                 <ul>
