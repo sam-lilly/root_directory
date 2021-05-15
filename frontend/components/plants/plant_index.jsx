@@ -52,9 +52,40 @@ class PlantIndex extends React.Component {
 
                 </div>
 
+
+                <div className="top-column">
+
+                    <div>
+                        <p className="all-plants">All Plants</p>
+                    </div>
+
+                    {/* <div className="underline-container">
+                        <span className="underline">&nbsp;hi its me&nbsp;&nbsp;&nbsp;</span>
+                    </div> */}
+
+                    <div className="right-dropdown">
+                        <div>
+                            <p className="sort-by">Sort by</p>
+                            <p className="featured">Featured</p>
+                        </div>
+                        <div>
+                            <i className="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
                     {
                         plants.map(plant => <PlantIndexItem key={plant.id} plant={plant} />)
                     }
+                
+
+                <div>
+                    
+                </div>
+
 
             </div>
 

@@ -1,18 +1,22 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class PlantIndexItem extends React.Component {
+
+    // linkToShowPg() {
+    //     <Link to="/plantcare" className="plant-care" />
+    // }
 
     render () {
 
         const { plant } = this.props;
         
-        
-        // let photoStatus = plant.photoMainUrl
 
         return (
             <div>
                 <ul>
-                    <li className="product-container">
+                    <Link to={`/plants/${plant.id}`} className="product-container" >
+                    {/* <li className="product-container"> */}
                             <img
                                 src={plant.photoMainUrl}
                                 className="main-images"
@@ -27,8 +31,8 @@ class PlantIndexItem extends React.Component {
                                 but don't do the onMouseLeave as it will stay the same if
                                 they navigate away until they hover again then will
                                 essentially 'refresh' the pics with the onMouseLeave */}
-
-                    </li>
+                    </Link>
+                    {/* </li> */}
                 </ul>
 
             </div>

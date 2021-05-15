@@ -9,6 +9,7 @@ class SplashPage extends React.Component {
                 
                 {/* <div className="img-wrapper"> */}
                     <img src={window.splash} alt="plants" className="splash-background" />
+                    {/* <img src={window.altSplash} alt="plants" className="splash-background" /> */}
                 {/* </div> */}
 
 
