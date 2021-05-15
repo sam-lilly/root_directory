@@ -1,0 +1,67 @@
+
+
+.plant-index {
+    font-family: futura-pt, sans-serif;
+    margin-top: 50px;
+    margin-bottom: 0px;
+    // ^^need to fix this as it doesn't perfectly align/ not dynamic
+    padding-right: 20px;
+    display: grid;
+    grid-template-columns: 1.5fr 2fr 2fr 2fr 2fr;
+    // grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 1000px;
+    grid-gap: 20px;
+    background-color: rgb(237, 237, 237);
+    // add more 600px rows as it grows
+
+    .sections-search {
+        padding-top: 20px;
+        grid-column-start: 1;
+        border: 1px solid magenta;
+        background: white;
+        // word-wrap: break-word;
+        // ^just have this in for resizing browser to
+        // verrrrry small, will remove once i adjust
+        padding: 10px;
+        font-size: 13px;
+        font-weight: bold;
+
+
+        .dropdown {
+            border-bottom: 1px solid rgb(193, 193, 193);
+            padding: 10px 0;
+            color: rgb(53, 53, 53);
+            letter-spacing: 0.5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    .hover-container:hover {
+        border: 3px solid magenta;
+    }
+
+    .main-images {
+        margin-top: 20px;
+        padding-bottom: 10px;
+        background-color: rgb(237, 237, 237);
+        border-bottom: 1px solid rgb(193, 193, 193);
+    }
+
+    .plant-name {
+        margin-top: 10px;
+        padding-left: 0px;
+        font-size: 13px;
+        color: rgb(74, 74, 74);
+    }
+
+    .plant-price {
+        margin-top: 5px;
+        font-size: 15px;
+        color: rgb(130, 187, 69);
+    }
+
+
+
+}

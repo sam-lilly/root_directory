@@ -6,8 +6,10 @@ class SplashPage extends React.Component {
     render () {
         return (
             <div className="splash-page">
-
-                <img src={window.splash} alt="plants" className="splash-background" />
+                
+                {/* <div className="img-wrapper"> */}
+                    <img src={window.splash} alt="plants" className="splash-background" />
+                {/* </div> */}
 
 
                 <h1 className="header">the future of plants</h1>

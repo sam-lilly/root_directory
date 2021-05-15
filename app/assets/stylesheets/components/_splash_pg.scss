@@ -15,9 +15,17 @@ h2 {
 
 .splash-page {
 
+    // .img-wrapper {
+    //     // height: calc(100vh - 50px);
+    // }
+
     .splash-background {
         margin-top: 50px;
+        height: calc(100vh - 50px);
+        width: 100%;
         padding: 0;
+        // need to fix this image
+        // isnt dynamic when makingn the screen too narrow
     }
 
     .header {
