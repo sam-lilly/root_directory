@@ -2,11 +2,15 @@ import React from 'react';
 
 class PlantIndexItem extends React.Component {
 
+    constructor(props) {
+        super(props);
+        // this.hoverPhoto = this.hoverPhoto.bind(this);
+    }
     
 
-    // hoverPhoto() {
-    //     if 
-    // }
+    // hoverPhoto(e) {
+    //     e.target.style.backgroundImage = this.props.plant.photoHoverUrl;
+    //   }
 
 
 
@@ -14,23 +18,28 @@ class PlantIndexItem extends React.Component {
 
         const { plant } = this.props;
         
+        
         // let photoStatus = plant.photoMainUrl
 
         return (
             <div>
                 <ul>
                     <li>
-                        {/* < div className="hover-container" onMouseEnter={}> */}
-                            <img src={plant.photoMainUrl} className="main-images"/>
-                        {/* </div> */}
+                            <img
+                                src={plant.photoMainUrl}
+                                className="main-images"
+                                onMouseEnter={e => (e.currentTarget.src = plant.photoHoverUrl)}
+                                onMouseLeave={e => (e.currentTarget.src = plant.photoMainUrl)}    
+                            />
                             <p className="plant-name">{plant.name} | {plant.inches.toString()}"</p>
                             <p className="plant-price">${plant.price} and up</p>
-                            <p>where am i</p>
 
+                            {/* when implementing the pots changing pic at the bottom
+                                will put the image then onMouseEnter change the above pic
+                                but don't do the onMouseLeave as it will stay the same if
+                                they navigate away until they hover again then will
+                                essentially 'refresh' the pics with the onMouseLeave */}
 
-                        {/* make p container with name and then | then inches */}
-
-                        {/* <img src={plant.photoHoverUrl} /> */}
                     </li>
                 </ul>
 

@@ -9,14 +9,14 @@
     display: grid;
     grid-template-columns: 1.5fr 2fr 2fr 2fr 2fr;
     // grid-template-columns: 20% 20% 20% 20% 20%;
-    grid-template-rows: 1000px;
+    grid-template-rows: 400px 400px 400px;
     grid-gap: 20px;
     background-color: rgb(237, 237, 237);
     // add more 600px rows as it grows
 
     .sections-search {
         padding-top: 20px;
-        grid-column-start: 1;
+        grid-row: 1 / 5;
         border: 1px solid magenta;
         background: white;
         // word-wrap: break-word;
@@ -54,6 +54,11 @@
         padding-left: 0px;
         font-size: 13px;
         color: rgb(74, 74, 74);
+        &::selection {
+            background: magenta;
+            // this changed the color of the highlighting!!!
+            // need to do this for all my text
+        }
     }
 
     .plant-price {
