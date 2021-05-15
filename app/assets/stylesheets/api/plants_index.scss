@@ -1,7 +1,8 @@
 
 
 .plant-index {
-    font-family: futura-pt, sans-serif;
+    font-family: 'Jost', sans-serif;
+    // font-weight: 500;
     margin-top: 50px;
     margin-bottom: 0px;
     // ^^need to fix this as it doesn't perfectly align/ not dynamic
@@ -17,7 +18,7 @@
     .sections-search {
         padding-top: 20px;
         grid-row: 1 / 5;
-        border: 1px solid magenta;
+        // border: 1px solid magenta;
         background: white;
         // word-wrap: break-word;
         // ^just have this in for resizing browser to
@@ -38,9 +39,14 @@
         }
     }
 
-    .hover-container:hover {
-        border: 3px solid magenta;
+    // .hover-container:hover {
+    //     border: 3px solid magenta;
+    // }
+
+    .product-container:hover {
+        color: yellowgreen;
     }
+
 
     .main-images {
         margin-top: 20px;
@@ -52,10 +58,10 @@
     .plant-name {
         margin-top: 10px;
         padding-left: 0px;
-        font-size: 13px;
+        font-size: 15px;
         color: rgb(74, 74, 74);
         &::selection {
-            background: magenta;
+            background: yellowgreen;
             // this changed the color of the highlighting!!!
             // need to do this for all my text
         }
@@ -63,8 +69,9 @@
 
     .plant-price {
         margin-top: 5px;
-        font-size: 15px;
-        color: rgb(130, 187, 69);
+        font-size: 17px;
+        color: rgb(117, 174, 55);
+        font-weight: bolder;
     }
 
 

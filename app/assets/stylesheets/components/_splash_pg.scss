@@ -1,11 +1,13 @@
 
 h1 {
-    font-family: futura-pt, sans-serif;
+
+    font-family: 'Jost', sans-serif;
     text-transform: uppercase;
 }
 
 h2 {
-    font-family: proxima-nova, sans-serif;
+
+    font-family: 'Jost', sans-serif;
     font-style: normal;
     font-weight: 100;
 }
@@ -31,7 +33,8 @@ h2 {
     .header {
         // border: 2px solid magenta;
         // font-family: futura-pt, sans-serif;
-        font-family: proxima-nova, sans-serif;
+
+        font-family: 'Jost', sans-serif;
         font-size: 40px;
         font-weight: bolder;
         text-align: center;
@@ -41,7 +44,8 @@ h2 {
     .info {
         // border: 2px solid blueviolet;
         // font-family: proxima-nova, sans-serif;
-        font-family: futura-pt, sans-serif;
+
+        font-family: 'Jost', sans-serif;
         text-align: center;
         font-size: 12px;
         text-transform: uppercase;
@@ -56,7 +60,8 @@ h2 {
     .delivery-bar {
         background-color: rgb(190, 254, 64);
         display: flex;
-        font-family: proxima-nova, sans-serif;
+
+        font-family: 'Jost', sans-serif;
         text-transform: uppercase;
         justify-content: center;
         padding-top: 20px;

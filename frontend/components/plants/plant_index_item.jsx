@@ -2,18 +2,6 @@ import React from 'react';
 
 class PlantIndexItem extends React.Component {
 
-    constructor(props) {
-        super(props);
-        // this.hoverPhoto = this.hoverPhoto.bind(this);
-    }
-    
-
-    // hoverPhoto(e) {
-    //     e.target.style.backgroundImage = this.props.plant.photoHoverUrl;
-    //   }
-
-
-
     render () {
 
         const { plant } = this.props;
@@ -24,7 +12,7 @@ class PlantIndexItem extends React.Component {
         return (
             <div>
                 <ul>
-                    <li>
+                    <li className="product-container">
                             <img
                                 src={plant.photoMainUrl}
                                 className="main-images"

@@ -54,7 +54,7 @@ monstera_deliciosa_large = Plant.create!(
 philodendron_hope = Plant.create!(
     product_id: 2,
     plant_db_id: 2,
-    name: "Philodendron Hope Selloum",
+    name: "Philodendron Hope",
     inches: 10,
     price: 65,
     plant_type: "test",
