@@ -5,6 +5,9 @@ class PlantShow extends React.Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            displayMain: true
+        };
     }
 
     componentDidMount() {
@@ -16,6 +19,15 @@ class PlantShow extends React.Component {
         let { plant } = this.props;
         
         if (!plant) return null;
+
+        let imgDisplay;
+
+        if (this.state.displayMain) {
+            imgDisplay = plant.photoMainUrl;
+        } else {
+            imgDisplay = plant.photoHoverUrl;
+        }
+
 
         return (
             <div className="plant-show">
@@ -70,13 +82,32 @@ class PlantShow extends React.Component {
                 </div>
                 
                 <div className="plant-display-container">
-                    <div className="click-images"> 
-                        <img src={plant.photoHoverUrl} />
+
+                    {/* <div className="click-images"> 
+                        <img src={plant.photoHoverUrl} onClick={}/>
                         <img className="bottom-pic" src={plant.photoMainUrl} />
                     </div>
                     <div className="display-image">
                         <img className="main-image" src={plant.photoMainUrl} />
+                    </div> */}
+                    {/* ^^click images & display image prior to the toggle */}
+
+
+                    <div className="click-images"> 
+                        <img className="top-pic"
+                            src={plant.photoHoverUrl}
+                            onClick={() => this.setState({displayMain: false})}/>
+                        <img className="bottom-pic"
+                            src={plant.photoMainUrl}
+                            onClick={() => this.setState({displayMain: true})}/>
                     </div>
+                    <div className="display-image">
+                        <img className="main-image" src={imgDisplay} />
+                    </div>
+                    
+
+
+
                     <div className="plant-info">
                         <div className="category-container">
                             <p>OVERVIEW</p>
@@ -85,6 +116,7 @@ class PlantShow extends React.Component {
                         </div>
                         <p className="plant-details">{plant.overview}</p>
                     </div>
+
                 </div>
 
                 {/* <p>{plant.name}</p>
