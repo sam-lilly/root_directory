@@ -34,9 +34,9 @@ class PlantShow extends React.Component {
 
                         <div className="nav-links">
                             <Link to="/" className="links">HOME</Link>
-                            <p className="carrot">&nbsp;>&nbsp;</p>
+                            {/* <p className="carrot">&nbsp;>&nbsp;</p> */}
                             <Link to="/plants" className="links">ALL PLANTS</Link>
-                            <p className="carrot">&nbsp;>&nbsp;</p>
+                            {/* <p className="carrot">&nbsp;>&nbsp;</p> */}
                             <p>{plant.inches.toString()}" {plant.name} | INDOOR PLANT </p>
                         </div>
 
