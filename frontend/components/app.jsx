@@ -36,7 +36,7 @@ const App = () => (
 
         </header>
         
-        {/* <Switch> */}
+        <Switch>
 
             <Route exact path="/" component={SplashPage} />
 
@@ -49,7 +49,7 @@ const App = () => (
             <Route exact path="/planters" component={PlanterIndexContainer} />
             <Route exact path="/planters/:planterId" component={PlanterShowContainer} />
 
-        {/* </Switch> */}
+        </Switch>
 
         <footer className="footer">
             <p>hiii, im the footer :)</p>
