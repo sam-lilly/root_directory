@@ -66,8 +66,13 @@ h2 {
         .delivery-bar {
             display: flex;
         }
+
+        .truck {
+            padding-right: 1px;
+        }
+
         .delivery {
-            font-weight: bolder;
+            font-weight: 600;
             letter-spacing: 1px;
        }
     }
