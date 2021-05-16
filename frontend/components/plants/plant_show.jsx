@@ -59,20 +59,35 @@ class PlantShow extends React.Component {
 
                         <p className="price">${plant.price.toString()}</p>
                         <Link to="/planters" className="link-planters">ADD A PLANTER</Link>
-                        <button className="add-to-cart"><i className="fas fa-shopping-cart"></i>&nbsp;add to cart</button>
+                        <button className="add-to-cart"><i className="fas fa-shopping-cart"></i>&nbsp;&nbsp;add to cart</button>
 
                         {/* flex box w two parent containers
                         left side name/images/info on pot */}
                         {/* may have to do a pot association.. will think on that */}
 
-                </div>
+                    </div>
             
-            </div>
+                </div>
+                
+                <div className="plant-display-container">
+                    <div className="click-images"> 
+                        <img src={plant.photoHoverUrl} />
+                        <img className="bottom-pic" src={plant.photoMainUrl} />
+                    </div>
+                    <div className="display-image">
+                        <img className="main-image" src={plant.photoMainUrl} />
+                    </div>
+                    <div className="plant-info">
+                        <div className="category-container">
+                            <p>OVERVIEW</p>
+                            <p>CARE</p>
+                            <p>NYC DELIVERY</p>
+                        </div>
+                        <p className="plant-details">{plant.overview}</p>
+                    </div>
+                </div>
 
-
-
-                {/* <h1>this is plant show page, hello world!</h1>
-                <p>{plant.name}</p>
+                {/* <p>{plant.name}</p>
                 <img src={plant.photoMainUrl} />
                 <img src={plant.photoHoverUrl} /> */}
 

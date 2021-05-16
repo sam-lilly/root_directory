@@ -4,7 +4,7 @@
 
 .login-signup-header {
     font-family: 'Jost', sans-serif;
-    font-size: 25px;
+    font-size: 35px;
     color: #585858;
     text-align: center;
     padding: 0;
@@ -26,21 +26,24 @@
 .login-signup-errors {
     color: rgb(226, 56, 41);
     font-family: 'Jost', sans-serif;
-    font-style: normal;
-    font-size: 10px;
+    font-weight: 300;
+    font-size: 11.5px;
     text-align: center;
 }
 
 .session-submit {
     background-color: #a6ce46;
-    width: 310px;
+    // background-color: rgb(151, 191, 55);
+    // ^actual color, but above looks better
+    width: 400px;
     border: 1px solid #dfdfdf;
 
 
     font-family: 'Jost', sans-serif;
     font-style: normal;
-    font-size: 12px;
-    font-weight: 50;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
     text-align: center;
 
     color: #555555;
@@ -59,16 +62,17 @@
 
     font-family: 'Jost', sans-serif;
     font-style: normal;
-    font-size: 11px;
-    font-weight: 50;
+    font-size: 14px;
+    font-weight: 200;
     padding: 5px 4px 5px 4px;
     margin: 9px 5px 9px 5px;
-    width: 310px;
+    width: 400px;
 }
 
 
 ::placeholder {
     color: rgb(151, 150, 150);
+    // font-size: 13px;
 }
 
 .new-customer {
@@ -84,13 +88,14 @@
 .forgot-password {
 
     font-family: 'Jost', sans-serif;
-    font-size: 10px;
+    font-size: 12px;
+    font-weight: 300;
     color: #669900;
     text-align: center;
-    margin: 7px 5px 13px 5px;
-}
-
-.forgot-password:hover {
-    text-decoration: underline;
-    cursor: pointer;
+    margin: 9px 5px 15px 5px;
+    &:hover {
+        text-decoration: underline;
+        color: #507802;
+        cursor: pointer;
+    }
 }

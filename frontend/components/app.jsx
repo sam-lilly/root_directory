@@ -18,7 +18,7 @@ const App = () => (
             <div className="nav-container">
 
                 <div className="header-left">
-                    <Link to="/" className="root-link" >ROOT :: DIRECTORY</Link>
+                    <Link to="/" className="root-link" ><i className="fas fa-seedling"></i>ROOT::DIRECTORY</Link>
                 </div>
                 
                 <div className="header-middle">

@@ -29,7 +29,7 @@
         // verrrrry small, will remove once i adjust
         padding: 10px;
         font-size: 13px;
-        font-weight: bold;
+        font-weight: 400;
 
 
         .dropdown {
@@ -68,6 +68,7 @@
             letter-spacing: 5px;
             padding-left: 7px;
             padding-right: 17px;
+            font-weight: 200;
             // text-transform: uppercase;
         }
         
@@ -105,6 +106,7 @@
         margin-top: 10px;
         padding-left: 0px;
         font-size: 15px;
+        font-weight: 200;
         color: rgb(74, 74, 74);
         &::selection {
             background: yellowgreen;
@@ -116,8 +118,9 @@
     .plant-price {
         margin-top: 5px;
         font-size: 17px;
+        font-weight: 300;
         color: rgb(117, 174, 55);
-        font-weight: bolder;
+        // font-weight: bold;
     }
 
 
