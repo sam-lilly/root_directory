@@ -53,12 +53,8 @@ h2 {
         margin-bottom: 100px;
     }
 
-    // .placeholder {
-    //     margin: 10px, 20px, 0px, 20px;
-    // }
-
-    .delivery-bar {
-        background-color: rgb(190, 254, 64);
+    .delivery-container {
+        background: rgb(189, 255, 10);
         display: flex;
 
         font-family: 'Jost', sans-serif;
@@ -66,9 +62,13 @@ h2 {
         justify-content: center;
         padding-top: 20px;
         padding-bottom: 20px;
-        .delivery {
-            font-weight: bold;
+        .delivery-bar {
+            display: flex;
         }
+        .delivery {
+            font-weight: bolder;
+            letter-spacing: 1px;
+       }
     }
 
 }

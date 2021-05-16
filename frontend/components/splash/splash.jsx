@@ -24,14 +24,13 @@ class SplashPage extends React.Component {
                 </div>
 
 
-                <div className="idk">
+                <div className="delivery-container">
                     <Link to="/plants" className="delivery-bar">
                         <p className="truck"><i className="fas fa-truck"></i></p>
                         <p className="delivery">&nbsp;NYC Area Day Delivery&nbsp;</p>
                         <p>On All Potted Plants</p>
                     </Link>
                 </div>
-
 
                 <div>
                     {/* <img src={window.plantShelf} alt="plant-shelf" className="plant-shelf" /> */}

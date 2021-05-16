@@ -1,0 +1,66 @@
+// Place all the styles related to the api/plants controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.plant-show {
+    margin-top: 50px;
+    font-family: 'Jost', sans-serif;
+    background: rgb(237, 237, 237);
+
+    .local-delivery {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        justify-content: center;
+        background: rgb(189, 255, 10);
+        padding: 15px 0;
+        letter-spacing: 1px;
+        #building {
+            font-size: 12px;
+        }
+    }
+
+    .top-title-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+        padding: 35px 215px;
+
+        .nav-links {
+            display: flex;
+            font-size: 11px;
+            padding-bottom: 10px;
+            .carrot {
+                margin-top: -1px;
+            }
+            .links:hover {
+                color:rgb(103, 138, 6);
+            }
+        }
+
+        .title {
+            padding: 0 0 10px 0;
+            font-size: 30px;
+            font-weight: bolder;
+        }
+
+        .pot-images {
+            display: flex;
+            justify-content: flex-start;
+            i {
+                padding-right: 10px;
+                padding-top: 0;
+            }
+        }
+
+        .top-right-side {
+            display: flex;
+            flex-direction: column;
+        }
+
+    }
+
+
+
+
+}
