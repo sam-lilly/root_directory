@@ -23,9 +23,9 @@ class PlantShow extends React.Component {
                 <div className="local-delivery">
                     <i className="fas fa-building" id="building">&nbsp;&nbsp;</i>
                     <p>NYC Area Local Delivery Only</p>
-                    {/* <i class="fas fa-truck"></i> */}
+                    {/* <i className="fas fa-truck"></i> */}
                     {/* truck delivery car */}
-                    {/* <i class="far fa-building"></i> */}
+                    {/* <i className="far fa-building"></i> */}
                     {/* ^above building more white than black */}
                 </div>
 
@@ -34,21 +34,21 @@ class PlantShow extends React.Component {
 
                         <div className="nav-links">
                             <Link to="/" className="links">HOME</Link>
-                            {/* <p className="carrot">&nbsp;>&nbsp;</p> */}
+                            <p className="carrot">&nbsp;<i className="fas fa-chevron-right"></i>&nbsp;</p>
                             <Link to="/plants" className="links">ALL PLANTS</Link>
-                            {/* <p className="carrot">&nbsp;>&nbsp;</p> */}
+                            <p className="carrot">&nbsp;<i className="fas fa-chevron-right"></i>&nbsp;</p>
                             <p>{plant.inches.toString()}" {plant.name} | INDOOR PLANT </p>
                         </div>
 
                         <p className="title">{plant.name} | {plant.inches.toString()}"</p>
                 
                         <div className="pot-images">
-                            <i class="fas fa-seedling"></i>
-                            <i class="fas fa-seedling"></i>
-                            <i class="fas fa-seedling"></i>
-                            <i class="fas fa-seedling"></i>
-                            <i class="fas fa-seedling"></i>
-                            <i class="fas fa-seedling"></i>
+                            <i className="fas fa-seedling"></i>
+                            <i className="fas fa-seedling"></i>
+                            <i className="fas fa-seedling"></i>
+                            <i className="fas fa-seedling"></i>
+                            <i className="fas fa-seedling"></i>
+                            <i className="fas fa-seedling"></i>
 
                                 {/* each color pot and nursery pot = 6 images */}
                         </div>

@@ -16,14 +16,15 @@
         display: flex;
         align-items: center;
         margin-left: 20px;
+        color: rgb(201, 201, 201);
 
         .root-link {
             font-size: 12px;
             letter-spacing: 4.5px;
         }
         .root-link:hover {
-            color: #b6b5b5;
-            text-decoration: underline;
+            color: #f9f9f9;
+            // text-decoration: underline;
         }
 
     }
@@ -34,24 +35,27 @@
         align-items: center;
         grid-column-start: 2;
         letter-spacing: 1px;
+        color: rgb(151, 150, 150);
 
         .shop-nyc {
-            color: rgb(151, 150, 150);
+            // color: rgb(151, 150, 150);
+            color: rgb(201, 201, 201);
             text-decoration: underline;
             &:hover {
-                color: #b6b5b5;
+                color: #f9f9f9;
                 cursor: pointer;
             }
         }
 
         .plant-care:hover {
-            color: #b6b5b5;
+            // color: #b6b5b5;
+            color: #f9f9f9;
             cursor: pointer;
             text-decoration: underline;
         }
 
         .plant-blog:hover {
-            color: #b6b5b5;
+            color: #f9f9f9;
             cursor: pointer;
             text-decoration: underline;
         }
@@ -64,6 +68,7 @@
         justify-content: flex-end;
         margin-right: 20px;
         letter-spacing: 1px;
+        color: rgb(201, 201, 201);
 
         // .login {
         //     letter-spacing: 1px;
@@ -90,7 +95,7 @@
                 font-size: 12px;
                 padding-right: 7px;
                 &:hover {
-                    color: #b6b5b5;
+                    color: #f9f9f9;
                     cursor: pointer;
                 }
             }
@@ -100,7 +105,7 @@
                 font-size: 12px;
                 padding-right: 6px;
                 &:hover {
-                    color: #b6b5b5;
+                    color: #f9f9f9;
                     cursor: pointer;
                 }
             }
@@ -110,7 +115,7 @@
                 font-size: 12px;
                 padding-left: 3px;
                 &:hover {
-                    color: #b6b5b5;
+                    color: #f9f9f9;
                     cursor: pointer;
                 }
             }
@@ -120,9 +125,9 @@
                 font-size: 12px;
                 padding-right: 5px;
                 &:hover {
-                    color: #b6b5b5;
+                    color: #f9f9f9;
                     cursor: pointer;
-                    text-decoration: underline;
+                    // text-decoration: underline;
                 }
             }
 

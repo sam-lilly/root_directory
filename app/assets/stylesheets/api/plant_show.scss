@@ -32,8 +32,10 @@
             display: flex;
             font-size: 11px;
             padding-bottom: 15px;
+            color: rgb(149, 149, 149);
             .carrot {
-                margin-top: -1px;
+                margin: 2px 2px 0 2px;
+                font-size: 8px;
             }
             .links:hover {
                 color:rgb(103, 138, 6);
