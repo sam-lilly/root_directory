@@ -1,0 +1,162 @@
+// Place all the styles related to the api/planters controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+// Place all the styles related to the api/plants controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.planter-show {
+    margin-top: 50px;
+    font-family: 'Jost', sans-serif;
+    background: rgb(237, 237, 237);
+
+    .local-delivery {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        justify-content: center;
+        background: rgb(189, 255, 10);
+        padding: 15px 0;
+        letter-spacing: 1px;
+        #building {
+            font-size: 12px;
+        }
+    }
+
+    .top-title-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin: 35px 215px 0 215px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid rgb(193, 193, 193);
+
+        .nav-links {
+            display: flex;
+            font-size: 11px;
+            padding-bottom: 15px;
+            color: rgb(149, 149, 149);
+            .carrot {
+                margin: 2px 2px 0 2px;
+                font-size: 8px;
+            }
+            .links:hover {
+                color:rgb(103, 138, 6);
+            }
+        }
+
+        .title {
+            padding: 0 0 25px 0;
+            font-size: 30px;
+            font-weight: bolder;
+        }
+
+        .pot-images {
+            display: flex;
+            justify-content: flex-start;
+            i {
+                color: rgb(82, 82, 82);
+                margin-left: 5px;
+                padding-right: 20px;
+                padding-top: 0;
+                padding-bottom: 10px;
+            }
+        }
+
+        .top-right-side {
+
+            display: flex;
+            flex-direction: column;
+            text-align: right;
+            .price {
+                font-size: 36px;
+                font-weight: bolder;
+                margin-bottom: 10px;
+                // padding-right: 5px;
+            }
+            .link-planters {
+                font-size: 12px;
+                margin-bottom: 25px;
+                &:hover {
+                    color:rgb(103, 138, 6);
+                }
+            }
+            .add-to-cart {
+                background: rgb(169, 223, 62);
+                border-radius: 0 18px 0 18px;
+                font-size: 12px;
+                padding: 7px 80px;
+                &:hover {
+                    background: rgb(47, 46, 46);
+                    color: #ffff
+
+                }
+            }
+
+        }
+
+
+
+    }
+
+    .plant-display-container {
+        display: grid;
+        // grid-template-columns: 150px 1fr 400px;
+        grid-template-columns: 15% 55% 30%;
+        column-gap: 10px;
+        margin: 10px 215px;
+        margin-right: 235px;
+        margin-bottom: 0px;
+        padding-bottom: 250px;
+
+        .click-images {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            .bottom-pic {
+                margin-bottom: 40px;
+            }
+
+        }
+
+        // .display-image {
+        //     // margin-left: -50px;
+        // }
+
+        .plant-info {
+            // margin-left: -30px;
+            // border: 1px solid maroon;
+            // keep this margin to push it over until i can edit and crop photos
+            .category-container {
+                display: flex;
+                justify-content: space-between;
+                p {
+                    margin-top: 50px;
+                    padding-bottom: 15px;
+                    font-size: 15px;
+                    font-weight: 500;
+                    border-bottom: 6px solid rgb(215, 215, 215);
+                    &:hover {
+                        // border-bottom: 6px solid rgb(255, 255, 255);
+                        border-bottom: 6px solid rgb(247, 247, 247);
+                        cursor: pointer;
+                        // change this once it actually works
+                        // ^^dummy pointer currently
+                    }
+                }
+            }
+
+            .plant-details {
+                margin-top: 30px;
+                font-size: 14px;
+                font-weight: 200;
+                line-height: 25px;
+                color: rgb(74, 74, 74);
+            }
+        
+        
+        }
+    }
+
+
+}

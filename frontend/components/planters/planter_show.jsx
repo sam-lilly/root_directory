@@ -5,6 +5,9 @@ class PlanterShow extends React.Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            displayMain: true
+        };
     }
 
     componentDidMount() {
@@ -14,6 +17,10 @@ class PlanterShow extends React.Component {
     render () {
 
         let { planter } = this.props;
+
+        if (!planter) return null;
+
+        let imgDisplay;
 
         return (
             <div className="planter-show">

@@ -3,7 +3,6 @@ import { RECEIVE_ADDRESSES, RECEIVE_ADDRESS, REMOVE_ADDRESS } from '../actions/a
 const addressesReducer = (oldState = {}, action) => {
     Object.freeze(oldState);
     let nextState = Object.assign({}, oldState);
-    debugger
 
     switch (action.type) {
         case RECEIVE_ADDRESSES:

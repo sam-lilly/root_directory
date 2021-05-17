@@ -18,7 +18,9 @@ import PlantShowContainer from './plants/plant_show_container';
 
 import PlanterIndexContainer from './planters/planter_index_container';
 import PlanterShowContainer from './planters/planter_show_container';
-        
+  
+import AccountHome from './account/account_home';
+
 const App = () => (
     <div>
         <header>
@@ -51,11 +53,12 @@ const App = () => (
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
 
+            <Route exact path="/account" component={AccountHome} />
+
             <Route exact path="/addresses" component={AddressIndexContainer} />
             <Route exact path="/addresses/new" component={CreateAddressFormContainer} />
             <Route exact path="/addresses/:addressId" component={AddressShowContainer} />
             <Route exact path="/addresses/:addressId/edit" component={EditAddressFormContainer} />
-
 
             <Route exact path="/plants" component={PlantIndexContainer} />
             <Route exact path="/plants/:plantId" component={PlantShowContainer} />

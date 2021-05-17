@@ -80,7 +80,7 @@ class PlanterIndex extends React.Component {
 
 
                 {
-                    planters.map(planter => <PlanterIndexItem key={planter.id} plant={planter} />)
+                    planters.map(planter => <PlanterIndexItem key={planter.id} planter={planter} />)
                 }
             
 
