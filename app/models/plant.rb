@@ -6,7 +6,7 @@ class Plant < ApplicationRecord
     BENEFITS = ["air purifying", "easy plants", "pet friendly", "drought tolerant"]
 
 
-    validates :product_id, :plant_db_id, :name, :inches, :price, :plant_type, :size, :light, :care_level, :benefits, :overview, :care, presence: true
+    validates :product_id, :plant_db_id, :name, :inches, :price, :plant_type, :size, :light, :care_level, :benefits, :overview,  :height, :lighting, :care, :lightreq, :water, :humidity, presence: true
     
     
     # monst = Plant.create!(product_id: 1, plant_db_id: 1, name: "Monstera Test", inches: 10, price: 150.90, plant_type: "test", size: "large", light: "medium", care_level: "beginners", benefits: "easy plants", overview: "overview test", care: "don't kill it")

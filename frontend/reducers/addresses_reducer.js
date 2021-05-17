@@ -11,11 +11,13 @@ const addressesReducer = (oldState = {}, action) => {
             nextState[action.address.id] = action.address;
             return nextState;
         case REMOVE_ADDRESS:
-            Object.keys(nextState).forEach(key => {
-                if (nextState[key].id === action.addressId) { 
-                    delete nextState[key]
-                }
-            })
+            // Object.keys(nextState).forEach(key => {
+            //     if (nextState[key].id === action.addressId) { 
+            //         delete nextState[key]
+            //     }
+            // })
+            debugger
+            delete nextState[action.addressId];
                 return nextState;
         default:
             return oldState;

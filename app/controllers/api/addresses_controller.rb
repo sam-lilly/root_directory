@@ -1,11 +1,12 @@
 class Api::AddressesController < ApplicationController
 
     def index
-        @addresses = Address.all
+        @addresses = Address.all.select { |address| address.user_id == current_user.id }
         render :index
     end
 
     def show
+        # debugger
         @address = Address.find(params[:id])
         render :show
     end
@@ -23,6 +24,8 @@ class Api::AddressesController < ApplicationController
         @address = Address.find_by(id: params[:id])
         if @address.update(address_params)
             render :show
+            # @addresses = Address.all.select { |address| address.user_id == current_user.id }
+            # render :index
         else
             render json: @address.errors.full_messages, status: 422
         end
@@ -31,6 +34,7 @@ class Api::AddressesController < ApplicationController
     def destroy
         @address = Address.find(params[:id])
         @address.destroy
+        @addresses = Address.all.select { |address| address.user_id == current_user.id }
         render :index
     end
 

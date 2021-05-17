@@ -19,6 +19,8 @@ class PlanterIndex extends React.Component {
 
         if (!planters) return null;
 
+        // debugger
+
         return (
 
             <div className="planter-index">

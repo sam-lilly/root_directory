@@ -33,7 +33,7 @@ class SessionForm extends React.Component {
 
     handleDemoSubmit(e) {
         e.preventDefault();
-        const demUse = Object.assign({}, this.state);
+        // const demUse = Object.assign({}, this.state);
         dispatch(login({ email: "plantlyfe@gmail.com", password: "password", first_name: "Forrest", last_name: "Willow" }))
     }
 

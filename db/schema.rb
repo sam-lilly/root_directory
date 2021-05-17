@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_17_051408) do
+ActiveRecord::Schema.define(version: 2021_05_17_170956) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -174,6 +174,11 @@ ActiveRecord::Schema.define(version: 2021_05_17_051408) do
     t.text "care", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "lighting"
+    t.string "lightreq"
+    t.string "water"
+    t.string "humidity"
+    t.string "height"
     t.index ["benefits"], name: "index_plants_on_benefits"
     t.index ["care_level"], name: "index_plants_on_care_level"
     t.index ["inches"], name: "index_plants_on_inches"

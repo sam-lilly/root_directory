@@ -1,40 +1,46 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class AddressForm extends React.Component {
 
     constructor(props) {
         super(props);
+        // debugger
         this.state = this.props.address;
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     update(field) {
+        // debugger
         return e => {
             this.setState({ [field]: e.currentTarget.value })
         }
     }
 
-    handleSubmit(e) {
-        e.preventDefault();
+    handleSubmit() {
+        // debugger
+        // e.preventDefault();
         this.props.submitAddress(this.state)
     }
 
     render () {
 
-        let { address } = this.props;
+        let { address, formType, fetchAddress, submitAddress } = this.props;
         
         if (!address) return null;
+        // debugger
 
         return (
             <form className="address-form-container" onSubmit={this.handleSubmit}>
 
-                <h1>{this.props.formType}</h1>
+                {/* <h1>{this.props.formType}</h1> */}
+                <h1>{formType}</h1>
 
                 <label>First Name
                     <input
                         type="text"
                         value={this.state.firstName}
-                        onChange={this.update("firstName")}
+                        onChange={this.update("first_name")}
                     />
                 </label>
 
@@ -42,7 +48,7 @@ class AddressForm extends React.Component {
                     <input
                         type="text"
                         value={this.state.lastName}
-                        onChange={this.update("lastName")}
+                        onChange={this.update("last_name")}
                     />
                 </label>
 
@@ -109,8 +115,8 @@ class AddressForm extends React.Component {
                         onChange={this.update("phoneNumber")}
                     />
                 </label>
-
-                <button type="submit" value={this.props.formType}>im a button</button>
+                {/* <Link to="/addresses" onClick={this.handleSubmit}>{formType}</Link> */}
+                <button type="submit" value={formType}>{formType}</button>
 
             </form>
 

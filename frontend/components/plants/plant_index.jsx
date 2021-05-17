@@ -18,6 +18,8 @@ class PlantIndex extends React.Component {
 
         if (!plants) return null;
 
+        // debugger
+
         return (
             <div className="plant-index">
                 <div className="sections-search">

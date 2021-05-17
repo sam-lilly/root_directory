@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 class PlanterShow extends React.Component {
 
     constructor(props) {
-        // debugger
         super(props);
         this.state = {
             displayMain: true
         };
+        // debugger
     }
 
     componentDidMount() {
@@ -29,6 +29,8 @@ class PlanterShow extends React.Component {
         } else {
             imgDisplay = planter.photoHoverUrl;
         }
+
+        // debugger
 
         return (
             <div className="planter-show">

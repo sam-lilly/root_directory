@@ -8,6 +8,7 @@ class PlanterIndexItem extends React.Component {
         const { planter } = this.props;
 
         if (!planter) return null;
+        
         // debugger
 
         return (

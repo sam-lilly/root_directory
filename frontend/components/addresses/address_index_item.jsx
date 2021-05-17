@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class AddressIndexItem extends React.Component {
 
@@ -11,9 +11,9 @@ class AddressIndexItem extends React.Component {
         // this.handleDelete = this.handleDelete.bind(this);
     }
 
-    componentDidMount() {
-        this.props.fetchAddress();
-    }
+    // componentDidMount() {
+    //     this.props.fetchAddress();
+    // }
 
     // componentWillUnmount() {
     //     this.props.fetchAddress()
@@ -62,6 +62,7 @@ class AddressIndexItem extends React.Component {
                         <p>{address.country}</p>
                         <p>{address.zipCode}</p>
                         <p>{address.phoneNumber}</p>
+                        <Link to ={`/addresses/${address.id}/edit`}>Edit Address</Link>
                         <button onClick={() => deleteAddress(address.id)}>remove address</button>
                         {/* <button onClick={this.handleDelete}>remove address</button> */}
                     </li>
@@ -73,4 +74,4 @@ class AddressIndexItem extends React.Component {
 
 }
 
-export default withRouter(AddressIndexItem);
+export default AddressIndexItem;
