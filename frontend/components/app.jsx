@@ -4,10 +4,18 @@ import { AuthRoute } from '../util/route_util';
 
 import GreetingContainer from './greeting/greeting_container';
 import SplashPage from './splash/splash';
+
 import LoginFormContainer from './session_form/login_form_container';
 import SignupFormContainer from './session_form/signup_form_container';
+
+import AddressIndexContainer from './addresses/address_index_container';
+import AddressShowContainer from './addresses/address_show_container';
+import EditAddressFormContainer from './addresses/edit_address_form_container';
+import CreateAddressFormContainer from './addresses/create_address_form_container';
+
 import PlantIndexContainer from './plants/plant_index_container';
 import PlantShowContainer from './plants/plant_show_container';
+
 import PlanterIndexContainer from './planters/planter_index_container';
 import PlanterShowContainer from './planters/planter_show_container';
         
@@ -42,6 +50,12 @@ const App = () => (
 
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
+
+            <Route exact path="/addresses" component={AddressIndexContainer} />
+            <Route exact path="/addresses/new" component={CreateAddressFormContainer} />
+            <Route exact path="/addresses/:addressId" component={AddressShowContainer} />
+            <Route exact path="/addresses/:addressId/edit" component={EditAddressFormContainer} />
+
 
             <Route exact path="/plants" component={PlantIndexContainer} />
             <Route exact path="/plants/:plantId" component={PlantShowContainer} />

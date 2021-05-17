@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do
     resources :users, only: [:create, :show] #added a show page// need to add into controller
     resource :session, only: [:create, :destroy, :show]
-    resources :addresses, only: [:create, :show, :update, :destoy]
+    resources :addresses, only: [:index, :show, :create, :update, :destroy]
     resources :plants, only: [:index, :show]
     resources :planters, only: [:index, :show]
     resources :accessories, only: [:index, :show]

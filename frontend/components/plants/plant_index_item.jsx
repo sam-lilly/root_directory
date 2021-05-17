@@ -10,6 +10,8 @@ class PlantIndexItem extends React.Component {
     render () {
 
         const { plant } = this.props;
+
+        if (!plant) return null;
         
 
         return (

@@ -1,3 +1,13 @@
 // Place all the styles related to the api/addresses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.address-form-container {
+    margin-top: 300px;
+    display: flex;
+    flex-direction: column;
+    label {
+        border: 1px solid grey;
+    }
+
+}

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_12_172951) do
+ActiveRecord::Schema.define(version: 2021_05_17_051408) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 2021_05_12_172951) do
     t.string "last_name", null: false
     t.string "company"
     t.string "address_1", null: false
-    t.string "addess_2"
+    t.string "address_2"
     t.string "city", null: false
     t.string "state", null: false
     t.string "country", null: false
@@ -149,6 +149,7 @@ ActiveRecord::Schema.define(version: 2021_05_12_172951) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "planter_type", null: false
+    t.integer "inches"
     t.index ["color"], name: "index_planters_on_color"
     t.index ["material"], name: "index_planters_on_material"
     t.index ["name"], name: "index_planters_on_name"

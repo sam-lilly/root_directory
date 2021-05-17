@@ -6,6 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require "open-uri"
+
+
 User.destroy_all
 Plant.destroy_all
 Planter.destroy_all
@@ -15,11 +18,89 @@ Planter.destroy_all
 
 demoUser = User.create!(email: "plantlyfe@gmail.com", password: "password", first_name: "Forrest", last_name: "Willow" )
 
+demoAddress1 = Address.create!(
+    user_id: demoUser.id,
+    first_name: "Sam",
+    last_name: "Lilly",
+    address_1: "133 G st",
+    address_2: "Apt 3B",
+    city: "Brooklyn",
+    state: "NY",
+    country: "USA",
+    zip_code: "25314",
+    phone_number: "3043954921"
+)
+
+demoAddress2 = Address.create!(
+    user_id: demoUser.id,
+    first_name: "Sam",
+    last_name: "Lilly",
+    address_1: "21237 G st",
+    address_2: "Apt 3B",
+    city: "Brooklyn",
+    state: "NY",
+    country: "USA",
+    zip_code: "25314",
+    phone_number: "3043954921"
+)
+
+demoAddress3 = Address.create!(
+    user_id: demoUser.id,
+    first_name: "Sam",
+    last_name: "Lilly",
+    address_1: "32334 G st",
+    address_2: "Apt 3B",
+    city: "Brooklyn",
+    state: "NY",
+    country: "USA",
+    zip_code: "25314",
+    phone_number: "3043954921"
+)
+
+demoAddress4 = Address.create!(
+    user_id: demoUser.id,
+    first_name: "Sam",
+    last_name: "Lilly",
+    address_1: "31214 G st",
+    address_2: "Apt 3B",
+    city: "Brooklyn",
+    state: "NY",
+    country: "USA",
+    zip_code: "25314",
+    phone_number: "3043954921"
+)
+
+demoAddress5 = Address.create!(
+    user_id: demoUser.id,
+    first_name: "Sam",
+    last_name: "Lilly",
+    address_1: "3334 G st",
+    address_2: "Apt 3B",
+    city: "Brooklyn",
+    state: "NY",
+    country: "USA",
+    zip_code: "25314",
+    phone_number: "3043954921"
+)
+
+demoAddress6 = Address.create!(
+    user_id: demoUser.id,
+    first_name: "Sam",
+    last_name: "Lilly",
+    address_1: "3444 G st",
+    address_2: "Apt 3B",
+    city: "Brooklyn",
+    state: "NY",
+    country: "USA",
+    zip_code: "25314",
+    phone_number: "3043954921"
+)
+
 
 # Plants
 # *** for care_level save info into a hash for ({care_level: "difficult", light_requirements: "lorem ipsum dolar", water_requirements: "lorem ipsum", humidity_preference: "lorem ipsum"})
 # *** for overview save info into a hash for ({heigh: "stands 5-6 feet tall", light: "medium light, indirect", delivery: "local delivery in New York City area from $20+", sale: "Final Sale Only"})
-
+# *** may need to do an array to be able to index into it
 
 monstera_deliciosa_large = Plant.create!(
     product_id: 1,
@@ -50,6 +131,9 @@ monstera_deliciosa_large = Plant.create!(
     monstera_deliciosa_large_hover = File.open('app/assets/images/plants/monstera_deliciosa_large/hover.jpeg')
     monstera_deliciosa_large.photohover.attach(io: monstera_deliciosa_large_hover, filename: 'hover.jpeg')
 
+    # monstera_delicious_large_main = open("https://root-directory-seed.s3.amazonaws.com/back1.jpg")
+    # assign it the same way//
+    # attach it the same way//
 
 philodendron_hope = Plant.create!(
     product_id: 2,
@@ -396,3 +480,291 @@ cereus_cactus = Plant.create!(
 # kentia_palm 14 *** DONE
 # birds_of_paradise 14 *** 
 # schefflera_amate 14 DONE
+
+
+wythe30 = Planter.create!(
+    product_id: 1,
+    name: "Wythe",
+    planter_type: "test",
+    price: 110,
+    size: "medium",
+    inches: 30,
+    color: "stone",
+    material: "fiberstone",
+    overview: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dignissim porta elit ut pellentesque. Nam auctor molestie arcu. Nulla sodales tempus aliquet. Phasellus vitae massa in enim facilisis cursus. Nullam vel eleifend libero. Nullam lobortis dui ut justo molestie, at interdum nisl vestibulum. Fusce nulla ante, maximus vitae sollicitudin quis, cursus ut tellus. Integer vel sapien augue. Sed quis ultricies urna. Nam semper dapibus odio, vitae cursus enim molestie in. Curabitur nec libero sit amet lacus commodo maximus eu a mauris. Praesent nunc felis, fermentum at dictum eget, venenatis vitae metus. Fusce hendrerit tellus est, at condimentum eros ultrices a. Nulla posuere varius odio, non convallis tellus elementum non.",
+    details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dignissim porta elit ut pellentesque. Nam auctor molestie arcu. Nulla sodales tempus aliquet. Phasellus vitae massa in enim facilisis cursus. Nullam vel eleifend libero. Nullam lobortis dui ut justo molestie, at interdum nisl vestibulum. Fusce nulla ante, maximus vitae sollicitudin quis, cursus ut tellus. Integer vel sapien augue. Sed quis ultricies urna. Nam semper dapibus odio, vitae cursus enim molestie in. Curabitur nec libero sit amet lacus commodo maximus eu a mauris. Praesent nunc felis, fermentum at dictum eget, venenatis vitae metus. Fusce hendrerit tellus est, at condimentum eros ultrices a. Nulla posuere varius odio, non convallis tellus elementum non.",
+    dimensions: "these are dimensions"
+)
+
+    wythe30_main = open('https://root-directory-seed.s3.amazonaws.com/planters/wythe-30/main.jpeg')
+    wythe30.photomain.attach(io: wythe30_main, filename: 'main.jpeg')
+
+    wythe30_hover = open('https://root-directory-seed.s3.amazonaws.com/planters/wythe-30/hover.jpeg')
+    wythe30.photohover.attach(io: wythe30_hover, filename: 'hover.jpeg')
+
+    wythe30_video = open('https://root-directory-seed.s3.amazonaws.com/planters/wythe-30/video.mp4')
+    wythe30.video.attach(io: wythe30_video, filename: 'video.mp4')
+
+
+wythe40 = Planter.create!(
+    product_id: 2,
+    name: "Wythe",
+    planter_type: "test",
+    price: 150,
+    size: "medium",
+    inches: 40,
+    color: "stone",
+    material: "fiberstone",
+    overview: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dignissim porta elit ut pellentesque. Nam auctor molestie arcu. Nulla sodales tempus aliquet. Phasellus vitae massa in enim facilisis cursus. Nullam vel eleifend libero. Nullam lobortis dui ut justo molestie, at interdum nisl vestibulum. Fusce nulla ante, maximus vitae sollicitudin quis, cursus ut tellus. Integer vel sapien augue. Sed quis ultricies urna. Nam semper dapibus odio, vitae cursus enim molestie in. Curabitur nec libero sit amet lacus commodo maximus eu a mauris. Praesent nunc felis, fermentum at dictum eget, venenatis vitae metus. Fusce hendrerit tellus est, at condimentum eros ultrices a. Nulla posuere varius odio, non convallis tellus elementum non.",
+    details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dignissim porta elit ut pellentesque. Nam auctor molestie arcu. Nulla sodales tempus aliquet. Phasellus vitae massa in enim facilisis cursus. Nullam vel eleifend libero. Nullam lobortis dui ut justo molestie, at interdum nisl vestibulum. Fusce nulla ante, maximus vitae sollicitudin quis, cursus ut tellus. Integer vel sapien augue. Sed quis ultricies urna. Nam semper dapibus odio, vitae cursus enim molestie in. Curabitur nec libero sit amet lacus commodo maximus eu a mauris. Praesent nunc felis, fermentum at dictum eget, venenatis vitae metus. Fusce hendrerit tellus est, at condimentum eros ultrices a. Nulla posuere varius odio, non convallis tellus elementum non.",
+    dimensions: "these are dimensions"
+)
+
+    wythe40_main = open('https://root-directory-seed.s3.amazonaws.com/planters/wythe-40/main.jpeg')
+    wythe40.photomain.attach(io: wythe40_main, filename: 'main.jpeg')
+
+    wythe40_hover = open('https://root-directory-seed.s3.amazonaws.com/planters/wythe-40/hover.jpeg')
+    wythe40.photohover.attach(io: wythe40_hover, filename: 'hover.jpeg')
+
+    wythe40_video = open('https://root-directory-seed.s3.amazonaws.com/planters/wythe-40/video.mp4')
+    wythe40.video.attach(io: wythe40_video, filename: 'video.mp4')
+
+
+kent35 = Planter.create!(
+    product_id: 3,
+    name: "Kent",
+    planter_type: "test",
+    price: 98,
+    size: "medium",
+    inches: 35,
+    color: "stone",
+    material: "fiberstone",
+    overview: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dignissim porta elit ut pellentesque. Nam auctor molestie arcu. Nulla sodales tempus aliquet. Phasellus vitae massa in enim facilisis cursus. Nullam vel eleifend libero. Nullam lobortis dui ut justo molestie, at interdum nisl vestibulum. Fusce nulla ante, maximus vitae sollicitudin quis, cursus ut tellus. Integer vel sapien augue. Sed quis ultricies urna. Nam semper dapibus odio, vitae cursus enim molestie in. Curabitur nec libero sit amet lacus commodo maximus eu a mauris. Praesent nunc felis, fermentum at dictum eget, venenatis vitae metus. Fusce hendrerit tellus est, at condimentum eros ultrices a. Nulla posuere varius odio, non convallis tellus elementum non.",
+    details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dignissim porta elit ut pellentesque. Nam auctor molestie arcu. Nulla sodales tempus aliquet. Phasellus vitae massa in enim facilisis cursus. Nullam vel eleifend libero. Nullam lobortis dui ut justo molestie, at interdum nisl vestibulum. Fusce nulla ante, maximus vitae sollicitudin quis, cursus ut tellus. Integer vel sapien augue. Sed quis ultricies urna. Nam semper dapibus odio, vitae cursus enim molestie in. Curabitur nec libero sit amet lacus commodo maximus eu a mauris. Praesent nunc felis, fermentum at dictum eget, venenatis vitae metus. Fusce hendrerit tellus est, at condimentum eros ultrices a. Nulla posuere varius odio, non convallis tellus elementum non.",
+    dimensions: "these are dimensions"
+)
+
+    kent35_main = open('https://root-directory-seed.s3.amazonaws.com/planters/kent-35/main.jpeg')
+    kent35.photomain.attach(io: kent35_main, filename: 'main.jpeg')
+
+    kent35_hover = open('https://root-directory-seed.s3.amazonaws.com/planters/kent-35/hover.jpeg')
+    kent35.photohover.attach(io: kent35_hover, filename: 'hover.jpeg')
+
+    kent35_video = open('https://root-directory-seed.s3.amazonaws.com/planters/kent-35/video.mp4')
+    kent35.video.attach(io: kent35_video, filename: 'video.mp4')
+
+
+kent48 = Planter.create!(
+    product_id: 4,
+    name: "Kent",
+    planter_type: "test",
+    price: 145,
+    size: "medium",
+    inches: 48,
+    color: "stone",
+    material: "fiberstone",
+    overview: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dignissim porta elit ut pellentesque. Nam auctor molestie arcu. Nulla sodales tempus aliquet. Phasellus vitae massa in enim facilisis cursus. Nullam vel eleifend libero. Nullam lobortis dui ut justo molestie, at interdum nisl vestibulum. Fusce nulla ante, maximus vitae sollicitudin quis, cursus ut tellus. Integer vel sapien augue. Sed quis ultricies urna. Nam semper dapibus odio, vitae cursus enim molestie in. Curabitur nec libero sit amet lacus commodo maximus eu a mauris. Praesent nunc felis, fermentum at dictum eget, venenatis vitae metus. Fusce hendrerit tellus est, at condimentum eros ultrices a. Nulla posuere varius odio, non convallis tellus elementum non.",
+    details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dignissim porta elit ut pellentesque. Nam auctor molestie arcu. Nulla sodales tempus aliquet. Phasellus vitae massa in enim facilisis cursus. Nullam vel eleifend libero. Nullam lobortis dui ut justo molestie, at interdum nisl vestibulum. Fusce nulla ante, maximus vitae sollicitudin quis, cursus ut tellus. Integer vel sapien augue. Sed quis ultricies urna. Nam semper dapibus odio, vitae cursus enim molestie in. Curabitur nec libero sit amet lacus commodo maximus eu a mauris. Praesent nunc felis, fermentum at dictum eget, venenatis vitae metus. Fusce hendrerit tellus est, at condimentum eros ultrices a. Nulla posuere varius odio, non convallis tellus elementum non.",
+    dimensions: "these are dimensions"
+)
+
+    kent48_main = open('https://root-directory-seed.s3.amazonaws.com/planters/kent-48/main.jpeg')
+    kent48.photomain.attach(io: kent48_main, filename: 'main.jpeg')
+
+    kent48_hover = open('https://root-directory-seed.s3.amazonaws.com/planters/kent-48/hover.jpeg')
+    kent48.photohover.attach(io: kent48_hover, filename: 'hover.jpeg')
+
+    wythe30_video = open('https://root-directory-seed.s3.amazonaws.com/planters/kent-48/video.mp4')
+    wythe30.video.attach(io: wythe30_video, filename: 'video.mp4')
+
+
+calyer34 = Planter.create!(
+    product_id: 5,
+    name: "Calyer",
+    planter_type: "test",
+    price: 125,
+    size: "medium",
+    inches: 34,
+    color: "stone",
+    material: "fiberstone",
+    overview: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dignissim porta elit ut pellentesque. Nam auctor molestie arcu. Nulla sodales tempus aliquet. Phasellus vitae massa in enim facilisis cursus. Nullam vel eleifend libero. Nullam lobortis dui ut justo molestie, at interdum nisl vestibulum. Fusce nulla ante, maximus vitae sollicitudin quis, cursus ut tellus. Integer vel sapien augue. Sed quis ultricies urna. Nam semper dapibus odio, vitae cursus enim molestie in. Curabitur nec libero sit amet lacus commodo maximus eu a mauris. Praesent nunc felis, fermentum at dictum eget, venenatis vitae metus. Fusce hendrerit tellus est, at condimentum eros ultrices a. Nulla posuere varius odio, non convallis tellus elementum non.",
+    details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dignissim porta elit ut pellentesque. Nam auctor molestie arcu. Nulla sodales tempus aliquet. Phasellus vitae massa in enim facilisis cursus. Nullam vel eleifend libero. Nullam lobortis dui ut justo molestie, at interdum nisl vestibulum. Fusce nulla ante, maximus vitae sollicitudin quis, cursus ut tellus. Integer vel sapien augue. Sed quis ultricies urna. Nam semper dapibus odio, vitae cursus enim molestie in. Curabitur nec libero sit amet lacus commodo maximus eu a mauris. Praesent nunc felis, fermentum at dictum eget, venenatis vitae metus. Fusce hendrerit tellus est, at condimentum eros ultrices a. Nulla posuere varius odio, non convallis tellus elementum non.",
+    dimensions: "these are dimensions"
+)
+
+    calyer34_main = open('https://root-directory-seed.s3.amazonaws.com/planters/calyer-34/main.jpeg')
+    calyer34.photomain.attach(io: calyer34_main, filename: 'main.jpeg')
+
+    calyer34_hover = open('https://root-directory-seed.s3.amazonaws.com/planters/calyer-34/hover.jpeg')
+    calyer34.photohover.attach(io: calyer34_hover, filename: 'hover.jpeg')
+
+    calyer34_video = open('https://root-directory-seed.s3.amazonaws.com/planters/calyer-34/video.mp4')
+    calyer34.video.attach(io: calyer34_video, filename: 'video.mp4')
+
+
+calyer46 = Planter.create!(
+    product_id: 6,
+    name: "Calyer",
+    planter_type: "test",
+    price: 210,
+    size: "medium",
+    inches: 46,
+    color: "stone",
+    material: "fiberstone",
+    overview: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dignissim porta elit ut pellentesque. Nam auctor molestie arcu. Nulla sodales tempus aliquet. Phasellus vitae massa in enim facilisis cursus. Nullam vel eleifend libero. Nullam lobortis dui ut justo molestie, at interdum nisl vestibulum. Fusce nulla ante, maximus vitae sollicitudin quis, cursus ut tellus. Integer vel sapien augue. Sed quis ultricies urna. Nam semper dapibus odio, vitae cursus enim molestie in. Curabitur nec libero sit amet lacus commodo maximus eu a mauris. Praesent nunc felis, fermentum at dictum eget, venenatis vitae metus. Fusce hendrerit tellus est, at condimentum eros ultrices a. Nulla posuere varius odio, non convallis tellus elementum non.",
+    details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dignissim porta elit ut pellentesque. Nam auctor molestie arcu. Nulla sodales tempus aliquet. Phasellus vitae massa in enim facilisis cursus. Nullam vel eleifend libero. Nullam lobortis dui ut justo molestie, at interdum nisl vestibulum. Fusce nulla ante, maximus vitae sollicitudin quis, cursus ut tellus. Integer vel sapien augue. Sed quis ultricies urna. Nam semper dapibus odio, vitae cursus enim molestie in. Curabitur nec libero sit amet lacus commodo maximus eu a mauris. Praesent nunc felis, fermentum at dictum eget, venenatis vitae metus. Fusce hendrerit tellus est, at condimentum eros ultrices a. Nulla posuere varius odio, non convallis tellus elementum non.",
+    dimensions: "these are dimensions"
+)
+
+    calyer46_main = open('https://root-directory-seed.s3.amazonaws.com/planters/calyer-46/main.jpeg')
+    calyer46.photomain.attach(io: calyer46_main, filename: 'main.jpeg')
+
+    calyer46_hover = open('https://root-directory-seed.s3.amazonaws.com/planters/calyer-46/hover.jpeg')
+    calyer46.photohover.attach(io: calyer46_hover, filename: 'hover.jpeg')
+
+    calyer46_video = open('https://root-directory-seed.s3.amazonaws.com/planters/calyer-46/video.mp4')
+    calyer46.video.attach(io: calyer46_video, filename: 'video.mp4')
+
+
+newel30 = Planter.create!(
+    product_id: 7,
+    name: "Newel",
+    planter_type: "test",
+    price: 89,
+    size: "medium",
+    inches: 30,
+    color: "stone",
+    material: "fiberstone",
+    overview: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dignissim porta elit ut pellentesque. Nam auctor molestie arcu. Nulla sodales tempus aliquet. Phasellus vitae massa in enim facilisis cursus. Nullam vel eleifend libero. Nullam lobortis dui ut justo molestie, at interdum nisl vestibulum. Fusce nulla ante, maximus vitae sollicitudin quis, cursus ut tellus. Integer vel sapien augue. Sed quis ultricies urna. Nam semper dapibus odio, vitae cursus enim molestie in. Curabitur nec libero sit amet lacus commodo maximus eu a mauris. Praesent nunc felis, fermentum at dictum eget, venenatis vitae metus. Fusce hendrerit tellus est, at condimentum eros ultrices a. Nulla posuere varius odio, non convallis tellus elementum non.",
+    details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dignissim porta elit ut pellentesque. Nam auctor molestie arcu. Nulla sodales tempus aliquet. Phasellus vitae massa in enim facilisis cursus. Nullam vel eleifend libero. Nullam lobortis dui ut justo molestie, at interdum nisl vestibulum. Fusce nulla ante, maximus vitae sollicitudin quis, cursus ut tellus. Integer vel sapien augue. Sed quis ultricies urna. Nam semper dapibus odio, vitae cursus enim molestie in. Curabitur nec libero sit amet lacus commodo maximus eu a mauris. Praesent nunc felis, fermentum at dictum eget, venenatis vitae metus. Fusce hendrerit tellus est, at condimentum eros ultrices a. Nulla posuere varius odio, non convallis tellus elementum non.",
+    dimensions: "these are dimensions"
+)
+
+    newel30_main = open('https://root-directory-seed.s3.amazonaws.com/planters/newel-30/main.jpeg')
+    newel30.photomain.attach(io: newel30_main, filename: 'main.jpeg')
+
+    newel30_hover = open('https://root-directory-seed.s3.amazonaws.com/planters/newel-30/hover.jpeg')
+    newel30.photohover.attach(io: newel30_hover, filename: 'hover.jpeg')
+
+    newel30_video = open('https://root-directory-seed.s3.amazonaws.com/planters/newel-30/video.mp4')
+    newel30.video.attach(io: newel30_video, filename: 'video.mp4')
+
+
+milton41 = Planter.create!(
+    product_id: 8,
+    name: "Milton",
+    planter_type: "test",
+    price: 175,
+    size: "medium",
+    inches: 41,
+    color: "stone",
+    material: "fiberstone",
+    overview: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dignissim porta elit ut pellentesque. Nam auctor molestie arcu. Nulla sodales tempus aliquet. Phasellus vitae massa in enim facilisis cursus. Nullam vel eleifend libero. Nullam lobortis dui ut justo molestie, at interdum nisl vestibulum. Fusce nulla ante, maximus vitae sollicitudin quis, cursus ut tellus. Integer vel sapien augue. Sed quis ultricies urna. Nam semper dapibus odio, vitae cursus enim molestie in. Curabitur nec libero sit amet lacus commodo maximus eu a mauris. Praesent nunc felis, fermentum at dictum eget, venenatis vitae metus. Fusce hendrerit tellus est, at condimentum eros ultrices a. Nulla posuere varius odio, non convallis tellus elementum non.",
+    details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dignissim porta elit ut pellentesque. Nam auctor molestie arcu. Nulla sodales tempus aliquet. Phasellus vitae massa in enim facilisis cursus. Nullam vel eleifend libero. Nullam lobortis dui ut justo molestie, at interdum nisl vestibulum. Fusce nulla ante, maximus vitae sollicitudin quis, cursus ut tellus. Integer vel sapien augue. Sed quis ultricies urna. Nam semper dapibus odio, vitae cursus enim molestie in. Curabitur nec libero sit amet lacus commodo maximus eu a mauris. Praesent nunc felis, fermentum at dictum eget, venenatis vitae metus. Fusce hendrerit tellus est, at condimentum eros ultrices a. Nulla posuere varius odio, non convallis tellus elementum non.",
+    dimensions: "these are dimensions"
+)
+
+    milton41_main = open('https://root-directory-seed.s3.amazonaws.com/planters/milton-41/main.jpeg')
+    milton41.photomain.attach(io: milton41_main, filename: 'main.jpeg')
+
+    milton41_hover = open('https://root-directory-seed.s3.amazonaws.com/planters/milton-41/hover.jpeg')
+    milton41.photohover.attach(io: milton41_hover, filename: 'hover.jpeg')
+
+    milton41_video = open('https://root-directory-seed.s3.amazonaws.com/planters/milton-41/video.mp4')
+    milton41.video.attach(io: milton41_video, filename: 'video.mp4')
+
+
+sutton15 = Planter.create!(
+    product_id: 9,
+    name: "Sutton",
+    planter_type: "test",
+    price: 45,
+    size: "medium",
+    inches: 15,
+    color: "stone",
+    material: "fiberstone",
+    overview: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dignissim porta elit ut pellentesque. Nam auctor molestie arcu. Nulla sodales tempus aliquet. Phasellus vitae massa in enim facilisis cursus. Nullam vel eleifend libero. Nullam lobortis dui ut justo molestie, at interdum nisl vestibulum. Fusce nulla ante, maximus vitae sollicitudin quis, cursus ut tellus. Integer vel sapien augue. Sed quis ultricies urna. Nam semper dapibus odio, vitae cursus enim molestie in. Curabitur nec libero sit amet lacus commodo maximus eu a mauris. Praesent nunc felis, fermentum at dictum eget, venenatis vitae metus. Fusce hendrerit tellus est, at condimentum eros ultrices a. Nulla posuere varius odio, non convallis tellus elementum non.",
+    details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dignissim porta elit ut pellentesque. Nam auctor molestie arcu. Nulla sodales tempus aliquet. Phasellus vitae massa in enim facilisis cursus. Nullam vel eleifend libero. Nullam lobortis dui ut justo molestie, at interdum nisl vestibulum. Fusce nulla ante, maximus vitae sollicitudin quis, cursus ut tellus. Integer vel sapien augue. Sed quis ultricies urna. Nam semper dapibus odio, vitae cursus enim molestie in. Curabitur nec libero sit amet lacus commodo maximus eu a mauris. Praesent nunc felis, fermentum at dictum eget, venenatis vitae metus. Fusce hendrerit tellus est, at condimentum eros ultrices a. Nulla posuere varius odio, non convallis tellus elementum non.",
+    dimensions: "these are dimensions"
+)
+
+    sutton15_main = open('https://root-directory-seed.s3.amazonaws.com/planters/sutton-15/main.jpeg')
+    sutton15.photomain.attach(io: sutton15_main, filename: 'main.jpeg')
+
+    sutton15_hover = open('https://root-directory-seed.s3.amazonaws.com/planters/sutton-15/hover.jpeg')
+    sutton15.photohover.attach(io: sutton15_hover, filename: 'hover.jpeg')
+
+    # sutton15_video = open('https://root-directory-seed.s3.amazonaws.com/planters/sutton-15/video.mp4')
+    # sutton15.video.attach(io: sutton15_video, filename: 'video.mp4')
+
+
+ainslie17 = Planter.create!(
+    product_id: 10,
+    name: "Ainslie",
+    planter_type: "test",
+    price: 50,
+    size: "medium",
+    inches: 17,
+    color: "stone",
+    material: "fiberstone",
+    overview: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dignissim porta elit ut pellentesque. Nam auctor molestie arcu. Nulla sodales tempus aliquet. Phasellus vitae massa in enim facilisis cursus. Nullam vel eleifend libero. Nullam lobortis dui ut justo molestie, at interdum nisl vestibulum. Fusce nulla ante, maximus vitae sollicitudin quis, cursus ut tellus. Integer vel sapien augue. Sed quis ultricies urna. Nam semper dapibus odio, vitae cursus enim molestie in. Curabitur nec libero sit amet lacus commodo maximus eu a mauris. Praesent nunc felis, fermentum at dictum eget, venenatis vitae metus. Fusce hendrerit tellus est, at condimentum eros ultrices a. Nulla posuere varius odio, non convallis tellus elementum non.",
+    details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dignissim porta elit ut pellentesque. Nam auctor molestie arcu. Nulla sodales tempus aliquet. Phasellus vitae massa in enim facilisis cursus. Nullam vel eleifend libero. Nullam lobortis dui ut justo molestie, at interdum nisl vestibulum. Fusce nulla ante, maximus vitae sollicitudin quis, cursus ut tellus. Integer vel sapien augue. Sed quis ultricies urna. Nam semper dapibus odio, vitae cursus enim molestie in. Curabitur nec libero sit amet lacus commodo maximus eu a mauris. Praesent nunc felis, fermentum at dictum eget, venenatis vitae metus. Fusce hendrerit tellus est, at condimentum eros ultrices a. Nulla posuere varius odio, non convallis tellus elementum non.",
+    dimensions: "these are dimensions"
+)
+
+    ainslie17_main = open('https://root-directory-seed.s3.amazonaws.com/planters/ainslie-17/main.jpeg')
+    ainslie17.photomain.attach(io: ainslie17_main, filename: 'main.jpeg')
+
+    ainslie17_hover = open('https://root-directory-seed.s3.amazonaws.com/planters/ainslie-17/hover.jpeg')
+    ainslie17.photohover.attach(io: ainslie17_hover, filename: 'hover.jpeg')
+
+    # wythe30_video = open('https://root-directory-seed.s3.amazonaws.com/planters/wythe-30/video.mp4')
+    # wythe30.video.attach(io: wythe30_video, filename: 'video.mp4')
+
+
+varick20 = Planter.create!(
+    product_id: 11,
+    name: "Varick",
+    planter_type: "test",
+    price: 45,
+    size: "medium",
+    inches: 20,
+    color: "stone",
+    material: "fiberstone",
+    overview: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dignissim porta elit ut pellentesque. Nam auctor molestie arcu. Nulla sodales tempus aliquet. Phasellus vitae massa in enim facilisis cursus. Nullam vel eleifend libero. Nullam lobortis dui ut justo molestie, at interdum nisl vestibulum. Fusce nulla ante, maximus vitae sollicitudin quis, cursus ut tellus. Integer vel sapien augue. Sed quis ultricies urna. Nam semper dapibus odio, vitae cursus enim molestie in. Curabitur nec libero sit amet lacus commodo maximus eu a mauris. Praesent nunc felis, fermentum at dictum eget, venenatis vitae metus. Fusce hendrerit tellus est, at condimentum eros ultrices a. Nulla posuere varius odio, non convallis tellus elementum non.",
+    details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dignissim porta elit ut pellentesque. Nam auctor molestie arcu. Nulla sodales tempus aliquet. Phasellus vitae massa in enim facilisis cursus. Nullam vel eleifend libero. Nullam lobortis dui ut justo molestie, at interdum nisl vestibulum. Fusce nulla ante, maximus vitae sollicitudin quis, cursus ut tellus. Integer vel sapien augue. Sed quis ultricies urna. Nam semper dapibus odio, vitae cursus enim molestie in. Curabitur nec libero sit amet lacus commodo maximus eu a mauris. Praesent nunc felis, fermentum at dictum eget, venenatis vitae metus. Fusce hendrerit tellus est, at condimentum eros ultrices a. Nulla posuere varius odio, non convallis tellus elementum non.",
+    dimensions: "these are dimensions"
+)
+
+    varick20_main = open('https://root-directory-seed.s3.amazonaws.com/planters/varick-20/main.jpeg')
+    varick20.photomain.attach(io: varick20_main, filename: 'main.jpeg')
+
+    varick20_hover = open('https://root-directory-seed.s3.amazonaws.com/planters/varick-20/hover.jpeg')
+    varick20.photohover.attach(io: varick20_hover, filename: 'hover.jpeg')
+
+    # wythe30_video = open('https://root-directory-seed.s3.amazonaws.com/planters/wythe-30/video.mp4')
+    # wythe30.video.attach(io: wythe30_video, filename: 'video.mp4')
+
+
+franklin12 = Planter.create!(
+    product_id: 12,
+    name: "Franklin",
+    planter_type: "test",
+    price: 29,
+    size: "medium",
+    inches: 12,
+    color: "stone",
+    material: "fiberstone",
+    overview: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dignissim porta elit ut pellentesque. Nam auctor molestie arcu. Nulla sodales tempus aliquet. Phasellus vitae massa in enim facilisis cursus. Nullam vel eleifend libero. Nullam lobortis dui ut justo molestie, at interdum nisl vestibulum. Fusce nulla ante, maximus vitae sollicitudin quis, cursus ut tellus. Integer vel sapien augue. Sed quis ultricies urna. Nam semper dapibus odio, vitae cursus enim molestie in. Curabitur nec libero sit amet lacus commodo maximus eu a mauris. Praesent nunc felis, fermentum at dictum eget, venenatis vitae metus. Fusce hendrerit tellus est, at condimentum eros ultrices a. Nulla posuere varius odio, non convallis tellus elementum non.",
+    details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dignissim porta elit ut pellentesque. Nam auctor molestie arcu. Nulla sodales tempus aliquet. Phasellus vitae massa in enim facilisis cursus. Nullam vel eleifend libero. Nullam lobortis dui ut justo molestie, at interdum nisl vestibulum. Fusce nulla ante, maximus vitae sollicitudin quis, cursus ut tellus. Integer vel sapien augue. Sed quis ultricies urna. Nam semper dapibus odio, vitae cursus enim molestie in. Curabitur nec libero sit amet lacus commodo maximus eu a mauris. Praesent nunc felis, fermentum at dictum eget, venenatis vitae metus. Fusce hendrerit tellus est, at condimentum eros ultrices a. Nulla posuere varius odio, non convallis tellus elementum non.",
+    dimensions: "these are dimensions"
+)
+
+    franklin12_main = open('https://root-directory-seed.s3.amazonaws.com/planters/franklin-12/main.jpeg')
+    franklin12.photomain.attach(io: franklin12_main, filename: 'main.jpeg')
+
+    franklin12_hover = open('https://root-directory-seed.s3.amazonaws.com/planters/franklin-12/hover.jpeg')
+    franklin12.photohover.attach(io: franklin12_hover, filename: 'hover.jpeg')
+
+    # wythe30_video = open('https://root-directory-seed.s3.amazonaws.com/planters/wythe-30/video.mp4')
+    # wythe30.video.attach(io: wythe30_video, filename: 'video.mp4')
