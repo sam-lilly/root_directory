@@ -54,7 +54,7 @@ class PlanterIndex extends React.Component {
             <div className="top-column">
 
                 <div>
-                    <p className="all-plants">All Planters</p>
+                    <p className="all-plants">All Containers</p>
                 </div>
 
                 {/* <div className="underline-container">
