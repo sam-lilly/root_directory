@@ -8,13 +8,13 @@ class PlanterIndexItem extends React.Component {
         const { planter } = this.props;
 
         if (!planter) return null;
+        // debugger
 
         return (
             <div>
                 <ul>
                     <Link to={`/planters/${planter.id}`} className="product-container" >
                     {/* <li className="product-container"> */}
-                    <h1>i am the planter index container</h1>
                             <img
                                 src={planter.photoMainUrl}
                                 className="main-images"

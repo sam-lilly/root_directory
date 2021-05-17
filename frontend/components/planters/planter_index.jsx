@@ -26,29 +26,25 @@ class PlanterIndex extends React.Component {
                 <h1 className="sections-header">sections search!</h1>
 
                 <div className="dropdown">
-                    <p>Light Requirements</p>
-                    <p>+</p>
-                </div>
-
-                <div className="dropdown">
-                    <p>Care Difficulty</p>
-                    <p>+</p>
-                </div>
-
-                <div className="dropdown">
                     <p>Size</p>
                     <p>+</p>
                 </div>
 
                 <div className="dropdown">
-                    <p>Benefits</p>
+                    <p>Type</p>
                     <p>+</p>
                 </div>
 
                 <div className="dropdown">
-                    <p>Plant Type</p>
+                    <p>Color</p>
                     <p>+</p>
                 </div>
+
+                <div className="dropdown">
+                    <p>Material</p>
+                    <p>+</p>
+                </div>
+
 
                 {/* all the p tags with + will be dropdown links */}
 
@@ -58,7 +54,7 @@ class PlanterIndex extends React.Component {
             <div className="top-column">
 
                 <div>
-                    <p className="all-plants">All Plants</p>
+                    <p className="all-plants">All Planters</p>
                 </div>
 
                 {/* <div className="underline-container">
