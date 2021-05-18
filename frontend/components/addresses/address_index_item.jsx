@@ -5,40 +5,7 @@ class AddressIndexItem extends React.Component {
 
     constructor(props) {
         super(props);
-        // this.state = {
-        //     changed: true
-        // };
-        // this.handleDelete = this.handleDelete.bind(this);
     }
-
-    // componentDidMount() {
-    //     this.props.fetchAddress();
-    // }
-
-    // componentWillUnmount() {
-    //     this.props.fetchAddress()
-    // }
-
-    // handleDelete(e) {
-    //     e.preventDefault();
-    //     this.props.deleteAddress(this.props.address.id)
-        // this.setState({ changed: !this.state.changed})
-    
-        
-        //     this.props.deleteAddress(this.props.address.id)
-        // if (this.state) {
-        //     this.setState({ changed: true })
-        // } else {
-        //     this.setState({ changed: false })
-        // }
-        // this.setState({changed: !this.state.changed})
-    // }
-
-
-    // componentWillUnmount() {
-
-    // }
-
 
     render () {
 
@@ -47,26 +14,28 @@ class AddressIndexItem extends React.Component {
         if (!address) return null;
 
         return (
-            <div>
-                <ul>
-                    <li>
-                        <p>hiii, im the address index item you were looking for :)</p>
-                        <p>{address.first}</p>
-                        <p>{address.last}</p>
+            <div className="address-index-boxes">
+                <ul className="address-info-container">
+                    <li className="address-items">
+                        <h5 className="address-title">{address.address1}, {address.address2}</h5>
+                        <p>{address.first} {address.last}</p>
                         <p>{address.company}</p>
-                        <p>{address.address1}</p>
-                        <p>{address.address2}</p>
-                        <p>{address.city}</p>
-                        <p>{address.state}</p>
-                        <p>{address.country}</p>
-                        <p>{address.zip}</p>
+                        <p>{address.city}, {address.state}</p>
+                        <p>{address.country}, {address.zip}</p>
                         <p>{address.phone}</p>
-                        <Link to ={`/addresses/${address.id}/edit`}>Edit Address</Link>
-                        <button onClick={() => deleteAddress(address.id)}>remove address</button>
+                        {/* <Link to ={`/addresses/${address.id}/edit`}>Edit Address</Link> */}
+                        {/* <button onClick={() => deleteAddress(address.id)}>remove address</button> */}
                         {/* <button onClick={this.handleDelete}>remove address</button> */}
                     </li>
                 </ul>
-                <Link to="/addresses/new">Add New Address</Link>
+                <div className="edit-and-delete-container">
+                    <i className="fas fa-pencil-alt"></i>
+                    <Link className="edit-address" to={`/addresses/${address.id}/edit`}>Edit</Link>
+                    <i className="fas fa-times"></i>
+                    <button className="delete-address" onClick={() => deleteAddress(address.id)}>Delete</button>
+                </div>
+
+                {/* <Link to="/addresses/new">Add New Address</Link> */}
             </div>
         )
 

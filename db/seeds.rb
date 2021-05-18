@@ -20,67 +20,67 @@ demoUser = User.create!(email: "plantlyfe@gmail.com", password: "password", firs
 
 demoAddress1 = Address.create!(
     user_id: demoUser.id,
-    first: "Sam",
-    last: "Lilly",
-    address1: "133 G st",
-    address2: "Apt 3B",
+    first: "Forrest",
+    last: "Willow",
+    address1: "427 Garden St",
+    address2: "Apt 7E",
     city: "Brooklyn",
     state: "NY",
     country: "USA",
-    zip: "25314",
-    phone: "3043954921"
+    zip: "11206",
+    phone: "917.723.6142"
 )
 
 demoAddress2 = Address.create!(
     user_id: demoUser.id,
-    first: "Sammaaaay",
-    last: "Lilly",
-    address1: "1331222 G st",
-    address2: "Apt 3B",
+    first: "Ivy",
+    last: "Willow",
+    address1: "417 Elmhurst St",
+    address2: "Apt 7F",
     city: "Brooklyn",
     state: "NY",
     country: "USA",
-    zip: "25314",
-    phone: "3043954921"
+    zip: "11206",
+    phone: "304.193.5645"
 )
 
 demoAddress3 = Address.create!(
     user_id: demoUser.id,
-    first: "Sammzzz",
-    last: "Lilly",
-    address1: "14342342333 G st",
-    address2: "Apt 3B",
-    city: "Brooklyn",
-    state: "NY",
+    first: "Scarlet",
+    last: "Willow",
+    address1: "13 Rainbow Rd",
+    address2: "",
+    city: "Asheville",
+    state: "NC",
     country: "USA",
-    zip: "25314",
-    phone: "3043954921"
+    zip: "28607",
+    phone: "741.976.3982"
 )
 
 demoAddress4 = Address.create!(
     user_id: demoUser.id,
-    first: "Sementhuggh",
-    last: "Lilly",
-    address1: "13erer3 G st",
-    address2: "Apt 3B",
+    first: "Forrest",
+    last: "Willow",
+    address1: "227 Starr St",
+    address2: "Apt 2F",
     city: "Brooklyn",
     state: "NY",
     country: "USA",
-    zip: "25314",
-    phone: "3043954921"
+    zip: "11206",
+    phone: "304.395.4921"
 )
 
 demoAddress5 = Address.create!(
     user_id: demoUser.id,
-    first: "Sam",
-    last: "Lilly",
-    address1: "133sdfsdfee G st",
-    address2: "Apt 3B",
-    city: "Brooklyn",
-    state: "NY",
+    first: "Forrest",
+    last: "Willow",
+    address1: "415 Cedarwood Circle",
+    address2: "Apt 2",
+    city: "Asheville",
+    state: "NC",
     country: "USA",
-    zip: "25314",
-    phone: "3043954921"
+    zip: "28607",
+    phone: "304.395.4921"
 )
 
 
