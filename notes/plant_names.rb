@@ -38,6 +38,23 @@ schefflera amate 14 *** DONE
 
 
 
+notes on how i will set up the shopping cart
+
+cart is created for user when they initially create account
+cart has *user_id
+cart items is what holds all the products (also, from two tables= plants/planters)
+cart_items has *cart_id and *product_id on table
+when user checks out, creates a new Order.new with order info
+    order_total, address_id, cart_id, user_id, delivery_date, delivery_type
+    *select address from your address book, by address_id
+    and if you enter new address then it creates it in address book
+then sets shopping cart *completed boolean true
+*will need to change user_has one cart to a has_many
+
+? when creating cart_item, will pass in , cart_id, product_id? or just product_id?
+
+
+
 
 
 

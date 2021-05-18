@@ -1,7 +1,8 @@
 class Api::AddressesController < ApplicationController
 
     def index
-        @addresses = Address.all.select { |address| address.user_id == current_user.id }
+        # @addresses = Address.all.select { |address| address.user_id == current_user.id }
+        @addresses = Address.where(user_id: currentuser.id)
         render :index
     end
 
@@ -14,6 +15,7 @@ class Api::AddressesController < ApplicationController
         @address = Address.new(address_params)
         @address.user_id = current_user.id
         if @address.save
+            # @addresses = Address.where(user_id: currentuser.id)
             # @addresses = Address.all.select { |address| address.user_id == current_user.id }
             # render :index
             render :show
@@ -36,7 +38,8 @@ class Api::AddressesController < ApplicationController
     def destroy
         @address = Address.find(params[:id])
         @address.destroy
-        @addresses = Address.all.select { |address| address.user_id == current_user.id }
+        @addresses = Address.where(user_id: currentuser.id)
+        # @addresses = Address.all.select { |address| address.user_id == current_user.id }
         render :index
     end
 

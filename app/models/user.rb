@@ -1,3 +1,21 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :bigint           not null, primary key
+#  email           :string           not null
+#  first_name      :string           not null
+#  last_name       :string           not null
+#  password_digest :string           not null
+#  session_token   :string           not null
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+# Indexes
+#
+#  index_users_on_email          (email) UNIQUE
+#  index_users_on_session_token  (session_token) UNIQUE
+#
 class User < ApplicationRecord
 
     validates :email, :session_token, presence: true, uniqueness: true
@@ -14,7 +32,7 @@ class User < ApplicationRecord
         foreign_key: :address_id,
         class_name: :Address
 
-    has_one :cart,
+    has_many :carts,
         primary_key: :id,
         foreign_key: :user_id,
         class_name: :Cart

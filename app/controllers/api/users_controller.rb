@@ -4,6 +4,7 @@ class Api::UsersController < ApplicationController
         @user = User.new(user_params)
 
         if @user.save
+            Cart.new(user_id: @user.id, completed: false)
             login!(@user)
             render 'api/users/show'
         else
