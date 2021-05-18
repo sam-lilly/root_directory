@@ -84,6 +84,31 @@ demoAddress5 = Address.create!(
 )
 
 
+plant1 = Product.create!(category: plant)
+plant2 = Product.create!(category: plant)
+plant3 = Product.create!(category: plant)
+plant4 = Product.create!(category: plant)
+plant5 = Product.create!(category: plant)
+plant6 = Product.create!(category: plant)
+plant7 = Product.create!(category: plant)
+plant8 = Product.create!(category: plant)
+plant9 = Product.create!(category: plant)
+plant10 = Product.create!(category: plant)
+plant11 = Product.create!(category: plant)
+plant12 = Product.create!(category: plant)
+
+planter1 = Product.create!(category: planter)
+planter2 = Product.create!(category: planter)
+planter3 = Product.create!(category: planter)
+planter4 = Product.create!(category: planter)
+planter5 = Product.create!(category: planter)
+planter6 = Product.create!(category: planter)
+planter7 = Product.create!(category: planter)
+planter8 = Product.create!(category: planter)
+planter9 = Product.create!(category: planter)
+planter10 = Product.create!(category: planter)
+planter11 = Product.create!(category: planter)
+planter12 = Product.create!(category: planter)
 
 
 # Plants
@@ -92,7 +117,7 @@ demoAddress5 = Address.create!(
 # *** may need to do an array to be able to index into it
 
 monstera_deliciosa_large = Plant.create!(
-    product_id: 1,
+    product_id: plant1.id,
     plant_db_id: 1,
     name: "Monstera Deliciosa",
     inches: 10,
@@ -122,7 +147,7 @@ monstera_deliciosa_large = Plant.create!(
     # attach it the same way//
 
 philodendron_hope = Plant.create!(
-    product_id: 2,
+    product_id: plant2.id,
     plant_db_id: 2,
     name: "Philodendron Hope",
     inches: 10,
@@ -149,7 +174,7 @@ philodendron_hope = Plant.create!(
 
 
 monstera_deliciosa_small = Plant.create!(
-    product_id: 3,
+    product_id: plant3.id,
     plant_db_id: 3,
     name: "Monstera Deliciosa",
     inches: 4,
@@ -176,7 +201,7 @@ monstera_deliciosa_small = Plant.create!(
     
 
 kentia_palm = Plant.create!(
-    product_id: 4,
+    product_id: plant4.id,
     plant_db_id: 4,
     name: "Kentia Palm",
     inches: 10,
@@ -204,7 +229,7 @@ kentia_palm = Plant.create!(
     
 
 fiddle_leaf = Plant.create!(
-    product_id: 5,
+    product_id: plant5.id,
     plant_db_id: 5,
     name: "Fiddle Leaf Fig Tree",
     inches: 14,
@@ -231,7 +256,7 @@ fiddle_leaf = Plant.create!(
     
 
 bird_of_paradise = Plant.create!(
-    product_id: 6,
+    product_id: plant6.id,
     plant_db_id: 6,
     name: "Bird of Paradise",
     inches: 14,
@@ -258,7 +283,7 @@ bird_of_paradise = Plant.create!(
 
 
 schefflera_amate = Plant.create!(
-    product_id: 7,
+    product_id: plant7.id,
     plant_db_id: 7,
     name: "Schlefflera Amate",
     inches: 14,
@@ -285,7 +310,7 @@ schefflera_amate = Plant.create!(
 
 
 calathea_ornata = Plant.create!(
-    product_id: 8,
+    product_id: plant8.id,
     plant_db_id: 8,
     name: "Calathea Ornata",
     inches: 6,
@@ -312,7 +337,7 @@ calathea_ornata = Plant.create!(
 
 
 sansevieria_laurentii = Plant.create!(
-    product_id: 9,
+    product_id: plant9.id,
     plant_db_id: 9,
     name: "Sansevieria Laurentii",
     inches: 10,
@@ -339,7 +364,7 @@ sansevieria_laurentii = Plant.create!(
 
 
 calathea_medallion = Plant.create!(
-    product_id: 10,
+    product_id: plant10.id,
     plant_db_id: 10,
     name: "Calathea Medallion",
     inches: 6,
@@ -366,7 +391,7 @@ calathea_medallion = Plant.create!(
 
 
 ficus_audrey = Plant.create!(
-    product_id: 11,
+    product_id: plant11.id,
     plant_db_id: 11,
     name: "Ficus Audrey",
     inches: 4,
@@ -393,7 +418,7 @@ ficus_audrey = Plant.create!(
 
 
 cereus_cactus = Plant.create!(
-    product_id: 12,
+    product_id: plant12.id,
     plant_db_id: 12,
     name: "Cereus Cactus",
     inches: 10,
@@ -437,7 +462,7 @@ cereus_cactus = Plant.create!(
 
 
 wythe30 = Planter.create!(
-    product_id: 1,
+    product_id: planter1.id,
     name: "Wythe",
     planter_type: "test",
     price: 110,
@@ -461,7 +486,7 @@ wythe30 = Planter.create!(
 
 
 wythe40 = Planter.create!(
-    product_id: 2,
+    product_id: planter2.id,
     name: "Wythe",
     planter_type: "test",
     price: 150,
@@ -485,7 +510,7 @@ wythe40 = Planter.create!(
 
 
 kent35 = Planter.create!(
-    product_id: 3,
+    product_id: planter3.id,
     name: "Kent",
     planter_type: "test",
     price: 98,
@@ -509,7 +534,7 @@ kent35 = Planter.create!(
 
 
 kent48 = Planter.create!(
-    product_id: 4,
+    product_id: planter4.id,
     name: "Kent",
     planter_type: "test",
     price: 145,
@@ -533,7 +558,7 @@ kent48 = Planter.create!(
 
 
 calyer34 = Planter.create!(
-    product_id: 5,
+    product_id: planter5.id,
     name: "Calyer",
     planter_type: "test",
     price: 125,
@@ -557,7 +582,7 @@ calyer34 = Planter.create!(
 
 
 calyer46 = Planter.create!(
-    product_id: 6,
+    product_id: planter6.id,
     name: "Calyer",
     planter_type: "test",
     price: 210,
@@ -581,7 +606,7 @@ calyer46 = Planter.create!(
 
 
 newel30 = Planter.create!(
-    product_id: 7,
+    product_id: planter7.id,
     name: "Newel",
     planter_type: "test",
     price: 89,
@@ -605,7 +630,7 @@ newel30 = Planter.create!(
 
 
 milton41 = Planter.create!(
-    product_id: 8,
+    product_id: planter8.id,
     name: "Milton",
     planter_type: "test",
     price: 175,
@@ -629,7 +654,7 @@ milton41 = Planter.create!(
 
 
 sutton15 = Planter.create!(
-    product_id: 9,
+    product_id: planter9.id,
     name: "Sutton",
     planter_type: "test",
     price: 45,
@@ -648,12 +673,9 @@ sutton15 = Planter.create!(
     sutton15_hover = open('https://root-directory-seed.s3.amazonaws.com/planters/sutton-15/hover.jpeg')
     sutton15.photohover.attach(io: sutton15_hover, filename: 'hover.jpeg')
 
-    # sutton15_video = open('https://root-directory-seed.s3.amazonaws.com/planters/sutton-15/video.mp4')
-    # sutton15.video.attach(io: sutton15_video, filename: 'video.mp4')
-
 
 ainslie17 = Planter.create!(
-    product_id: 10,
+    product_id: planter10.id,
     name: "Ainslie",
     planter_type: "test",
     price: 50,
@@ -672,12 +694,9 @@ ainslie17 = Planter.create!(
     ainslie17_hover = open('https://root-directory-seed.s3.amazonaws.com/planters/ainslie-17/hover.jpeg')
     ainslie17.photohover.attach(io: ainslie17_hover, filename: 'hover.jpeg')
 
-    # wythe30_video = open('https://root-directory-seed.s3.amazonaws.com/planters/wythe-30/video.mp4')
-    # wythe30.video.attach(io: wythe30_video, filename: 'video.mp4')
-
 
 varick20 = Planter.create!(
-    product_id: 11,
+    product_id: planter11.id,
     name: "Varick",
     planter_type: "test",
     price: 45,
@@ -696,12 +715,9 @@ varick20 = Planter.create!(
     varick20_hover = open('https://root-directory-seed.s3.amazonaws.com/planters/varick-20/hover.jpeg')
     varick20.photohover.attach(io: varick20_hover, filename: 'hover.jpeg')
 
-    # wythe30_video = open('https://root-directory-seed.s3.amazonaws.com/planters/wythe-30/video.mp4')
-    # wythe30.video.attach(io: wythe30_video, filename: 'video.mp4')
-
 
 franklin12 = Planter.create!(
-    product_id: 12,
+    product_id: planter12.id,
     name: "Franklin",
     planter_type: "test",
     price: 29,
@@ -719,6 +735,3 @@ franklin12 = Planter.create!(
 
     franklin12_hover = open('https://root-directory-seed.s3.amazonaws.com/planters/franklin-12/hover.jpeg')
     franklin12.photohover.attach(io: franklin12_hover, filename: 'hover.jpeg')
-
-    # wythe30_video = open('https://root-directory-seed.s3.amazonaws.com/planters/wythe-30/video.mp4')
-    # wythe30.video.attach(io: wythe30_video, filename: 'video.mp4')
