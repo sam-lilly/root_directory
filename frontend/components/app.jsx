@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Switch, Link } from 'react-router-dom';
 import { AuthRoute } from '../util/route_util';
+import { AccountRoute } from '../util/account_route_util';
 
 import GreetingContainer from './greeting/greeting_container';
 import SplashPage from './splash/splash';
@@ -33,8 +34,8 @@ const App = () => (
                 
                 <div className="header-middle">
                     <Link to="/plants" className="shop-nyc">SHOP NYC</Link>
-                    <Link to="/plantcare" className="plant-care">PLANT CARE</Link>
-                    <Link to="/blogs" className="plant-blog">PLANT BLOG</Link>
+                    <Link to="/planters" className="plant-care">PLANTERS</Link>
+                    <Link to="/plantcare" className="plant-blog">PLANT CARE</Link>
                 </div>
 
                 <div className="header-right">
@@ -55,10 +56,10 @@ const App = () => (
 
             <Route exact path="/account" component={AccountHome} />
 
-            <Route exact path="/addresses" component={AddressIndexContainer} />
-            <Route exact path="/addresses/new" component={CreateAddressFormContainer} />
-            <Route exact path="/addresses/:addressId" component={AddressShowContainer} />
-            <Route exact path="/addresses/:addressId/edit" component={EditAddressFormContainer} />
+            <AccountRoute exact path="/addresses" component={AddressIndexContainer} />
+            <AccountRoute exact path="/addresses/new" component={CreateAddressFormContainer} />
+            <AccountRoute exact path="/addresses/:addressId" component={AddressShowContainer} />
+            <AccountRoute exact path="/addresses/:addressId/edit" component={EditAddressFormContainer} />
 
             <Route exact path="/plants" component={PlantIndexContainer} />
             <Route exact path="/plants/:plantId" component={PlantShowContainer} />

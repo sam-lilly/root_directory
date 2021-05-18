@@ -14,6 +14,8 @@ class Api::AddressesController < ApplicationController
         @address = Address.new(address_params)
         @address.user_id = current_user.id
         if @address.save
+            # @addresses = Address.all.select { |address| address.user_id == current_user.id }
+            # render :index
             render :show
         else
             render json: @address.errors.full_messages, status: 422

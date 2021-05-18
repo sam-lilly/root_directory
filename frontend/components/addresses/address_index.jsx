@@ -3,23 +3,9 @@ import AddressIndexItem from './address_index_item';
 
 class AddressIndex extends React.Component {
 
-    // constructor(props) {
-    //     super(props);
-    //     // if (this.props.addresses) {
-    //     //     this.state = this.props.addresses
-    //     // } else {
-    //     //     this.state = null;
-    //     // }
-    //     // this.state = this.props.addresses
-    // }
-
     componentDidMount() {
         this.props.fetchAddresses()
     }
-
-    // componentWillUnmount() {
-    //     this.props.fetchAddresses()
-    // }
 
     render () {
 

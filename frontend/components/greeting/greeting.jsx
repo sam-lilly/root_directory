@@ -19,7 +19,8 @@ const Greeting = ({ currentUser, logout }) => {
             <Link to="/account" className="user-icon"><i className="far fa-user"></i></Link>
             {/* make above to go back to account page */}
             <p>&nbsp;|&nbsp;&nbsp;</p>
-            <button className="header-button" onClick={logout}>LOGOUT</button>
+            {/* <button className="header-button" onClick={logout}>LOGOUT</button> */}
+            <Link to="/" onClick={logout}>LOGOUT</Link>
             <Link to="/cart" className="shopping-cart"><i className="fas fa-shopping-cart"></i></Link>
         </div>
     );

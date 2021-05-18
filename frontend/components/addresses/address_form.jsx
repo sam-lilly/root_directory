@@ -16,7 +16,7 @@ class AddressForm extends React.Component {
     }
 
     handleSubmit() {
-        e.preventDefault();
+        // e.preventDefault();
         this.props.submitAddress(this.state)
     }
 
@@ -111,8 +111,10 @@ class AddressForm extends React.Component {
                         onChange={this.update("phone")}
                     />
                 </label>
-                {/* <Link to="/addresses" onClick={this.handleSubmit}>{formType}</Link> */}
-                <button type="submit" value={formType}>{formType}</button>
+                <Link to="/addresses" onClick={this.handleSubmit}>{formType}</Link>
+                {/* <button type="submit" value={formType}>{formType}</button> */}
+
+                <Link to="/addresses">View All Addresses</Link>
 
             </form>
 

@@ -66,6 +66,7 @@ class AddressIndexItem extends React.Component {
                         {/* <button onClick={this.handleDelete}>remove address</button> */}
                     </li>
                 </ul>
+                <Link to="/addresses/new">Add New Address</Link>
             </div>
         )
 
