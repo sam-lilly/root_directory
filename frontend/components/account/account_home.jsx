@@ -5,7 +5,6 @@ class AccountHome extends React.Component {
 
     render () {
 
-        debugger
 
         return (
             <div className="account-home">
