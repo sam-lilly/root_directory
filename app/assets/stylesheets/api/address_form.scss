@@ -1,0 +1,123 @@
+
+.address-form-edit-update {
+
+    margin-top: 50px;
+    font-family: 'Jost', sans-serif;
+    background: rgb(237, 237, 237);
+    display: grid;
+    grid-template-columns: 0.7fr 4fr;
+    grid-template-rows: 5;
+    // not sure if that will work// hoping it will size with components
+
+    .index-container {
+        grid-row: 1 / 6;
+        // grid-row-start: 1 span;
+        display: flex;
+        flex-direction: column;
+        background: white;
+        padding: 50px 0 0 30px;
+        color: rgb(111, 184, 1);
+        .index {
+            font-size: 34px;
+            text-transform: capitalize;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .linkz {
+            margin-bottom: 10px;
+            font-size: 14px;
+            &:hover {
+                color: rgb(85, 133, 14);
+            } 
+        }
+        .logout-button {
+            background: rgb(152, 232, 32);
+            color: rgb(14, 14, 14);
+            text-align: center;
+            letter-spacing: 1px;
+            margin: 0;
+            margin-top: 20px;
+            padding: 5px 0;
+            width: 90px;
+            &:hover {
+                background: rgb(111, 184, 1);
+            }
+        }
+
+    }
+
+    .greeting-header {
+        grid-row: 1;
+        grid-column: 2 / 4;
+        margin: 50px 100px 40px 80px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .greeting {
+            font-size: 35px;
+            font-weight: 600;
+            text-transform: capitalize;
+            margin-bottom: 10px;
+        }
+        .new-address {
+            background: rgb(152, 232, 32);
+            color: rgb(14, 14, 14);
+            text-align: center;
+            letter-spacing: 1px;
+            margin: 0;
+            margin-top: 20px;
+            padding: 10px 0;
+            width: 200px;
+            &:hover {
+                background: rgb(111, 184, 1);
+            }
+        }
+    }
+
+    .address-form-container {
+        font-size: 14px;
+        margin: 50px 100px 40px 80px;
+        input {
+            border: 1px rgb(206, 206, 206);
+            margin-bottom: 15px;
+            padding: 5px 5px 5px 10px;
+            font-size: 14px;
+            font-weight: 200;
+            background: rgba(255, 254, 254, 0.81);
+            width: 80%;
+        }
+
+    }
+
+    .update-address-button {
+
+
+        background: rgb(152, 232, 32);
+        color: rgb(14, 14, 14);
+        text-align: center;
+        letter-spacing: 1px;
+        margin: 0;
+        margin-top: 20px;
+        padding: 10px 0;
+        width: 200px;
+        &:hover {
+            background: rgb(111, 184, 1);
+        }
+    }
+
+    .view-addresses-button {
+        background: rgb(152, 232, 32);
+        color: rgb(14, 14, 14);
+        text-align: center;
+        letter-spacing: 1px;
+        margin: 0;
+        margin-top: 20px;
+        padding: 10px 0;
+        width: 200px;
+        &:hover {
+            background: rgb(111, 184, 1);
+        }
+    }
+
+
+}

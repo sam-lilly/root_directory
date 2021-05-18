@@ -27,97 +27,131 @@ class AddressForm extends React.Component {
         if (!address) return null;
 
         return (
-            <form className="address-form-container" onSubmit={this.handleSubmit}>
 
-                {/* <h1>{this.props.formType}</h1> */}
-                <h1>{formType}</h1>
+            <div className="address-form-edit-update">
 
-                <label>First Name
-                    <input
-                        type="text"
-                        value={this.state.first}
-                        onChange={this.update("first")}
-                    />
-                </label>
+                <div className="index-container">
+                    <h1 className="index">Index</h1>
+                    <Link className="linkz" to="/account">MY ACCOUNT</Link>
+                    <Link className="linkz" to="/addresses">ADDRESS BOOK</Link>
+                    <Link className="linkz" to="/orders">MY ORDERS</Link>
+                    <Link className="logout-button" to="/" onClick={this.props.logout}>LOGOUT</Link>
+                </div>
 
-                <label>Last Name
-                    <input
-                        type="text"
-                        value={this.state.last}
-                        onChange={this.update("last")}
-                    />
-                </label>
+                <div className="greeting-header">
+                    <h1 className="greeting">Address Book</h1>
+                    <Link className="new-address" to="/addresses/new">Add New Address</Link>
+                    {/* dummy value!! need to fix tomorrow 5/18 */}
+                    {/* <p className="summary">Welcome to your dashboard, from here you are able to view your address book as well as past orders.</p> */}
+                </div>  
+                
 
-                <label>Company
-                    <input
-                        type="text"
-                        value={this.state.company}
-                        onChange={this.update("company")}
-                    />
-                </label>
 
-                <label>Address 1
-                    <input
-                        type="text"
-                        value={this.state.address1}
-                        onChange={this.update("address1")}
-                    />
-                </label>
 
-                <label>Address2
-                    <input
-                        type="text"
-                        value={this.state.address2}
-                        onChange={this.update("address2")}
-                    />
-                </label>
 
-                <label>City
-                    <input
-                        type="text"
-                        value={this.state.city}
-                        onChange={this.update("city")}
-                    />
-                </label>
+                <form className="address-form-container" onSubmit={this.handleSubmit}>
 
-                <label>State (enter abbreviation)
-                    <input
-                        type="text"
-                        value={this.state.state}
-                        onChange={this.update("state")}
-                    />
-                </label>
+                    {/* <h1>{this.props.formType}</h1> */}
+                    {/* <h1>{formType}</h1> */}
 
-                <label>Country
-                    <input
-                        type="text"
-                        value={this.state.country}
-                        onChange={this.update("country")}
-                    />
-                </label>
+                    {/* <label>First Name */}
+                        <input
+                            type="text"
+                            value={this.state.first}
+                            placeholder="First Name"
+                            onChange={this.update("first")}
+                        />
+                    {/* </label> */}
 
-                <label>Zip Code
-                    <input
-                        type="text"
-                        value={this.state.zip}
-                        onChange={this.update("zip")}
-                    />
-                </label>
+                    {/* <label>Last Name */}
+                        <input
+                            type="text"
+                            value={this.state.last}
+                            placeholder="Last Name"
+                            onChange={this.update("last")}
+                        />
+                    {/* </label> */}
 
-                <label>Phone Number
-                    <input
-                        type="text"
-                        value={this.state.phone}
-                        onChange={this.update("phone")}
-                    />
-                </label>
-                <Link to="/addresses" onClick={this.handleSubmit}>{formType}</Link>
-                {/* <button type="submit" value={formType}>{formType}</button> */}
+                    {/* <label>Company */}
+                        <input
+                            type="text"
+                            value={this.state.company}
+                            placeholder="Company"
+                            onChange={this.update("company")}
+                        />
+                    {/* </label> */}
 
-                <Link to="/addresses">View All Addresses</Link>
+                    {/* <label>Address 1 */}
+                        <input
+                            type="text"
+                            value={this.state.address1}
+                            placeholder="Address 1"
+                            onChange={this.update("address1")}
+                        />
+                    {/* </label> */}
 
-            </form>
+                    {/* <label>Address2 */}
+                        <input
+                            type="text"
+                            value={this.state.address2}
+                            placeholder="Address 2"
+                            onChange={this.update("address2")}
+                        />
+                    {/* </label> */}
 
+                    {/* <label>City */}
+                        <input
+                            type="text"
+                            value={this.state.city}
+                            placeholder="City"
+                            onChange={this.update("city")}
+                        />
+                    {/* </label> */}
+
+                    {/* <label>State (enter abbreviation) */}
+                        <input
+                            type="text"
+                            value={this.state.state}
+                            placeholder="State"
+                            onChange={this.update("state")}
+                        />
+                    {/* </label> */}
+
+                    {/* <label>Country */}
+                        <input
+                            type="text"
+                            value={this.state.country}
+                            placeholder="Country"
+                            onChange={this.update("country")}
+                        />
+                    {/* </label> */}
+
+                    {/* <label>Zip Code */}
+                        <input
+                            type="text"
+                            value={this.state.zip}
+                            placeholder="Zip Code"
+                            onChange={this.update("zip")}
+                        />
+                    {/* </label> */}
+
+                    {/* <label>Phone Number */}
+                        <input
+                            type="text"
+                            value={this.state.phone}
+                            placeholder="Phone Number"
+                            onChange={this.update("phone")}
+                        />
+                    {/* </label> */}
+                    <Link className="update-address-button" to="/addresses" onClick={this.handleSubmit}>{formType}</Link>
+                    {/* <button type="submit" value={formType}>{formType}</button> */}
+
+                    <Link className="view-addresses-button" to="/addresses">View All Addresses</Link>
+
+                </form>
+
+
+            </div>
 
         )
     }
