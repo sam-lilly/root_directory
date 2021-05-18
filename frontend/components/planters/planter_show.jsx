@@ -8,11 +8,9 @@ class PlanterShow extends React.Component {
         this.state = {
             displayMain: true
         };
-        // debugger
     }
 
     componentDidMount() {
-        // debugger
         this.props.fetchPlanter(this.props.match.params.planterId);
     }
 
@@ -30,7 +28,6 @@ class PlanterShow extends React.Component {
             imgDisplay = planter.photoHoverUrl;
         }
 
-        // debugger
 
         return (
             <div className="planter-show">

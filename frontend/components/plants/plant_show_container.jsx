@@ -3,7 +3,6 @@ import { fetchPlant } from '../../actions/plant_actions';
 import PlantShow from './plant_show';
 
 const mSTP = (state, ownProps) => {
-    debugger
     return ({
         plant: state.entities.plants[ownProps.match.params.plantId]
     })

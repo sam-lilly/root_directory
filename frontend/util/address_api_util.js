@@ -15,7 +15,8 @@ export const fetchAddress = (addressId) => (
 export const createAddress = (address) => (
     $.ajax({
         method: "POST",
-        url: `/api/addresses`
+        url: `/api/addresses`,
+        data: { address }
     })
 )
 

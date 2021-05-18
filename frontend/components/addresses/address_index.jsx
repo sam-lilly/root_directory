@@ -10,7 +10,6 @@ class AddressIndex extends React.Component {
     //     // } else {
     //     //     this.state = null;
     //     // }
-    //     debugger
     //     // this.state = this.props.addresses
     // }
 

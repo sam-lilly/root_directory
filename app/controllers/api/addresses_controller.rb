@@ -6,13 +6,13 @@ class Api::AddressesController < ApplicationController
     end
 
     def show
-        # debugger
         @address = Address.find(params[:id])
         render :show
     end
 
     def create
         @address = Address.new(address_params)
+        @address.user_id = current_user.id
         if @address.save
             render :show
         else
@@ -43,7 +43,7 @@ class Api::AddressesController < ApplicationController
     private
 
     def address_params
-        params.require(:address).permit(:first_name, :last_name, :company, :address_1, :address_2, :city, :state, :country, :zip_code, :phone_number)
+        params.require(:address).permit(:first, :last, :company, :address1, :address2, :city, :state, :country, :zip, :phone)
     end
 
 

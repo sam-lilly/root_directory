@@ -20,81 +20,70 @@ demoUser = User.create!(email: "plantlyfe@gmail.com", password: "password", firs
 
 demoAddress1 = Address.create!(
     user_id: demoUser.id,
-    first_name: "Sam",
-    last_name: "Lilly",
-    address_1: "133 G st",
-    address_2: "Apt 3B",
+    first: "Sam",
+    last: "Lilly",
+    address1: "133 G st",
+    address2: "Apt 3B",
     city: "Brooklyn",
     state: "NY",
     country: "USA",
-    zip_code: "25314",
-    phone_number: "3043954921"
+    zip: "25314",
+    phone: "3043954921"
 )
 
 demoAddress2 = Address.create!(
     user_id: demoUser.id,
-    first_name: "Sam",
-    last_name: "Lilly",
-    address_1: "21237 G st",
-    address_2: "Apt 3B",
+    first: "Sammaaaay",
+    last: "Lilly",
+    address1: "1331222 G st",
+    address2: "Apt 3B",
     city: "Brooklyn",
     state: "NY",
     country: "USA",
-    zip_code: "25314",
-    phone_number: "3043954921"
+    zip: "25314",
+    phone: "3043954921"
 )
 
 demoAddress3 = Address.create!(
     user_id: demoUser.id,
-    first_name: "Sam",
-    last_name: "Lilly",
-    address_1: "32334 G st",
-    address_2: "Apt 3B",
+    first: "Sammzzz",
+    last: "Lilly",
+    address1: "14342342333 G st",
+    address2: "Apt 3B",
     city: "Brooklyn",
     state: "NY",
     country: "USA",
-    zip_code: "25314",
-    phone_number: "3043954921"
+    zip: "25314",
+    phone: "3043954921"
 )
 
 demoAddress4 = Address.create!(
     user_id: demoUser.id,
-    first_name: "Sam",
-    last_name: "Lilly",
-    address_1: "31214 G st",
-    address_2: "Apt 3B",
+    first: "Sementhuggh",
+    last: "Lilly",
+    address1: "13erer3 G st",
+    address2: "Apt 3B",
     city: "Brooklyn",
     state: "NY",
     country: "USA",
-    zip_code: "25314",
-    phone_number: "3043954921"
+    zip: "25314",
+    phone: "3043954921"
 )
 
 demoAddress5 = Address.create!(
     user_id: demoUser.id,
-    first_name: "Sam",
-    last_name: "Lilly",
-    address_1: "3334 G st",
-    address_2: "Apt 3B",
+    first: "Sam",
+    last: "Lilly",
+    address1: "133sdfsdfee G st",
+    address2: "Apt 3B",
     city: "Brooklyn",
     state: "NY",
     country: "USA",
-    zip_code: "25314",
-    phone_number: "3043954921"
+    zip: "25314",
+    phone: "3043954921"
 )
 
-demoAddress6 = Address.create!(
-    user_id: demoUser.id,
-    first_name: "Sam",
-    last_name: "Lilly",
-    address_1: "3444 G st",
-    address_2: "Apt 3B",
-    city: "Brooklyn",
-    state: "NY",
-    country: "USA",
-    zip_code: "25314",
-    phone_number: "3043954921"
-)
+
 
 
 # Plants

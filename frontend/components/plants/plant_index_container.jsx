@@ -3,7 +3,6 @@ import { fetchPlants } from '../../actions/plant_actions';
 import PlantIndex from './plant_index';
 
 const mSTP = (state) => {
-    // debugger
     return ({
         plants: Object.values(state.entities.plants)
     })

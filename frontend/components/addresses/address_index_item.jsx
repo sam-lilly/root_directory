@@ -5,9 +5,9 @@ class AddressIndexItem extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            changed: true
-        };
+        // this.state = {
+        //     changed: true
+        // };
         // this.handleDelete = this.handleDelete.bind(this);
     }
 
@@ -21,7 +21,6 @@ class AddressIndexItem extends React.Component {
 
     // handleDelete(e) {
     //     e.preventDefault();
-    // //     debugger
     //     this.props.deleteAddress(this.props.address.id)
         // this.setState({ changed: !this.state.changed})
     
@@ -52,16 +51,16 @@ class AddressIndexItem extends React.Component {
                 <ul>
                     <li>
                         <p>hiii, im the address index item you were looking for :)</p>
-                        <p>{address.firstName}</p>
-                        <p>{address.lastName}</p>
+                        <p>{address.first}</p>
+                        <p>{address.last}</p>
                         <p>{address.company}</p>
                         <p>{address.address1}</p>
                         <p>{address.address2}</p>
                         <p>{address.city}</p>
                         <p>{address.state}</p>
                         <p>{address.country}</p>
-                        <p>{address.zipCode}</p>
-                        <p>{address.phoneNumber}</p>
+                        <p>{address.zip}</p>
+                        <p>{address.phone}</p>
                         <Link to ={`/addresses/${address.id}/edit`}>Edit Address</Link>
                         <button onClick={() => deleteAddress(address.id)}>remove address</button>
                         {/* <button onClick={this.handleDelete}>remove address</button> */}

@@ -16,7 +16,6 @@ const addressesReducer = (oldState = {}, action) => {
             //         delete nextState[key]
             //     }
             // })
-            debugger
             delete nextState[action.addressId];
                 return nextState;
         default:

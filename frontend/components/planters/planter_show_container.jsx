@@ -3,7 +3,6 @@ import { fetchPlanter } from '../../actions/planter_actions';
 import PlanterShow from './planter_show';
 
 const mSTP = (state, ownProps) => {
-    // debugger
     return ({
         planter: state.entities.planters[ownProps.match.params.planterId]
     })

@@ -4,16 +4,16 @@ import AddressForm from './address_form';
 
 const mSTP = (state) => ({
     address: {
-        firstName: "",
-        lastName: "",
+        first: "",
+        last: "",
         company: "",
         address1: "",
         address2: "",
         city: "",
         state: "",
         country: "",
-        zipCode: "",
-        phoneNumber: "",
+        zip: "",
+        phone: "",
     },
     formType: "Create Address"
 })

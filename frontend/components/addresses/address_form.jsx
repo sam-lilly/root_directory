@@ -5,21 +5,18 @@ class AddressForm extends React.Component {
 
     constructor(props) {
         super(props);
-        // debugger
         this.state = this.props.address;
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     update(field) {
-        // debugger
         return e => {
             this.setState({ [field]: e.currentTarget.value })
         }
     }
 
     handleSubmit() {
-        // debugger
-        // e.preventDefault();
+        e.preventDefault();
         this.props.submitAddress(this.state)
     }
 
@@ -28,7 +25,6 @@ class AddressForm extends React.Component {
         let { address, formType, fetchAddress, submitAddress } = this.props;
         
         if (!address) return null;
-        // debugger
 
         return (
             <form className="address-form-container" onSubmit={this.handleSubmit}>
@@ -39,16 +35,16 @@ class AddressForm extends React.Component {
                 <label>First Name
                     <input
                         type="text"
-                        value={this.state.firstName}
-                        onChange={this.update("first_name")}
+                        value={this.state.first}
+                        onChange={this.update("first")}
                     />
                 </label>
 
                 <label>Last Name
                     <input
                         type="text"
-                        value={this.state.lastName}
-                        onChange={this.update("last_name")}
+                        value={this.state.last}
+                        onChange={this.update("last")}
                     />
                 </label>
 
@@ -103,16 +99,16 @@ class AddressForm extends React.Component {
                 <label>Zip Code
                     <input
                         type="text"
-                        value={this.state.zipCode}
-                        onChange={this.update("zipCode")}
+                        value={this.state.zip}
+                        onChange={this.update("zip")}
                     />
                 </label>
 
                 <label>Phone Number
                     <input
                         type="text"
-                        value={this.state.phoneNumber}
-                        onChange={this.update("phoneNumber")}
+                        value={this.state.phone}
+                        onChange={this.update("phone")}
                     />
                 </label>
                 {/* <Link to="/addresses" onClick={this.handleSubmit}>{formType}</Link> */}
