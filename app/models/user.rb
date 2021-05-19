@@ -18,6 +18,8 @@
 #
 class User < ApplicationRecord
 
+    # attr_reader :carts
+
     validates :email, :session_token, presence: true, uniqueness: true
     validates :first_name, :last_name, :password_digest, presence: true
     validates :password, length: { minimum: 6, allow_nil: true }
@@ -53,6 +55,19 @@ class User < ApplicationRecord
         end
 
     end
+
+    # an instance method for current cart
+
+
+    # def current_cart_of_user
+    #     self.carts.select { |cart| !cart.completed }
+        # ^if comment back in this is the one that was working
+
+        # ^returns a cart instance inside an array, have to use .pluck(:id) to extract from it
+        # debugger
+        # self.carts.where(completed: false)
+        # ^returns same thing as above, but this is better practice
+    # end
 
 
     def password=(password)

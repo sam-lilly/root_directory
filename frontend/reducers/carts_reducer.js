@@ -1,4 +1,4 @@
-import { RECEIVE_CARTS, RECEIVE_CART } from '../actions/address_actions';
+import { RECEIVE_CARTS, RECEIVE_CART } from '../actions/cart_actions';
 
 const cartsReducer = (oldState = {}, action) => {
     Object.freeze(oldState);
@@ -6,9 +6,14 @@ const cartsReducer = (oldState = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_CARTS:
+            // debugger
             return action.carts;
         case RECEIVE_CART:
-            nextState[action.cart.id] = action.cart;
+            // debugger
+            // nextState[action.cart.id] = action.cart;
+            // return nextState;
+            // ^only using this for one
+            return action.cart;
         default:
             return oldState;
     }

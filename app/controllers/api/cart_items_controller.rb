@@ -4,6 +4,10 @@ class Api::CartItemsController < ApplicationController
         current_cart = Cart.select{ |cart| cart.user_id == current_user.id && !cart.completed }
         @cart_items = current_cart.items
 
+        # self.carts.where(completed: false)
+        # move this to models to call
+        # current_user.current_cart
+
         # OR
 
         # @cart_items = CartItem.where(cart_id: current_cart)
@@ -24,6 +28,7 @@ class Api::CartItemsController < ApplicationController
         @cart_item.cart_id = current_cart.id
         if @cart_item.save!
             @cart_items = CartItem.where(cart_id: current_cart)
+            # @cart_items = current_user.current_cart.items
             render :index
         else
             render json: @cart_item.errors.full_messages, status: 422
@@ -48,13 +53,23 @@ class Api::CartItemsController < ApplicationController
         @cart_item.cart_id = current_cart.id
         render :index
     end
-
+''
 
     private
 
     def cart_item_params
         params.require(:cart_item).permit(:product_id, :quantity)
     end
+
+
+    # add another user
+    # keep cart open when not user
+    # bonus
+
+
+    # session state/
+    # have product id state saved and then store product id on clock
+    # to add product upon create new user / login
 
 
 end

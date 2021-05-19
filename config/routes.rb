@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :plants, only: [:index, :show]
     resources :planters, only: [:index, :show]
     resources :accessories, only: [:index, :show]
-    resources :carts, only: [:show, :create]
+    resources :carts, only: [:index, :show, :create, :update]
     resources :cart_items, only: [:index, :create, :update, :destroy]
     resources :orders, only: [:index, :show]
     resources :blogs, only: [:index, :show]

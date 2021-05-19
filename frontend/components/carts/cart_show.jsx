@@ -2,7 +2,13 @@ import React from 'react';
 
 class CartShow extends React.Component {
 
+    constructor(props) {
+        // debugger
+        super(props);
+    }
+
     componentDidMount() {
+        // debugger
         this.props.fetchCart(this.props.match.params.cartId);
     }
 
@@ -10,7 +16,11 @@ class CartShow extends React.Component {
 
         let { cart } = this.props;
 
+        // debugger
+
         if (!cart) return null;
+
+        // debugger
 
         return (
             <div className="cart-show-page">
@@ -18,8 +28,7 @@ class CartShow extends React.Component {
                 <p>do these things work below??</p>
                 <p>{cart.id}</p>
                 <p>{cart.user_id}</p>
-                <p>{cart.completed}</p>
-                <p>{cart.items}</p>
+                {/* <p>{cart.items}</p> */}
                 <p>may have to make items or index page because is items an array?? IDK</p>
             </div>
         )

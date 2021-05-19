@@ -2,7 +2,7 @@ class Api::AddressesController < ApplicationController
 
     def index
         # @addresses = Address.all.select { |address| address.user_id == current_user.id }
-        @addresses = Address.where(user_id: currentuser.id)
+        @addresses = Address.where(user_id: current_user.id)
         render :index
     end
 
@@ -33,6 +33,7 @@ class Api::AddressesController < ApplicationController
         else
             render json: @address.errors.full_messages, status: 422
         end
+
     end
 
     def destroy

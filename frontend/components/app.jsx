@@ -22,6 +22,10 @@ import PlanterShowContainer from './planters/planter_show_container';
   
 import AccountHome from './account/account_home';
 
+import CartShowContainer from './carts/cart_show_container';
+import CartIndexContainer from './carts/cart_index_container';
+
+
 const App = () => (
     <div>
         <header>
@@ -47,9 +51,8 @@ const App = () => (
 
         </header>
         
-        {/* <Switch> */}
+        <Switch>
 
-            <Route exact path="/" component={SplashPage} />
 
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
@@ -67,7 +70,14 @@ const App = () => (
             <Route exact path="/planters" component={PlanterIndexContainer} />
             <Route exact path="/planters/:planterId" component={PlanterShowContainer} />
 
-        {/* </Switch> */}
+            <Route exact path="/cart" component={CartIndexContainer} />
+            
+            {/* <Route exact path="/cart/:cartId" component={CartShowContainer} /> */}
+            {/* ^ this whole route works but I am not using it */}
+
+            <Route path="/" component={SplashPage} />
+            
+        </Switch>
 
         <footer className="footer">
             <p>hiii, im the footer :)</p>

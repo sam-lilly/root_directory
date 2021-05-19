@@ -15,11 +15,12 @@ class Api::OrdersController < ApplicationController
         @order = Order.new(order_params)
         @order.user_id = current_user.id
         @order.cart_id = current_user.cart.id
+        # needs to be current_user.current_cart.id
         # @order.address_id = current_user.
-        if @address.save
+        if @order.save
             render :show
         else
-            render json: @address.errors.full_messages, status: 422
+            render json: @order.errors.full_messages, status: 422
         end
 
     end

@@ -41,13 +41,20 @@ schefflera amate 14 *** DONE
 notes on how i will set up the shopping cart
 
 cart is created for user when they initially create account
-cart has *user_id
+    keeps same cart until boolean changed to completed
+    completed upon checkout
+    then that triggers a new cart being created for them
+cart has *user_id // belongs to user // when looking up look up their cart that is !completed
+
 cart items is what holds all the products (also, from two tables= plants/planters)
-cart_items has *cart_id and *product_id on table
+    cart_items has *cart_id and *product_id on table
+
 when user checks out, creates a new Order.new with order info
     order_total, address_id, cart_id, user_id, delivery_date, delivery_type
-    *select address from your address book, by address_id
+    *select address from your address book, by address_id //
+    *autofill with address(1) then have a button for them to edit / change address
     and if you enter new address then it creates it in address book
+
 then sets shopping cart *completed boolean true
 *will need to change user_has one cart to a has_many
 
