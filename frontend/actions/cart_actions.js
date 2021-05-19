@@ -22,3 +22,8 @@ export const fetchCart = () => (dispatch) => (
     CartApiUtil.fetchCart()
         .then(cart => dispatch(receiveCart(cart)))
 )
+
+export const createCart = () => (dispatch) => (
+    CartApiUtil.createCart()
+        .then(cart => dispatch(receiveCart(cart)))
+)

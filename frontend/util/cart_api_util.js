@@ -11,3 +11,10 @@ export const fetchCart = (cartId) => (
         url: `/api/carts/${cartId}`
     })
 )
+
+export const createCart = () => (
+    $.ajax({
+        method: "POST",
+        url: `/api/carts/`
+    })
+)

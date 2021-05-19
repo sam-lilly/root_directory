@@ -5,6 +5,13 @@ export const fetchCartItems = () => (
     })
 )
 
+export const fetchCartItem = (cartItemId) => (
+    $.ajax({
+        method: "GET",
+        url: `/api/cart_items${cartItemId}`
+    })
+)
+
 export const createCartItem = (cartItem) => (
     $.ajax({
         method: "POST",

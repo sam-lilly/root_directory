@@ -24,6 +24,11 @@ export const fetchCartItems = () => (dispatch) => (
         .then(cartItems => dispatch(receiveCartItems(cartItems)))
 )
 
+export const fetchCartItem = (cartItemId) => (dispatch) => (
+    CartItemApiUtil.fetchCartItem(cartItemId)
+        .then(cartItem => dispatch(receiveCartItems(cartItem)))
+)
+
 export const createCartItem = (cartItem) => (dispatch) => (
     CartItemApiUtil.createCartItem(cartItem)
         .then(cartItem => dispatch(receiveCartItem(cartItem)))

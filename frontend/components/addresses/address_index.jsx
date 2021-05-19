@@ -1,6 +1,6 @@
 import React from 'react';
-import AddressIndexItem from './address_index_item';
 import { Link } from 'react-router-dom';
+import AddressIndexItem from './address_index_item';
 
 class AddressIndex extends React.Component {
 

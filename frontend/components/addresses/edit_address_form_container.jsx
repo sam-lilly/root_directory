@@ -25,6 +25,7 @@ class EditAddressForm extends React.Component {
 
 }
 
+
 const mSTP = (state, ownProps) => ({
     address: state.entities.addresses[ownProps.match.params.addressId],
     formType: "Update Address"
