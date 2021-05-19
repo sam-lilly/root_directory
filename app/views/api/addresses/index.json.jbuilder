@@ -7,5 +7,5 @@ if @addresses
         end
     end
 else
-    return null;
+    return null
 end
