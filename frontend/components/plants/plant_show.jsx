@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 class PlantShow extends React.Component {
 
     constructor(props) {
-        debugger
+        // debugger
         super(props);
         this.state = {
             displayMain: true
@@ -13,7 +13,7 @@ class PlantShow extends React.Component {
     }
 
     componentDidMount() {
-        debugger
+        // debugger
         this.props.fetchPlant(this.props.match.params.plantId);
         this.props.fetchCarts();
         this.props.fetchCartItems();
@@ -21,7 +21,7 @@ class PlantShow extends React.Component {
 
     addItemToCart() {
         debugger
-        this.props.addItemToCart({cart_id: 5, product_id: 1, quantity: 1});
+        this.props.addItemToCart({cart_id: this.props.plant.currentcart, product_id: this.props.plant.id, quantity: 1});
         // this works but need to dynamically add in productId and cartId
         // will keep quantity at 1 for now because there is no button on this one
         // this.props.fetchCartItems();
