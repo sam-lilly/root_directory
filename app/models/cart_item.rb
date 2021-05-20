@@ -16,7 +16,7 @@
 #
 class CartItem < ApplicationRecord
 
-    atrr_accessor :quantity
+    # attr_accessor :quantity
 
     validates :cart_id, :product_id, :quantity, presence: true
 

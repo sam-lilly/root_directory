@@ -30,6 +30,9 @@ class Api::CartsController < ApplicationController
         # debugger
 
         @cart = Cart.create!(user_id: current_user.id)
+        
+        # also need to be creating a new order here!!
+
         if @cart.save
             @cart = current_user.carts.where(completed: false).first
             # debugger

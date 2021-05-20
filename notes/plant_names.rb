@@ -63,5 +63,9 @@ then sets shopping cart *completed boolean true
 
 
 
+ADD create CART item on plant show page and planter show page
+
+onClick = addItemToCart createCartItem(cartItem)
+
 
 

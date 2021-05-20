@@ -4,14 +4,25 @@ import { Link } from 'react-router-dom';
 class PlantShow extends React.Component {
 
     constructor(props) {
+        debugger
         super(props);
         this.state = {
             displayMain: true
         };
+        this.addItemToCart = this.addItemToCart.bind(this);
     }
 
     componentDidMount() {
+        debugger
         this.props.fetchPlant(this.props.match.params.plantId);
+    }
+
+    addItemToCart() {
+        debugger
+        this.props.addItemToCart({cart_id: 5, product_id: 1, quantity: 1});
+        // this works but need to dynamically add in productId and cartId
+        // will keep quantity at 1 for now because there is no button on this one
+        
     }
 
     render () {
@@ -71,7 +82,7 @@ class PlantShow extends React.Component {
 
                         <p className="price">${plant.price.toString()}</p>
                         <Link to="/planters" className="link-planters">ADD A PLANTER</Link>
-                        <button className="add-to-cart"><i className="fas fa-shopping-cart"></i>&nbsp;&nbsp;add to cart</button>
+                        <button onClick={this.addItemToCart} className="add-to-cart"><i className="fas fa-shopping-cart"></i>&nbsp;&nbsp;add to cart</button>
 
                         {/* flex box w two parent containers
                         left side name/images/info on pot */}
