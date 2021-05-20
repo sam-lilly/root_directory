@@ -7,19 +7,23 @@ class CartIndex extends React.Component {
     constructor(props) {
         // debugger
         super(props);
-        // this.state = { newCart: false }
+        // this.state = 
         this.checkoutCart = this.checkoutCart.bind(this);
     }
 
     componentDidMount() {
         // debugger
         this.props.fetchCarts();
+        this.props.fetchCartItems();
+
+        // this.props.cartItems
     }
 
     componentDidUpdate(prevProps) {
-        // debugger
+        debugger
         if (prevProps.cart.id !== this.props.cart.id) {
             this.props.fetchCarts();
+            this.props.fetchCartItems();
         }
     }
 
@@ -31,12 +35,15 @@ class CartIndex extends React.Component {
 
     render () {
 
-        let { cart } = this.props;
+        // let { cart } = this.props;
 
-        // debugger
+        // if (!cart) return null;
 
-        if (!cart) return null;
+        let { items } = this.props;
 
+        if (!items) return null;
+
+        
         // debugger
 
 
@@ -62,34 +69,16 @@ class CartIndex extends React.Component {
                 </div>
 
 
-
-
-
-
-
-
-
-
-                {/* <h1>hey! im the cart index page</h1>
-                <p>do these things work below??</p>
-                <p>{cart.id}</p>
-                <p>{cart.userId}</p> */}
-
-                {/* {   
-                    if (cart.items) {
-                    return ({
-                        cart.items.map(item => <CartIndexItem key={item.id} name={item.name} price={item.price} quantity={item.quantity} />)
-                    })
-                } */}
-
-                { cart.items ? cart.items.map(item => <CartIndexItem key={item.id} name={item.name} price={item.price} photo={item.photoCheckoutUrl}/> ) : <div>nope</div> }
+                {/* { cart.items ? cart.items.map(item => <CartIndexItem key={item.id} name={item.name} price={item.price} photo={item.photoCheckoutUrl}/> ) : <div>nope</div> } */}
                     {/* should make key be cart_item.key */}
-                {/* <p>{mapped}</p> */}
+                    {/* the above worked// what i 've been using before refactor */}
 
+                {/* { cart.items ? cart.items.map(item => <CartIndexItem key={item.id} name={item.name} price={item.price} photo={item.photoCheckoutUrl}/> ) : <div>nope</div> } */}
 
+                {/* { cart.items ? itemsQuant.map(item )} */}
 
-                {/* <p>{cart.items}</p> */}
-                {/* <p>may have to make items or index page because is items an array?? IDK</p> */}
+                {/* { itemsQuant ? itemsQuant.map(item => <CartIndexItem key={item.id} name={item.name} price={item.price} quantity={item.quantity} photo={item.photoCheckoutUrl}/> ) : <div>nope</div> } */}
+                { items.map(item => <CartIndexItem key={item.id} name={item.name} price={item.price} quantity={item.quantity} photo={item.photoCheckoutUrl}/> ) }
 
                 <button onClick={this.checkoutCart}>Checkout</button>
             </div>

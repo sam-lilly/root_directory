@@ -24,7 +24,8 @@ class AddPlantModal extends React.Component {
                     </div>
 
                     <div className="mod-butts">
-                        <button className="continue-shop" onClick={this.onClose}>continue shopping</button>
+                        {/* <button className="continue-shop" onClick={this.onClose}>continue shopping</button> */}
+                        <Link className="continue-shop" to="/plants">continue shopping</Link>
                         <Link className="checkout-shop" to="/cart">checkout</Link>
                     </div>
 

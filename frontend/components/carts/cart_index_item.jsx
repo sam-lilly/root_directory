@@ -5,6 +5,8 @@ class CartIndexItem extends React.Component {
 
     render () {
 
+        if (!this.props.name) return null;
+
         const { name, price, quantity, photo } = this.props;
 
         // debugger
@@ -16,6 +18,7 @@ class CartIndexItem extends React.Component {
                 <p>{name}</p>
                 <p>{price}</p>
                 <p>{quantity}</p>
+                {/* <button onClick={() => removeITEM from CART} */}
             </div>
         )
 

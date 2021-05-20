@@ -13,6 +13,7 @@ class Api::CartItemsController < ApplicationController
         if @cart_item.save!           
             # debugger 
             cart_id = @cart_item.cart_id
+            # debugger
             @cart_items = CartItem.where(cart_id: cart_id)
             render :index
         else
