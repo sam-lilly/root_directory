@@ -31,6 +31,7 @@
         padding: 10px;
         font-size: 13px;
         font-weight: 400;
+        // position: fixed;
 
 
         .dropdown {
@@ -41,6 +42,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            // position: fixed;
+            // margin-bottom: 30px;
         }
     }
 

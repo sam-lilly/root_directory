@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import AddPlantModal from '../modals/add_to_cart';
 
 class PlantShow extends React.Component {
 
@@ -7,9 +8,11 @@ class PlantShow extends React.Component {
         // debugger
         super(props);
         this.state = {
-            displayMain: true
+            displayMain: true,
+            openModal: true
         };
         this.addItemToCart = this.addItemToCart.bind(this);
+        this.openModal = this.openModal.bind(this);
     }
 
     componentDidMount() {
@@ -24,6 +27,18 @@ class PlantShow extends React.Component {
         this.props.addItemToCart({cart_id: this.props.plant.currentcart, product_id: this.props.plant.productId, quantity: 1});
         // will keep quantity at 1 for now because there is no button on this one
         // this.props.fetchCartItems();
+        this.openModal()
+
+    }
+
+    // openModal = (e) => {
+    //     e.preventDefault();
+    //     this.setState({ openModal: !this.state.openModal });
+    // }
+
+    openModal() {
+        // e.preventDefault();
+        this.setState({ openModal: !this.state.openModal });
     }
 
     // componentDidUpdate(prevProps) {
@@ -92,6 +107,7 @@ class PlantShow extends React.Component {
 
                         <p className="price">${plant.price.toString()}</p>
                         <Link to="/planters" className="link-planters">ADD A PLANTER</Link>
+
                         <button onClick={this.addItemToCart} className="add-to-cart"><i className="fas fa-shopping-cart"></i>&nbsp;&nbsp;add to cart</button>
 
                         {/* flex box w two parent containers
@@ -144,6 +160,7 @@ class PlantShow extends React.Component {
                 <img src={plant.photoMainUrl} />
                 <img src={plant.photoHoverUrl} /> */}
 
+                <AddPlantModal open={this.state.openModal} onClose={this.openModal} />
 
 
             </div>

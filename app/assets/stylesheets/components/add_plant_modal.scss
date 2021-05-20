@@ -1,0 +1,86 @@
+.add-plant-modal {
+    font-family: 'Jost', sans-serif;
+    background: rgba(41, 41, 41, 0.646);
+    position: absolute;
+    margin-top: 0;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    position: fixed;
+
+    .modal-inner-box {
+        background: rgb(237, 237, 237);
+        padding: 20px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        // border: 2px solid yellowgreen;
+        // z-index: 1;
+        position: absolute;
+        top: 30vh;
+        left: 50%;
+        margin-left: -225px;
+        // should technically be 200
+        // but it looks off
+        // left: calc(100vh - 30%);
+        // right:
+        position: flex;
+        flex-direction: column;
+        width: 400px;
+
+        .mod-head {
+            align-self: center;
+        }
+
+        .item-added {
+            font-size: 15px;
+            font-weight: 200;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .mod-butts {
+            display: flex;
+            justify-content: center;
+            font-size: 15px;
+            // letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        .continue-shop {
+            border: 1px solid rgb(47, 46, 46);
+            color:rgb(47, 46, 46);
+            padding: 10px 30px;
+            margin: 10px 3px;
+            letter-spacing: 1px;
+            &:hover {
+                background: #ffff;
+                border: 1px solid #ffff;
+            }
+        }
+        .checkout-shop {
+            border: 1px solid rgb(169, 223, 62);
+            padding: 10px 30px;
+            background: rgb(169, 223, 62);
+            color:rgb(47, 46, 46);
+            margin: 10px 3px;
+            letter-spacing: 1px;
+            &:hover {
+                background: rgb(47, 46, 46);
+                border: 1px solid  rgb(47, 46, 46);
+                color: #ffff
+            }
+        }
+
+    }
+
+    .x-in-corner {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        font-size: 30px;
+        font-weight: 200;
+        color:rgb(160, 160, 160);
+    }
+
+}
