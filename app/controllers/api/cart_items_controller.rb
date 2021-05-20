@@ -8,6 +8,7 @@ class Api::CartItemsController < ApplicationController
 
     def create
         @cart_item = CartItem.new(cart_item_params)
+        @cart_item.cart_id = current_user.carts.where(completed: false).first.id
         # debugger
         if @cart_item.save!           
             # debugger 
