@@ -1,14 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import AddPlanterModal from '../modals/add_planter';
 
 class PlanterShow extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            displayMain: true
+            displayMain: true,
+            openModal: true
         };
         this.addItemToCart = this.addItemToCart.bind(this);
+        this.openModal = this.openModal.bind(this);
     }
 
     componentDidMount() {
@@ -20,7 +23,16 @@ class PlanterShow extends React.Component {
         this.props.addItemToCart({cart_id: this.props.planter.currentcart, product_id: this.props.planter.productId, quantity: 1});
         // will keep quantity at 1 for now because there is no button on this one
         // this.props.fetchCartItems();
+        this.openModal()
     }
+
+
+    openModal() {
+        // e.preventDefault();
+        this.setState({ openModal: !this.state.openModal });
+    }
+
+
 
     render () {
 
@@ -130,6 +142,10 @@ class PlanterShow extends React.Component {
             {/* <p>{plant.name}</p>
             <img src={plant.photoMainUrl} />
             <img src={plant.photoHoverUrl} /> */}
+
+
+            <AddPlanterModal open={this.state.openModal} onClose={this.openModal} />
+
 
 
 

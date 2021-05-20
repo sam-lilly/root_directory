@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import AddPlantModal from '../modals/add_to_cart';
+import AddPlantModal from '../modals/add_plant';
 
 class PlantShow extends React.Component {
 
