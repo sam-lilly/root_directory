@@ -21,7 +21,7 @@ json.items @cart.items do |item|
         json.name item.product.planter.name
         json.price item.product.planter.price
         json.quantity item.quantity
-        json.photoCheckoutUrl url_for(item.product.planter.hover)
+        json.photoCheckoutUrl url_for(item.product.planter.photohover)
     end
 end
 
