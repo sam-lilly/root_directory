@@ -37,9 +37,10 @@ class Api::AddressesController < ApplicationController
     end
 
     def destroy
+        debugger
         @address = Address.find(params[:id])
         @address.destroy
-        @addresses = Address.where(user_id: currentuser.id)
+        @addresses = Address.where(user_id: current_user.id)
         # @addresses = Address.all.select { |address| address.user_id == current_user.id }
         render :index
     end
