@@ -1,4 +1,5 @@
 import React from 'react';
+import CartIndexItem from './cart_index_item';
 
 class CartIndex extends React.Component {
 
@@ -35,7 +36,30 @@ class CartIndex extends React.Component {
 
         if (!cart) return null;
 
-        // debugger
+        debugger
+
+
+
+        // if (cart) {
+        //     const mapped = cart.items.map((item, i) => {
+        //         debugger
+        //         return (
+        //             <div>
+        //             <h1>its me betchh</h1>
+        //             <p>{item.name}</p>
+        //             <p>{item.price}</p>
+        //             <p>{item.quantity}</p>
+        //             </div>
+        //         )
+        //     })
+        // }
+
+
+
+
+
+
+
 
         return (
             <div className="cart-show-page">
@@ -43,6 +67,20 @@ class CartIndex extends React.Component {
                 <p>do these things work below??</p>
                 <p>{cart.id}</p>
                 <p>{cart.userId}</p>
+
+                {/* {   
+                    if (cart.items) {
+                    return ({
+                        cart.items.map(item => <CartIndexItem key={item.id} name={item.name} price={item.price} quantity={item.quantity} />)
+                    })
+                } */}
+
+                { cart.items ? cart.items.map(item => <CartIndexItem key={item.id} name={item.name} price={item.price} /> ) : <div>nope</div> }
+                    {/* should make key be cart_item.key */}
+                {/* <p>{mapped}</p> */}
+
+
+
                 {/* <p>{cart.items}</p> */}
                 <p>may have to make items or index page because is items an array?? IDK</p>
 

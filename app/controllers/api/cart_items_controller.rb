@@ -1,8 +1,12 @@
 class Api::CartItemsController < ApplicationController
 
     def index
-        current_cart = Cart.select{ |cart| cart.user_id == current_user.id && !cart.completed }
-        @cart_items = current_cart.items
+        # current_cart = Cart.select{ |cart| cart.user_id == current_user.id && !cart.completed }
+        cart_right_now = current_user.carts.where(completed: false).first
+        debugger
+        @cart_items = cart_right_now.items
+
+
 
         # self.carts.where(completed: false)
         # move this to models to cart

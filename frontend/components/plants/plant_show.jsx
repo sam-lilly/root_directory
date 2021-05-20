@@ -15,6 +15,8 @@ class PlantShow extends React.Component {
     componentDidMount() {
         debugger
         this.props.fetchPlant(this.props.match.params.plantId);
+        this.props.fetchCarts();
+        this.props.fetchCartItems();
     }
 
     addItemToCart() {
@@ -22,8 +24,17 @@ class PlantShow extends React.Component {
         this.props.addItemToCart({cart_id: 5, product_id: 1, quantity: 1});
         // this works but need to dynamically add in productId and cartId
         // will keep quantity at 1 for now because there is no button on this one
-        
+        // this.props.fetchCartItems();
     }
+
+    // componentDidUpdate(prevProps) {
+    //     debugger
+    //     if (prevProps.cart.id !== this.props.cart.id) {
+    //         // this.props.fetchCartItems();
+    //         // this.props.fetchCarts();
+    //     }
+    // }
+
 
     render () {
 
