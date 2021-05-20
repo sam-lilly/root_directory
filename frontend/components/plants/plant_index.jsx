@@ -22,10 +22,10 @@ class PlantIndex extends React.Component {
         return (
             <div className="plant-index">
                 <div className="sections-search">
-                    <h1 className="sections-header">sections search!</h1>
+                    <h1 className="sections-header"> </h1>
 
                     <div className="dropdown">
-                        <p>Light Requirements</p>
+                        <p className="light">Light Requirements</p>
                         <p>+</p>
                     </div>
 

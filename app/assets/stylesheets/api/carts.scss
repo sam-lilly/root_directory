@@ -2,6 +2,137 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.cart-show-page {
-    margin-top: 150px;
+
+.cart-index {
+
+    margin-top: 50px;
+    font-family: 'Jost', sans-serif;
+    background: rgb(237, 237, 237);
+    display: grid;
+    // grid-template-columns: 0.7fr 4fr;
+    grid-template-columns: 0.7fr 4fr;
+    grid-template-rows: 300;
+    // not sure if that will work// hoping it will size with components
+
+    .index-container {
+        grid-row: 1 / 300;
+        // grid-row-start: 1 span;
+        display: flex;
+        flex-direction: column;
+        background: white;
+        padding: 50px 0 0 30px;
+        color: rgb(111, 184, 1);
+        .index {
+            font-size: 34px;
+            text-transform: capitalize;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .linkz {
+            margin-bottom: 10px;
+            font-size: 14px;
+            &:hover {
+                color: rgb(85, 133, 14);
+            } 
+        }
+        .logout-button {
+            background: rgb(152, 232, 32);
+            color: rgb(14, 14, 14);
+            text-align: center;
+            letter-spacing: 1px;
+            margin: 0;
+            margin-top: 20px;
+            padding: 5px 0;
+            width: 90px;
+            &:hover {
+                // background: rgb(111, 184, 1);
+                background: rgb(47, 46, 46);
+                color: #ffff
+            }
+        }
+
+    }
+
+    .greeting-header {
+        grid-row: 1;
+        grid-column: 2 / 3;
+        margin: 50px 100px 40px 80px;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        .greeting {
+            font-size: 35px;
+            font-weight: 600;
+            text-transform: capitalize;
+            margin-bottom: 10px;
+        }
+        .new-address {
+            background: rgb(152, 232, 32);
+            color: rgb(14, 14, 14);
+            text-align: center;
+            letter-spacing: 1px;
+            margin: 0;
+            margin-top: 20px;
+            padding: 10px 0;
+            width: 200px;
+            &:hover {
+                background: rgb(47, 46, 46);
+                color: #ffff
+            }
+        }
+    }
+
+    .cart-index-items  {
+        margin: 30px 100px 40px 80px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .cart-photo {
+        width: 250px;
+    }
+
+    // .address-index-boxes {
+    //     // -ms-grid-row-span: 2;
+    //     margin: 30px 100px 40px 80px;
+    //     display: flex;
+    //     justify-content: space-between;
+    //     align-items: flex-start;
+
+    //     .address-title {
+    //         font-weight: 400;
+    //         font-size: 16px;
+    //         margin-bottom: 15px;
+    //     }
+
+    //     .address-items {
+    //         font-size: 14px;
+    //         font-weight: 300;
+    //         margin-bottom: 10px;
+    //         p {
+    //             margin-bottom: 10px;
+    //         }
+    //     }
+
+    //     .edit-and-delete-container {
+    //         font-size: 14px;
+    //         font-weight: 400;
+    //         margin-bottom: 5px;
+    //         .edit-address {
+    //             padding: 10px 15px 10px 7px;
+    //             &:hover {
+    //                 color: rgb(111, 184, 1);
+    //             }
+    //         }
+    //         .delete-address {
+    //             padding: 10px 10px 0px 7px;
+    //             &:hover {
+    //                 color: rgb(111, 184, 1);
+    //             }
+    //         }
+    //     }
+    // }
+
+
 }

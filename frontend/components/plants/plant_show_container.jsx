@@ -11,7 +11,7 @@ const mSTP = (state, ownProps) => {
 }
 
 const mDTP = (dispatch) => {
-    debugger
+    // debugger
     return ({
     fetchPlant: (plantId) => dispatch(fetchPlant(plantId)), 
     addItemToCart: (cartItem) => dispatch(createCartItem(cartItem)),
@@ -19,5 +19,6 @@ const mDTP = (dispatch) => {
     fetchCarts: () => dispatch(fetchCarts())
     })
 }
+
 
 export default connect (mSTP, mDTP)(PlantShow);

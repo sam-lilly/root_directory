@@ -11,14 +11,17 @@ json.items @cart.items do |item|
         json.name item.product.plant.name
         json.price item.product.plant.price
         json.quantity item.quantity
-        json.photoMainUrl url_for(item.product.plant.photomain)
-    
-    else # item.product.category == "product"
+        json.photoCheckoutUrl url_for(item.product.plant.photomain)
+        
+        # debugger
+
+    elsif # item.product.category == "product"
+        # debugger
         json.id item.id
         json.name item.product.planter.name
         json.price item.product.planter.price
         json.quantity item.quantity
-        json.photoMainUrl url_for(item.product.planter.photomain)
+        json.photoCheckoutUrl url_for(item.product.planter.hover)
     end
 end
 

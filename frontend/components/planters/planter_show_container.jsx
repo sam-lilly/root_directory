@@ -1,5 +1,7 @@
 import { connect } from 'react-redux';
 import { fetchPlanter } from '../../actions/planter_actions';
+import { createCartItem, fetchCartItems } from '../../actions/cart_items_actions';
+import { fetchCarts } from '../../actions/cart_actions';
 import PlanterShow from './planter_show';
 
 const mSTP = (state, ownProps) => {
@@ -9,7 +11,11 @@ const mSTP = (state, ownProps) => {
 }
 
 const mDTP = (dispatch) => ({
-    fetchPlanter: (planterId) => dispatch(fetchPlanter(planterId)) 
+    fetchPlanter: (planterId) => dispatch(fetchPlanter(planterId)), 
+    addItemToCart: (cartItem) => dispatch(createCartItem(cartItem)),
+    fetchCartItems: () => dispatch(fetchCartItems()),
+    fetchCarts: () => dispatch(fetchCarts())
+
 })
 
 export default connect (mSTP, mDTP)(PlanterShow);

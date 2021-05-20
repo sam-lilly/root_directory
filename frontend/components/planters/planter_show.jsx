@@ -8,10 +8,18 @@ class PlanterShow extends React.Component {
         this.state = {
             displayMain: true
         };
+        this.addItemToCart = this.addItemToCart.bind(this);
     }
 
     componentDidMount() {
         this.props.fetchPlanter(this.props.match.params.planterId);
+    }
+
+    addItemToCart() {
+        // debugger
+        this.props.addItemToCart({cart_id: this.props.planter.currentcart, product_id: this.props.planter.productId, quantity: 1});
+        // will keep quantity at 1 for now because there is no button on this one
+        // this.props.fetchCartItems();
     }
 
     render () {
@@ -71,7 +79,7 @@ class PlanterShow extends React.Component {
 
                     <p className="price">${planter.price.toString()}</p>
                     <Link to="/plants" className="link-planters">ADD A PLANT</Link>
-                    <button className="add-to-cart"><i className="fas fa-shopping-cart"></i>&nbsp;&nbsp;add to cart</button>
+                    <button onClick={this.addItemToCart} className="add-to-cart"><i className="fas fa-shopping-cart"></i>&nbsp;&nbsp;add to cart</button>
 
                     {/* flex box w two parent containers
                     left side name/images/info on pot */}

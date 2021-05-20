@@ -52,9 +52,9 @@ class Api::CartsController < ApplicationController
 
     # private
 
-    # def cart_params
-    #     params.require(:cart).permit(:completed)
-    # end
+    def cart_params
+        params.require(:cart).permit(:completed)
+    end
 
 
 end

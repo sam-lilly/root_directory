@@ -24,10 +24,10 @@ class PlanterIndex extends React.Component {
 
             <div className="planter-index">
             <div className="sections-search">
-                <h1 className="sections-header">sections search!</h1>
+                <h1 className="sections-header"> </h1>
 
                 <div className="dropdown">
-                    <p>Size</p>
+                    <p className="size">Size</p>
                     <p>+</p>
                 </div>
 

@@ -5,13 +5,14 @@ class CartIndexItem extends React.Component {
 
     render () {
 
-        const { name, price, quantity } = this.props;
+        const { name, price, quantity, photo } = this.props;
 
-        debugger
+        // debugger
 
         return (
-            <div>
-                <h1>its me betchh</h1>
+            <div className="cart-index-items">
+                {/* <h1>its me, the item in your cart</h1> */}
+                <img className="cart-photo" src={photo}></img>
                 <p>{name}</p>
                 <p>{price}</p>
                 <p>{quantity}</p>

@@ -15,15 +15,23 @@ class Product < ApplicationRecord
 
     validates :category, inclusion: { in: CATEGORIES }
 
-    has_one :plant,
-        primary_key: :id,
-        foreign_key: :product_id,
-        class_name: :Plant
+    # attr_reader :category
 
-    has_one :planter,
-        primary_key: :id,
-        foreign_key: :product_id,
-        class_name: :Planter
+    # if category == "plant"
+        has_one :plant,
+            primary_key: :id,
+            foreign_key: :product_id,
+            class_name: :Plant
+    # else 
+        has_one :planter,
+            primary_key: :id,
+            foreign_key: :product_id,
+            class_name: :Planter
+    # end
+
+    # has_one :plant, -> {where category: "plant"}, class_name: :Plant
+    # has_one :planter, -> {where category: "planter"}, class_name: :Planter
+
 
 
 end

@@ -10,3 +10,5 @@ json.planter do
         json.videoUrl url_for(@planter.video)
     end
 end
+json.userid current_user.id
+json.currentcart current_user.carts.where(completed: false).first.id
