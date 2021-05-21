@@ -82,6 +82,8 @@ const App = () => (
         <footer className="footer">
             {/* <p>hiii, im the footer :)</p>
             <p>cool stuff will go here</p> */}
+
+
             <div className="lil-icon">
                 <i className="fab fa-github"></i>
                 {/* <i className="fab fa-linkedin"></i> */}

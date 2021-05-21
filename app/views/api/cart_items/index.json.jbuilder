@@ -34,7 +34,7 @@ if @cart_items
                 json.inches item.product.plant.inches
                 json.photoCheckoutUrl url_for(item.product.plant.photomain)
             elsif # item.product.category == "product"
-                price += (item.product.planter.price * item.quantity)
+                price_count += (item.product.planter.price * item.quantity)
                 json.id item.id
                 json.name item.product.planter.name
                 json.price item.product.planter.price
