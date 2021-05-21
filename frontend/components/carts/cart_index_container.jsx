@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchCarts, createCart } from '../../actions/cart_actions';
-import { fetchCartItems } from '../../actions/cart_items_actions';
+import { fetchCartItems, updateCartItem, deleteCartItem } from '../../actions/cart_items_actions';
 import CartIndex from './cart_index'
 
 
@@ -18,8 +18,9 @@ const mDTP = (dispatch) => {
     return ({
         fetchCarts: () => dispatch(fetchCarts()),
         createCart: () => dispatch(createCart()),
-        fetchCartItems: () => dispatch(fetchCartItems())
-        // fetchCart: (cartId) => dispatch(fetchCart(cartId))
+        fetchCartItems: () => dispatch(fetchCartItems()),
+        updateCartItem: (cartItem) => dispatch(updateCartItem(cartItem)),
+        deleteCartItem: (cartItemId) => dispatch(deleteCartItem(cartItemId))
     })
 }
 

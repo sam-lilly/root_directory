@@ -3,13 +3,23 @@ import { Link } from 'react-router-dom';
 
 class CartIndexItem extends React.Component {
 
+    constructor(props) {
+        super(props);
+
+    }
+
+    // removeItem() {
+    //     this.props.deleteCartItem({cartItem: {id: 305} })
+    // }
+
+
     render () {
 
         if (!this.props.name) return null;
 
-        const { name, price, quantity, photo } = this.props;
+        const { cartItemId, name, price, quantity, photo, updateCartItem, deleteCartItem } = this.props;
 
-        // debugger
+        debugger
 
         return (
             <div className="cart-index-items">
@@ -18,7 +28,7 @@ class CartIndexItem extends React.Component {
                 <p>{name}</p>
                 <p>{price}</p>
                 <p>{quantity}</p>
-                {/* <button onClick={() => removeITEM from CART} */}
+                <button className="delete-item" onClick={() => deleteCartItem(cartItemId)}>Remove Item</button>
             </div>
         )
 

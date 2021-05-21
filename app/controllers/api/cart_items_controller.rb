@@ -34,10 +34,18 @@ class Api::CartItemsController < ApplicationController
     end
 
     def destroy
-        @cart_item = CartItem.find(params[:id])
-        @cart_item.destroy
-        current_cart = Cart.select{ |cart| cart.user_id == current_user.id && !cart.completed }
-        @cart_item.cart_id = current_cart.id
+        # debugger
+        cart_item = CartItem.find(params[:id])
+        # debugger
+        cart_item.destroy
+        # debugger
+
+        # current_cart = Cart.select{ |cart| cart.user_id == current_user.id && !cart.completed }
+        # @cart_item.cart_id = current_cart.id
+        # ^errors cannot find .id of undefined
+
+        current_cart_id = current_user.carts.where(completed: false).first.id
+        @cart_items = CartItem.where(cart_id: current_cart_id)
         render :index
     end
 
@@ -47,6 +55,7 @@ class Api::CartItemsController < ApplicationController
     def cart_item_params
         # debugger
         params.require(:cartItem).permit(:cart_id, :product_id, :quantity)
+        # params.require(:cartItem).permit(:id, :cart_id, :product_id, :quantity)
     end
 
 

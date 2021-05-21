@@ -39,12 +39,12 @@ class CartIndex extends React.Component {
 
         // if (!cart) return null;
 
-        let { items } = this.props;
+        let { items, updateCartItem, deleteCartItem } = this.props;
 
         if (!items) return null;
 
         
-        // debugger
+        debugger
 
 
         return (
@@ -78,7 +78,16 @@ class CartIndex extends React.Component {
                 {/* { cart.items ? itemsQuant.map(item )} */}
 
                 {/* { itemsQuant ? itemsQuant.map(item => <CartIndexItem key={item.id} name={item.name} price={item.price} quantity={item.quantity} photo={item.photoCheckoutUrl}/> ) : <div>nope</div> } */}
-                { items.map(item => <CartIndexItem key={item.id} name={item.name} price={item.price} quantity={item.quantity} photo={item.photoCheckoutUrl}/> ) }
+                { items.map(item => <CartIndexItem  
+                                        key={item.id}
+                                        cartItemId={item.id}
+                                        name={item.name}
+                                        price={item.price}
+                                        quantity={item.quantity}
+                                        photo={item.photoCheckoutUrl}
+                                        updateCartItem={updateCartItem}
+                                        deleteCartItem={deleteCartItem}
+                                    /> ) }
 
                 <button onClick={this.checkoutCart}>Checkout</button>
             </div>
