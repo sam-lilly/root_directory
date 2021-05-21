@@ -21,7 +21,7 @@ class AddressIndex extends React.Component {
                     <h1 className="index">Index</h1>
                     <Link className="linkz" to="/account">MY ACCOUNT</Link>
                     <Link className="linkz" to="/addresses">ADDRESS BOOK</Link>
-                    <Link className="linkz" to="/orders">MY ORDERS</Link>
+                    <Link className="linkz" to="/cart">MY ORDERS</Link>
                     <Link className="logout-button" to="/" onClick={this.props.logout}>LOGOUT</Link>
                 </div>
 

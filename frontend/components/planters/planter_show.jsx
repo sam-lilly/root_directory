@@ -52,8 +52,14 @@ class PlanterShow extends React.Component {
             <div className="planter-show">
 
             <div className="local-delivery">
-                <i className="fas fa-building" id="building">&nbsp;&nbsp;</i>
-                <p>NYC Area Local Delivery Only</p>
+
+                {/* <i className="fas fa-building" id="building">&nbsp;&nbsp;</i>
+                <p>NYC Area Local Delivery Only</p> */}
+                <i class="fas fa-shipping-fast" id="building">&nbsp;&nbsp;</i>
+                {/* <i className="fas fa-building" id="building">&nbsp;&nbsp;</i> */}
+                <p>Ships NationWide. Free Shipping over $49</p>
+
+
                 {/* <i className="fas fa-truck"></i> */}
                 {/* truck delivery car */}
                 {/* <i className="far fa-building"></i> */}
@@ -128,6 +134,9 @@ class PlanterShow extends React.Component {
 
 
                 <div className="plant-info">
+                    {/* {
+                        this.props.videoUrl ? <video src={this.props.videoUrl} /> : <p>naw</p>
+                    } */}
                     <div className="category-container">
                         <p>OVERVIEW</p>
                         <p>CARE</p>
