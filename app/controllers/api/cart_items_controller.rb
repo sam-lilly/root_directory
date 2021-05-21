@@ -34,17 +34,12 @@ class Api::CartItemsController < ApplicationController
         @cart_item = CartItem.find(params[:cartItem][:cart_item_id])
         # debugger
         if @cart_item.update(quantity: params[:cartItem][:quantity])
-
-        # if @cart_item.update(cart_item_params)
             # debugger
-            # current_cart = Cart.select{ |cart| cart.user_id == current_user.id && !cart.completed }
-            # @cart_item.cart_id = current_cart.id
-            # render :index
             current_cart_id = current_user.carts.where(completed: false).first.id
             @cart_items = CartItem.where(cart_id: current_cart_id)
+            # debugger
             render :index
         else
-            # debugger
             render json: @cart_item.errors.full_messages, status: 422
         end
     end
@@ -54,6 +49,7 @@ class Api::CartItemsController < ApplicationController
         cart_item.destroy
         current_cart_id = current_user.carts.where(completed: false).first.id
         @cart_items = CartItem.where(cart_id: current_cart_id)
+        debugger
         render :index
     end
 
@@ -61,7 +57,7 @@ class Api::CartItemsController < ApplicationController
     private
 
     def cart_item_params
-        # debugger
+        debugger
         params.require(:cartItem).permit(:cart_id, :product_id, :quantity, :cart_item_id)
         # params.require(:cartItem).permit(:id, :cart_id, :product_id, :quantity)
     end

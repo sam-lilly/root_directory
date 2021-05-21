@@ -28,8 +28,9 @@ if @cart_items
     unique_array.each do |item|
         # debugger
         json.set! item.id do
-            json.extract! item, :id, :cart_id, :product_id
-            json.quantity quant_count[item.product_id]
+            # debugger
+            json.extract! item, :id, :cart_id, :product_id, :quantity
+            # json.quantity quant_count[item.product_id]
             if item.product.category == "plant"
                 # debugger
                 json.id item.id
