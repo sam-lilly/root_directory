@@ -1,18 +1,34 @@
 import React from 'react';
 import CartIndexItem from './cart_index_item';
 import { Link } from 'react-router-dom';
+import CheckoutModal from '../modals/checkout_modal';
 
 class CartIndex extends React.Component {
 
     constructor(props) {
         super(props);
-        // this.state = 
+        debugger
+        // if  (!this.props.carts) {
+        //     this.state = { newItem: true,
+        //                     newPrice: this.props.carts.totalPrice
+        //                 }
+        //     }
+        this.state = { newItem: true,
+                        newPrice: 1,
+                        openModal: true }
+        // this.props.carts ? this.state = { newItem: true } : this.state = { newItem: true, newPrice: this.props.totalPrice };
+
         this.checkoutCart = this.checkoutCart.bind(this);
+        this.reRenderPriceUp = this.reRenderPriceUp.bind(this);
+        this.reRenderPriceDown = this.reRenderPriceDown.bind(this);
+        this.openModal = this.openModal.bind(this);
+
     }
 
     componentDidMount() {
         this.props.fetchCarts();
         this.props.fetchCartItems();
+        this.setState({ newPrice: this.props.totalPrice })
 
         // this.props.cartItems
     }
@@ -25,8 +41,33 @@ class CartIndex extends React.Component {
     }
 
 
+    reRenderPriceUp(addedPrice) {
+        debugger
+        if (this.state.newItem) {
+            this.setState({ newItem: false })
+        } else {
+            this.setState({ newItem: true });
+        }
+        debugger
+        this.setState({ newPrice: parseInt(this.state.newPrice) + addedPrice})
+    }
+
+    reRenderPriceDown(addedPrice) {
+        debugger
+        if (this.state.newItem) {
+            this.setState({ newItem: false })
+        } else {
+            this.setState({ newItem: true });
+        }
+        this.setState({ newPrice: 0 })
+    }
+
+
+
     checkoutCart() {
         this.props.createCart()
+        this.openModal()
+
         // this.props.createCart({
         //     delivery_date: "5/22/2021",
         //     delivery_type: "delivery",
@@ -48,6 +89,12 @@ class CartIndex extends React.Component {
         // user_id: this.props.carts.userId
     }
 
+    openModal() {
+        // e.preventDefault();
+        this.setState({ openModal: !this.state.openModal });
+    }
+
+
     render () {
 
         // let { cart } = this.props;
@@ -58,6 +105,7 @@ class CartIndex extends React.Component {
 
         if (!items) return null;
 
+        debugger
 
         return (
             <div className="cart-index">
@@ -76,7 +124,7 @@ class CartIndex extends React.Component {
                 <div className="greeting-header">
                     <h1 className="greeting">Shopping Cart</h1>
                     <div>
-                    <p className="total-word">SUBTOTAL: <i className="total-price">${this.props.cart.totalPrice}</i></p>
+                    <p className="total-word">SUBTOTAL: <i className="total-price">${this.props.renderPrice}</i></p>
                     {/* <i className="total-price">{this.props.cart.totalPrice}</i> */}
                     {/* <Link className="new-address" to="/plants">Add More Items</Link> */}
                     </div>
@@ -97,11 +145,18 @@ class CartIndex extends React.Component {
                                         fetchCartItem={fetchCartItem}
                                         updateCartItem={updateCartItem}
                                         deleteCartItem={deleteCartItem}
+                                        // reRenderPrice={this.reRenderPrice}
+                                        reRenderPriceUp={this.reRenderPriceUp}
+                                        reRenderPriceDown={this.reRenderPriceDown}
                                     /> ) }
                 <div className="checkout-container">
                     <Link className="continue-shop" to="/plants">Need More Plants</Link>
                     <button className="checkout" onClick={this.checkoutCart}>Checkout</button>
                 </div>
+
+                    
+                <CheckoutModal open={this.state.openModal} onClose={this.openModal} />
+
             </div>
         )
 

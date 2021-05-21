@@ -12,6 +12,10 @@ class CartIndexItem extends React.Component {
         // this.deleteCartItem = this.deleteCartItem.bind(this);
         this.handleCountPlus = this.handleCountPlus.bind(this);
         this.handleCountMinus = this.handleCountMinus.bind(this);
+        // this.reRenderPrice = this.props.reRenderPrice.bind(this);
+        this.reRenderPriceUp = this.props.reRenderPriceUp.bind(this);
+        this.reRenderPriceDown = this.props.reRenderPriceDown.bind(this);
+        this.removeCartItem = this.removeCartItem.bind(this);
     }
 
 
@@ -19,10 +23,11 @@ class CartIndexItem extends React.Component {
     //     this.props.fetchCartItem(this.props.cartItemId)
     // }
 
-    // componentDidUpdate() {
-    //     if (this.state.changed) {
-    //         this.props.fetchCartItem(this.props.cartItemId)
-    //         this.setState({ changed: false })
+    // componentDidUpdate(prevProps) {
+
+    //     debugger
+    //     if (prevProps.quantity !== this.props.quantity) {
+    //      this.props.reRenderPriceUp(this.props.price);
     //     }
     // }
 
@@ -50,17 +55,26 @@ class CartIndexItem extends React.Component {
         let count = this.props.quantity + 1;
         this.props.updateCartItem({cart_item_id: this.props.cartItemId, cart_id: this.props.cartId, product_id: this.props.productId, quantity: count })
             // .then(this.setState({ changed: true }))
+        // this.reRenderPriceUp(this.props.price);
     }
 
     handleCountMinus() {
         if (this.props.quantity === 1) {
             this.props.deleteCartItem(this.props.cartItemId)
+                // .then(this.reRenderPriceDown(this.props.price));
+            
         } else {
             let count = this.props.quantity - 1;
             this.props.updateCartItem({cart_item_id: this.props.cartItemId, cart_id: this.props.cartId, product_id: this.props.productId, quantity: count })
         }
+        // this.reRenderPriceDown(this.props.price);
     }
 
+
+    removeCartItem() {
+        this.props.deleteCartItem(this.props.cartItemId);
+        this.reRenderPriceDown(this.props.price);
+    }
 
 
     render () {
@@ -93,7 +107,9 @@ class CartIndexItem extends React.Component {
                     <button className="change-butt" onClick={this.handleCountPlus}>+ 1</button>
                 </div>
                 {/* <button className="delete-item" onClick={() => deleteCartItem(cartItemId)}>Remove Item</button> */}
-                <button className="delete-item" onClick={() => deleteCartItem(cartItemId)}>REMOVE ITEM</button>
+                {/* <button className="delete-item" onClick={() => deleteCartItem(cartItemId)}>REMOVE ITEM</button> */}
+                <button className="delete-item" onClick={this.removeCartItem}>REMOVE ITEM</button>
+
             </div>
         )
 

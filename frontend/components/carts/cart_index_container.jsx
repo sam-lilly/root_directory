@@ -5,8 +5,10 @@ import CartIndex from './cart_index'
 
 
 const mSTP = (state) => {
+    debugger
     return ({
         cart: state.entities.carts,
+        renderPrice: state.entities.cartItems.totalPrice,
         // cart: Object.values[state.entities.carts]
         items: Object.values(state.entities.cartItems)
     })
