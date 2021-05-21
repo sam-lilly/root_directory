@@ -17,6 +17,8 @@ Planter.destroy_all
 # Users
 
 demoUser = User.create!(email: "plantlyfe@gmail.com", password: "password", first_name: "Forrest", last_name: "Willow" )
+demoUserCart = Cart.create!(user_id: demoUser.id)
+
 
 demoAddress1 = Address.create!(
     user_id: demoUser.id,

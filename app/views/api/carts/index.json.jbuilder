@@ -6,17 +6,14 @@ json.extract! @cart, :id, :user_id, :items
 
 json.items @cart.items do |item|
     if item.product.category == "plant"
-        # debugger
         json.id item.id
         json.name item.product.plant.name
         json.price item.product.plant.price
         json.quantity item.quantity
         json.photoCheckoutUrl url_for(item.product.plant.photomain)
         
-        # debugger
 
     elsif # item.product.category == "product"
-        # debugger
         json.id item.id
         json.name item.product.planter.name
         json.price item.product.planter.price
