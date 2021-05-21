@@ -11,7 +11,6 @@ const mSTP = (state, ownProps) => {
 }
 
 const mDTP = (dispatch) => {
-    // debugger
     return ({
     fetchPlant: (plantId) => dispatch(fetchPlant(plantId)), 
     addItemToCart: (cartItem) => dispatch(createCartItem(cartItem)),

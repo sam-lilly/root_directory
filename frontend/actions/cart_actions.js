@@ -4,7 +4,7 @@ export const RECEIVE_CARTS = "RECEIVE_CARTS"
 export const RECEIVE_CART = "RECEIVE_CART"
 
 const receiveCarts = (carts) => {
-    // debugger
+
     return ({
         type: RECEIVE_CARTS,
         carts
@@ -12,7 +12,7 @@ const receiveCarts = (carts) => {
 }
 
 const receiveCart = (cart) => {
-    // debugger
+
     return ({
         type: RECEIVE_CART,
         cart

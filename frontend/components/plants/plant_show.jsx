@@ -5,7 +5,6 @@ import AddPlantModal from '../modals/add_plant';
 class PlantShow extends React.Component {
 
     constructor(props) {
-        // debugger
         super(props);
         this.state = {
             displayMain: true,
@@ -16,14 +15,12 @@ class PlantShow extends React.Component {
     }
 
     componentDidMount() {
-        // debugger
         this.props.fetchPlant(this.props.match.params.plantId);
         this.props.fetchCarts();
         this.props.fetchCartItems();
     }
 
     addItemToCart() {
-        // debugger
         this.props.addItemToCart({cart_id: this.props.plant.currentcart, product_id: this.props.plant.productId, quantity: 1});
         // will keep quantity at 1 for now because there is no button on this one
         // this.props.fetchCartItems();
@@ -42,7 +39,6 @@ class PlantShow extends React.Component {
     }
 
     // componentDidUpdate(prevProps) {
-    //     debugger
     //     if (prevProps.cart.id !== this.props.cart.id) {
     //         // this.props.fetchCartItems();
     //         // this.props.fetchCarts();

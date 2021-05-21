@@ -235,7 +235,7 @@ fiddle_leaf = Plant.create!(
     plant_db_id: 5,
     name: "Fiddle Leaf Fig Tree",
     inches: 14,
-    price: 600,
+    price: 250,
     plant_type: "test",
     size: "large",
     light: "high",

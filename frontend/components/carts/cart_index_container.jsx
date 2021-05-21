@@ -5,7 +5,6 @@ import CartIndex from './cart_index'
 
 
 const mSTP = (state) => {
-    debugger
     return ({
         cart: state.entities.carts,
         // cart: Object.values[state.entities.carts]
@@ -14,7 +13,6 @@ const mSTP = (state) => {
 }
 
 const mDTP = (dispatch) => {
-    // debugger
     return ({
         fetchCarts: () => dispatch(fetchCarts()),
         createCart: () => dispatch(createCart()),

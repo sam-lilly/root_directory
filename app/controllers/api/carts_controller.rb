@@ -1,10 +1,8 @@
 class Api::CartsController < ApplicationController
 
     def index
-        # debugger
         # @cart = current_user.current_cart
         @cart = current_user.carts.where(completed: false).first
-        # debugger
         render :index
     end
 
@@ -19,23 +17,21 @@ class Api::CartsController < ApplicationController
     def create
 
         # creating new cart and checking out current cart
-        # debugger
         # current_cart = current_user.carts.where(completed: false)
-        # debugger
         # current_cart.checkout_cart
 
         # Cart.where(id: self.id).update_all("completed = true")
         Cart.where(user_id: current_user.id).where(completed: false).update_all("completed = true")
 
         # debugger
-
         @cart = Cart.create!(user_id: current_user.id)
+        # debugger
+        # Order.create!
         
         # also need to be creating a new order here!!
 
         if @cart.save
             @cart = current_user.carts.where(completed: false).first
-            # debugger
             render :index
         else
             render json: @cart.errors.full_messages, status: 422
@@ -50,7 +46,12 @@ class Api::CartsController < ApplicationController
         # Cart.where(id: 10).update_all("completed = true")
     end
 
-    # private
+    private
+
+    # def cart_params
+    #     debugger
+    #     params.require(:cart).permit(:delivery_date, :delivery_type, :order_total, :address_id, :cart_id, :user_id)
+    # end
 
     def cart_params
         params.require(:cart).permit(:completed)

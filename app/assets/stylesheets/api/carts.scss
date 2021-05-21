@@ -18,6 +18,7 @@
         grid-row: 1 / 300;
         // grid-row-start: 1 span;
         display: flex;
+        // align-items: center;
         flex-direction: column;
         background: white;
         padding: 50px 0 0 30px;
@@ -60,6 +61,15 @@
         display: flex;
         justify-content: space-between;
         align-items: baseline;
+        .total-word {
+            font-size: 14px;
+            font-weight: 200;
+        }
+        .total-price {
+            font-size: 18px;
+            font-weight: 400;
+            color:rgb(129, 198, 26);
+        }
         .greeting {
             font-size: 35px;
             font-weight: 600;
@@ -82,15 +92,49 @@
         }
     }
 
+    .delete-item {
+        background: rgb(152, 232, 32);
+        color: rgb(14, 14, 14);
+        text-align: center;
+        letter-spacing: 1px;
+        margin: 0;
+        // margin-top: 20px;
+        padding: 10px 0;
+        width: 200px;
+        &:hover {
+            background: rgb(47, 46, 46);
+            color: #ffff
+        }
+    }
+
     .cart-index-items  {
         margin: 30px 100px 40px 80px;
         display: flex;
         justify-content: space-between;
-        align-items: flex-start;
+        align-items: center;
+        font-size: 14px;
+        font-weight: 200px;
+        .item-name {
+            font-size: 16px;
+            font-weight: 300;
+        }
+        .price {
+            font-size: 14px;
+            font-weight: 200;
+        }
     }
 
     .cart-photo {
-        width: 250px;
+        width: 150px;
+    }
+    .quantity-div {
+        display: flex;
+        align-items: center;
+        .change-butt {
+            padding: 5px;
+            background: #ffff;
+            margin: 10px;
+        }
     }
 
     // .address-index-boxes {
@@ -135,4 +179,45 @@
     // }
 
 
+}
+
+
+.checkout-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 100px;
+    margin-bottom: 350px;
+
+    .continue-shop {
+        // display: flex;
+        background: #ffff;
+        border: 1px solid #ffff;
+        color: rgb(14, 14, 14);
+        text-align: center;
+        letter-spacing: 1px;
+        margin-left: 350px;
+        margin-right: 30px;
+        padding: 10px 0;
+        width: 200px;
+        &:hover {
+            background: rgb(255, 255, 255);
+            border: 1px solid rgb(14, 14, 14)
+        }
+    }
+
+    .checkout {
+        // display: flex;
+        background: rgb(152, 232, 32);
+        color: rgb(14, 14, 14);
+        text-align: center;
+        letter-spacing: 1px;
+        margin: 0;
+        // margin-top: 20px;
+        padding: 10px 0;
+        width: 200px;
+        &:hover {
+            background: rgb(47, 46, 46);
+            color: #ffff
+        }
+    }
 }

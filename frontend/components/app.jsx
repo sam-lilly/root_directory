@@ -80,8 +80,14 @@ const App = () => (
         </Switch>
 
         <footer className="footer">
-            <p>hiii, im the footer :)</p>
-            <p>cool stuff will go here</p>
+            {/* <p>hiii, im the footer :)</p>
+            <p>cool stuff will go here</p> */}
+            <div className="lil-icon">
+                <i className="fab fa-github"></i>
+                {/* <i className="fab fa-linkedin"></i> */}
+                <i className="fab fa-linkedin-in"></i>
+                <i className="fab fa-angellist"></i>
+            </div>
         </footer>
 
     </div>

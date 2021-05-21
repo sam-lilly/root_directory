@@ -5,14 +5,12 @@ import { Link } from 'react-router-dom';
 class CartIndex extends React.Component {
 
     constructor(props) {
-        // debugger
         super(props);
         // this.state = 
         this.checkoutCart = this.checkoutCart.bind(this);
     }
 
     componentDidMount() {
-        // debugger
         this.props.fetchCarts();
         this.props.fetchCartItems();
 
@@ -20,7 +18,6 @@ class CartIndex extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        debugger
         if (prevProps.cart.id !== this.props.cart.id) {
             this.props.fetchCarts();
             this.props.fetchCartItems();
@@ -29,8 +26,26 @@ class CartIndex extends React.Component {
 
 
     checkoutCart() {
-        this.props.createCart();
+        this.props.createCart()
+        // this.props.createCart({
+        //     delivery_date: "5/22/2021",
+        //     delivery_type: "delivery",
+        //     order_total: this.props.cart.totalPrice,
+        //     address_id: this.props.cart.addressId,
+        //     cart_id: this.props.cart.id,
+        //     user_id: this.props.cart.userId,
+        // });
+
+        // add in info here // current_user.address.first.id
+
         // this.setState({ newCart: true });
+    
+        // delivery_date: "5/22/2021"
+        // delivery_type: "delivery"
+        // order_total: this.props.cart.totalPrice
+        // address_id: this.props.cart.addressId
+        // cart_id: this.props.cart.id     
+        // user_id: this.props.carts.userId
     }
 
     render () {
@@ -42,9 +57,6 @@ class CartIndex extends React.Component {
         let { items, updateCartItem, deleteCartItem, fetchCartItem } = this.props;
 
         if (!items) return null;
-
-        
-        debugger
 
 
         return (
@@ -63,7 +75,11 @@ class CartIndex extends React.Component {
 
                 <div className="greeting-header">
                     <h1 className="greeting">Shopping Cart</h1>
-                    <Link className="new-address" to="/addresses/new">Add New Address</Link>
+                    <div>
+                    <p className="total-word">SUBTOTAL: <i className="total-price">${this.props.cart.totalPrice}</i></p>
+                    {/* <i className="total-price">{this.props.cart.totalPrice}</i> */}
+                    {/* <Link className="new-address" to="/plants">Add More Items</Link> */}
+                    </div>
                     {/* dummy value!! need to fix tomorrow 5/18 */}
                     {/* <p className="summary">Welcome to your dashboard, from here you are able to view your address book as well as past orders.</p> */}
                 </div>
@@ -82,8 +98,10 @@ class CartIndex extends React.Component {
                                         updateCartItem={updateCartItem}
                                         deleteCartItem={deleteCartItem}
                                     /> ) }
-
-                <button onClick={this.checkoutCart}>Checkout</button>
+                <div className="checkout-container">
+                    <Link className="continue-shop" to="/plants">Need More Plants</Link>
+                    <button className="checkout" onClick={this.checkoutCart}>Checkout</button>
+                </div>
             </div>
         )
 

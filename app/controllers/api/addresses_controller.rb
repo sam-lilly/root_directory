@@ -37,7 +37,6 @@ class Api::AddressesController < ApplicationController
     end
 
     def destroy
-        # debugger
         @address = Address.find(params[:id])
         @address.destroy
         @addresses = Address.where(user_id: current_user.id)

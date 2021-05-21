@@ -11,6 +11,7 @@ class CartIndexItem extends React.Component {
         // this.handleUpdate = this.handleUpdate.bind(this);
         // this.deleteCartItem = this.deleteCartItem.bind(this);
         this.handleCountPlus = this.handleCountPlus.bind(this);
+        this.handleCountMinus = this.handleCountMinus.bind(this);
     }
 
 
@@ -27,14 +28,12 @@ class CartIndexItem extends React.Component {
 
     // handleAdd() {
     //     // return () => {
-    //         debugger
     //         this.setState({ count: count + 1})
     //     // }
     // }
 
     // handleSubtract() {
     //     // return ()) => {
-    //         debugger
     //         if (this.state.count === 1) {
     //             this.deleteCartItem
     //         } else
@@ -48,10 +47,18 @@ class CartIndexItem extends React.Component {
 
 
     handleCountPlus() {
-        debugger
         let count = this.props.quantity + 1;
         this.props.updateCartItem({cart_item_id: this.props.cartItemId, cart_id: this.props.cartId, product_id: this.props.productId, quantity: count })
             // .then(this.setState({ changed: true }))
+    }
+
+    handleCountMinus() {
+        if (this.props.quantity === 1) {
+            this.props.deleteCartItem(this.props.cartItemId)
+        } else {
+            let count = this.props.quantity - 1;
+            this.props.updateCartItem({cart_item_id: this.props.cartItemId, cart_id: this.props.cartId, product_id: this.props.productId, quantity: count })
+        }
     }
 
 
@@ -71,22 +78,22 @@ class CartIndexItem extends React.Component {
                 updateCartItem,
                 deleteCartItem } = this.props;
 
-        // debugger
 
         return (
             <div className="cart-index-items">
                 {/* <h1>its me, the item in your cart</h1> */}
                 <img className="cart-photo" src={photo}></img>
-                <p>{name}</p>
-                <p>{inches}</p>
-                <p>{price}</p>
-                <p>{cartId}</p>
-                <p>{productId}</p>
-                <p>{quantity}</p>
-                {/* <button onClick={this.}>remove one</button> */}
-                <button onClick={this.handleCountPlus}>add another</button>
+                <p className="item-name">{name} | {inches}"</p>
+                <p className="price">PRICE: ${price}/per item</p>
+                {/* <p>{cartId}</p>
+                <p>{productId}</p> */}
+                <div className="quantity-div">
+                    <button className="change-butt" onClick={this.handleCountMinus}>- 1</button>
+                    <p>QUANTITY: {quantity}</p>
+                    <button className="change-butt" onClick={this.handleCountPlus}>+ 1</button>
+                </div>
                 {/* <button className="delete-item" onClick={() => deleteCartItem(cartItemId)}>Remove Item</button> */}
-                <button className="delete-item" onClick={() => deleteCartItem(cartItemId)}>Remove Item</button>
+                <button className="delete-item" onClick={() => deleteCartItem(cartItemId)}>REMOVE ITEM</button>
             </div>
         )
 

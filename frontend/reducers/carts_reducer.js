@@ -6,10 +6,8 @@ const cartsReducer = (oldState = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_CARTS:
-            // debugger
             return action.carts;
         case RECEIVE_CART:
-            // debugger
             // nextState[action.cart.id] = action.cart;
             // return nextState;
             // ^only using this for one

@@ -19,7 +19,6 @@ class PlanterShow extends React.Component {
     }
 
     addItemToCart() {
-        // debugger
         this.props.addItemToCart({cart_id: this.props.planter.currentcart, product_id: this.props.planter.productId, quantity: 1});
         // will keep quantity at 1 for now because there is no button on this one
         // this.props.fetchCartItems();

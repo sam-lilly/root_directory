@@ -13,7 +13,6 @@ class AddressIndexItem extends React.Component {
         
         if (!address) return null;
 
-        // debugger
 
         return (
             <div className="address-index-boxes">

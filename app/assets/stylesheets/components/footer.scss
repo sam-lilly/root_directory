@@ -1,6 +1,18 @@
 .footer {
-    border: 5px solid rgb(193, 193, 193);
+    // border: 5px solid rgb(193, 193, 193);
+    border-top: 1px solid rgb(237, 237, 237);
     text-align: center;
-    padding: 300px 0px 400px 0px;
+    padding: 400px 0px 100px 0px;
+    display: flex;
+    justify-content: center;
 
+    .lil-icon {
+        background: rgb(152, 232, 32);
+        width: 100%;
+    //     width: 30px;
+    }
+        i {
+            font-size: 70px;
+            margin: 10px;
+        }
 }

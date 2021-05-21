@@ -64,7 +64,6 @@ class User < ApplicationRecord
         # ^if comment back in this is the one that was working
 
         # ^returns a cart instance inside an array, have to use .pluck(:id) to extract from it
-        # debugger
         # self.carts.where(completed: false)
         # ^returns same thing as above, but this is better practice
     # end

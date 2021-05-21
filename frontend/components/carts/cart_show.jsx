@@ -3,12 +3,10 @@ import React from 'react';
 class CartShow extends React.Component {
 
     constructor(props) {
-        // debugger
         super(props);
     }
 
     componentDidMount() {
-        // debugger
         this.props.fetchCart(this.props.match.params.cartId);
     }
 
@@ -16,11 +14,9 @@ class CartShow extends React.Component {
 
         let { cart } = this.props;
 
-        // debugger
 
         if (!cart) return null;
 
-        // debugger
 
         return (
             <div className="cart-show-page">

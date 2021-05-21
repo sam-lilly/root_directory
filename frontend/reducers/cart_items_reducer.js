@@ -8,7 +8,6 @@ const cartItemsReducer = (oldState = {}, action) => {
         case RECEIVE_CART_ITEMS:
             return action.cartItems
         case RECEIVE_CART_ITEM:
-            debugger
             // nextState[action.cartItem.id] = action.cartItem;
             return action.cartItem;
         case REMOVE_CART_ITEM:
