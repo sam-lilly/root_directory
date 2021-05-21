@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     resources :planters, only: [:index, :show]
     resources :accessories, only: [:index, :show]
     resources :carts, only: [:index, :show, :create, :update]
-    resources :cart_items, only: [:index, :create, :update, :destroy]
+    resources :cart_items, only: [:index, :show, :create, :update, :destroy]
     resources :orders, only: [:index, :show]
     resources :blogs, only: [:index, :show]
     resources :plant_dbs, only: [:index, :show]

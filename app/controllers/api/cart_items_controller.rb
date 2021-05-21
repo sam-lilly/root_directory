@@ -6,6 +6,11 @@ class Api::CartItemsController < ApplicationController
         render :index
     end
 
+    def show
+        @cart_items = CartItem.find(params[:id])
+        render :show
+    end
+
     def create
         @cart_item = CartItem.new(cart_item_params)
         @cart_item.cart_id = current_user.carts.where(completed: false).first.id
@@ -23,27 +28,30 @@ class Api::CartItemsController < ApplicationController
     end
 
     def update
-        @cart_item = CartItem.find(params[:id])
-        if @cart_item.update(cart_item_params)
-            current_cart = Cart.select{ |cart| cart.user_id == current_user.id && !cart.completed }
-            @cart_item.cart_id = current_cart.id
+        # debugger
+        # @cart_item = CartItem.find(params[:id])
+
+        @cart_item = CartItem.find(params[:cartItem][:cart_item_id])
+        # debugger
+        if @cart_item.update(quantity: params[:cartItem][:quantity])
+
+        # if @cart_item.update(cart_item_params)
+            # debugger
+            # current_cart = Cart.select{ |cart| cart.user_id == current_user.id && !cart.completed }
+            # @cart_item.cart_id = current_cart.id
+            # render :index
+            current_cart_id = current_user.carts.where(completed: false).first.id
+            @cart_items = CartItem.where(cart_id: current_cart_id)
             render :index
         else
+            # debugger
             render json: @cart_item.errors.full_messages, status: 422
         end
     end
 
     def destroy
-        # debugger
         cart_item = CartItem.find(params[:id])
-        # debugger
         cart_item.destroy
-        # debugger
-
-        # current_cart = Cart.select{ |cart| cart.user_id == current_user.id && !cart.completed }
-        # @cart_item.cart_id = current_cart.id
-        # ^errors cannot find .id of undefined
-
         current_cart_id = current_user.carts.where(completed: false).first.id
         @cart_items = CartItem.where(cart_id: current_cart_id)
         render :index
@@ -54,7 +62,7 @@ class Api::CartItemsController < ApplicationController
 
     def cart_item_params
         # debugger
-        params.require(:cartItem).permit(:cart_id, :product_id, :quantity)
+        params.require(:cartItem).permit(:cart_id, :product_id, :quantity, :cart_item_id)
         # params.require(:cartItem).permit(:id, :cart_id, :product_id, :quantity)
     end
 

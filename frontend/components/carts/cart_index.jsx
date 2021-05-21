@@ -39,7 +39,7 @@ class CartIndex extends React.Component {
 
         // if (!cart) return null;
 
-        let { items, updateCartItem, deleteCartItem } = this.props;
+        let { items, updateCartItem, deleteCartItem, fetchCartItem } = this.props;
 
         if (!items) return null;
 
@@ -68,23 +68,17 @@ class CartIndex extends React.Component {
                     {/* <p className="summary">Welcome to your dashboard, from here you are able to view your address book as well as past orders.</p> */}
                 </div>
 
-
-                {/* { cart.items ? cart.items.map(item => <CartIndexItem key={item.id} name={item.name} price={item.price} photo={item.photoCheckoutUrl}/> ) : <div>nope</div> } */}
-                    {/* should make key be cart_item.key */}
-                    {/* the above worked// what i 've been using before refactor */}
-
-                {/* { cart.items ? cart.items.map(item => <CartIndexItem key={item.id} name={item.name} price={item.price} photo={item.photoCheckoutUrl}/> ) : <div>nope</div> } */}
-
-                {/* { cart.items ? itemsQuant.map(item )} */}
-
-                {/* { itemsQuant ? itemsQuant.map(item => <CartIndexItem key={item.id} name={item.name} price={item.price} quantity={item.quantity} photo={item.photoCheckoutUrl}/> ) : <div>nope</div> } */}
                 { items.map(item => <CartIndexItem  
                                         key={item.id}
                                         cartItemId={item.id}
                                         name={item.name}
+                                        inches={item.inches}
                                         price={item.price}
+                                        cartId={item.cartId}
+                                        productId={item.productId}
                                         quantity={item.quantity}
                                         photo={item.photoCheckoutUrl}
+                                        fetchCartItem={fetchCartItem}
                                         updateCartItem={updateCartItem}
                                         deleteCartItem={deleteCartItem}
                                     /> ) }
