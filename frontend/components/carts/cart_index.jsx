@@ -7,7 +7,7 @@ class CartIndex extends React.Component {
 
     constructor(props) {
         super(props);
-        debugger
+        // debugger
         // if  (!this.props.carts) {
         //     this.state = { newItem: true,
         //                     newPrice: this.props.carts.totalPrice
@@ -42,18 +42,18 @@ class CartIndex extends React.Component {
 
 
     reRenderPriceUp(addedPrice) {
-        debugger
+        // debugger
         if (this.state.newItem) {
             this.setState({ newItem: false })
         } else {
             this.setState({ newItem: true });
         }
-        debugger
+        // debugger
         this.setState({ newPrice: parseInt(this.state.newPrice) + addedPrice})
     }
 
     reRenderPriceDown(addedPrice) {
-        debugger
+        // debugger
         if (this.state.newItem) {
             this.setState({ newItem: false })
         } else {
@@ -105,7 +105,7 @@ class CartIndex extends React.Component {
 
         if (!items) return null;
 
-        debugger
+        // debugger
 
         return (
             <div className="cart-index">

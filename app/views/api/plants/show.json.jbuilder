@@ -4,6 +4,9 @@ json.extract! @plant, :id, :product_id, :plant_db_id, :name, :inches, :price, :p
 json.photoMainUrl url_for(@plant.photomain)
 json.photoHoverUrl url_for(@plant.photohover)
 
-json.userid current_user.id
-json.currentcart current_user.carts.where(completed: false).first.id
+if current_user
+    json.userid current_user.id
+    json.currentcart current_user.carts.where(completed: false).first.id
+end
+
 

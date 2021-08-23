@@ -1,8 +1,10 @@
 class Api::CartItemsController < ApplicationController
 
     def index
-        cart_right_now = current_user.carts.where(completed: false).first
-        @cart_items = cart_right_now.items
+        if current_user
+            cart_right_now = current_user.carts.where(completed: false).first
+            @cart_items = cart_right_now.items
+        end
         render :index
     end
 
@@ -17,6 +19,7 @@ class Api::CartItemsController < ApplicationController
         if @cart_item.save!           
             cart_id = @cart_item.cart_id
             @cart_items = CartItem.where(cart_id: cart_id)
+            # debugger
             render :index
         else
             render json: @cart_item.errors.full_messages, status: 422

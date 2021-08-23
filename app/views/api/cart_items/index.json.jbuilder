@@ -2,19 +2,21 @@ json.key_format! camelize: :lower
 
 quant_count = Hash.new(0)
 # @cart_items.each { |item| quant_count[item.product_id] += 1 }
-@cart_items.each { |item| quant_count[item.product_id] += item.quantity }
+if @cart_items
+    @cart_items.each { |item| quant_count[item.product_id] += item.quantity }
 # returns this
 # {3=>4, 1=>4, 2=>4, 4=>1, 6=>1, 8=>1, 11=>1, 12=>1}
 
 # this gives all product ID then quantity, somehow extract the info from them  ??
 
 
-unique_array = []
-product_id_array = []
-@cart_items.each do |item|
-    if !product_id_array.include?(item.product_id)
-        product_id_array.push(item.product_id)
-        unique_array.push(item)
+    unique_array = []
+    product_id_array = []
+    @cart_items.each do |item|
+        if !product_id_array.include?(item.product_id)
+            product_id_array.push(item.product_id)
+            unique_array.push(item)
+        end
     end
 end
 
@@ -47,4 +49,8 @@ end
 
 # debugger
 json.total_price price_count
-json.address_id Address.all.select{ |add| add.user_id == current_user.id }.first.id
+# debugger
+
+if current_user && Address.all.select{ |add| add.user_id == current_user.id }.first
+    json.address_id Address.all.select{ |add| add.user_id == current_user.id }.first.id
+end

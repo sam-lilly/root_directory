@@ -5,7 +5,7 @@ import CartIndex from './cart_index'
 
 
 const mSTP = (state) => {
-    debugger
+    // debugger
     return ({
         cart: state.entities.carts,
         renderPrice: state.entities.cartItems.totalPrice,

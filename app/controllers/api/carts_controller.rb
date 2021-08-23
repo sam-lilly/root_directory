@@ -2,7 +2,9 @@ class Api::CartsController < ApplicationController
 
     def index
         # @cart = current_user.current_cart
-        @cart = current_user.carts.where(completed: false).first
+        if current_user
+            @cart = current_user.carts.where(completed: false).first
+        end
         render :index
     end
 
@@ -21,6 +23,7 @@ class Api::CartsController < ApplicationController
         # current_cart.checkout_cart
 
         # Cart.where(id: self.id).update_all("completed = true")
+        # debugger
         Cart.where(user_id: current_user.id).where(completed: false).update_all("completed = true")
 
         # debugger
