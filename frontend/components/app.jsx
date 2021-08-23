@@ -20,7 +20,7 @@ import PlantShowContainer from './plants/plant_show_container';
 import PlanterIndexContainer from './planters/planter_index_container';
 import PlanterShowContainer from './planters/planter_show_container';
   
-import AccountHome from './account/account_home';
+import AccountHome from './account/account_home_container';
 
 import CartShowContainer from './carts/cart_show_container';
 import CartIndexContainer from './carts/cart_index_container';
@@ -38,8 +38,8 @@ const App = () => (
                 
                 <div className="header-middle">
                     <Link to="/plants" className="shop-nyc">SHOP NYC</Link>
+                    <Link to="/plants" className="plant-blog">PLANTS</Link>
                     <Link to="/planters" className="plant-care">PLANTERS</Link>
-                    <Link to="/plantcare" className="plant-blog">PLANT CARE</Link>
                 </div>
 
                 <div className="header-right">
@@ -85,10 +85,10 @@ const App = () => (
 
 
             <div className="lil-icon">
-                <i className="fab fa-github"></i>
+                <a href="https://github.com/samantha-lilly"><i className="fab fa-github"></i></a>
                 {/* <i className="fab fa-linkedin"></i> */}
-                <i className="fab fa-linkedin-in"></i>
-                <i className="fab fa-angellist"></i>
+                <a href="https://www.linkedin.com/in/samantha-lilly-a7377a203/"><i className="fab fa-linkedin-in"></i></a>
+                <a href="https://angel.co/u/samantha-lilly"><i className="fab fa-angellist"></i></a>
             </div>
         </footer>
 

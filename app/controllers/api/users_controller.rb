@@ -13,6 +13,12 @@ class Api::UsersController < ApplicationController
 
     end
 
+    # def show
+    #     # debugger
+    #     # @user = current_user
+    #     # ^ do i need this for new addresses? IDK
+    # end
+
 
     private
 

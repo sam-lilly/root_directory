@@ -49,6 +49,11 @@ class PlantIndex extends React.Component {
                         <p>+</p>
                     </div>
 
+                    <div>
+                     <br/>
+                        ^UNDER CONSTRUCTION
+                    </div>
+
                     {/* all the p tags with + will be dropdown links */}
 
                 </div>
@@ -65,13 +70,14 @@ class PlantIndex extends React.Component {
                     </div> */}
 
                     <div className="right-dropdown">
-                        <div>
+                        {/* <div>
                             <p className="sort-by">Sort by</p>
                             <p className="featured">Featured</p>
                         </div>
                         <div>
                             <i className="fas fa-chevron-down"></i>
-                        </div>
+                        </div> */}
+                        {/* ADD THIS BACK ASAP!!!! */}
                     </div>
 
                 </div>

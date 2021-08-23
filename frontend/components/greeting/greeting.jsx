@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 const Greeting = ({ currentUser, logout }) => {
     const signUpLogInGreeting = () =>  (
         <nav className="header-group">
-            <button className="search-modal"><i className="fas fa-search">&nbsp;</i></button>
+            {/* <button className="search-modal"><i className="fas fa-search">&nbsp;</i></button> */}
+            {/* ADD THIS SEARCH BUTTON BACK WHENEVER IMPLEMENT SEARCH // ASAP!!!! */}
             <Link to="/login" className="user-icon"><i className="far fa-user"></i></Link>
             <Link to="/cart" className="shopping-cart"><i className="fas fa-shopping-cart"></i></Link>
             {/* &nbsp;//&nbsp; */}
@@ -15,7 +16,8 @@ const Greeting = ({ currentUser, logout }) => {
     const logInGreeting = () => (
         <div className="header-group">
             {/* <h2 className="header-greeting">Welcome, {currentUser.first_name} // &nbsp;</h2> */}
-            <button className="search-modal"><i className="fas fa-search">&nbsp;</i></button>
+            {/* <button className="search-modal"><i className="fas fa-search">&nbsp;</i></button> */}
+            {/* ADD THIS SEARCH BUTTON BACK WHENEVER IMPLEMENT SEARCH // ASAP!!!! */}
             <Link to="/account" className="user-icon"><i className="far fa-user"></i></Link>
             {/* make above to go back to account page */}
             <p>&nbsp;|&nbsp;&nbsp;</p>

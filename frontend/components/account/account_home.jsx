@@ -3,8 +3,63 @@ import { Link } from 'react-router-dom';
 
 class AccountHome extends React.Component {
 
+    constructor(props) {
+        // debugger
+        super(props);
+    }
+
+    componentDidMount() {
+        // debugger
+        this.props.fetchAddresses();
+    }
+    // ^need to fetch main address and orders
+    // figure out how to update the address when going back
+
+    // componentDidUpdate(prevProps) {
+    //     if (prevProps.address !== this.props.address) {
+    //         this.props.fetchAddresses();
+    //     }
+    // }
+    // need to figure out how to update state for addresses
+
     render () {
 
+        // { first_name }
+        const { currentUser, address } = this.props;
+
+        const hasAddress = () => {
+            if (address) {
+                return <div>
+                        <p className="rig-for-manage-address-space">{address.first} {address.last}</p>
+                        <p>{address.company}</p>
+                        <p>{address.address1}</p>
+                        <p>{address.address2}</p>
+                        <p>{address.city}, {address.state} {address.zip}</p>
+                        <p>{address.country}</p>
+                        <p>{address.phone}</p>
+                    </div>
+            } else {
+                return <div>
+                        {/* <br/> */}
+                        {/* <Link className="manage-addresses" to="/addresses">Add A New Address!</Link> */}
+                        <p className="rig-for-manage-address-space">Looks like you don't have any addresses yet.</p>
+                    </div>
+            }
+        }
+
+        const addOrManageAddress = () => {
+            if (address) {
+                return <div>
+                        <Link className="manage-addresses" to="/addresses">Manage Addresses ({currentUser.numAddresses})</Link>
+                    </div>
+            } else {
+                return <div>
+                        <Link className="manage-addresses" to="/addresses">Add A New Address!</Link>
+                    </div>
+            }
+        }
+
+        // debugger
 
         return (
             <div className="account-home">
@@ -18,8 +73,7 @@ class AccountHome extends React.Component {
                 </div>
 
                 <div className="greeting-header">
-                    <h1 className="greeting">Hello, Forrest</h1>
-                    {/* dummy value!! need to fix tomorrow 5/18 */}
+                    <h1 className="greeting">Hello, {currentUser.first_name}</h1>
                     <p className="summary">Welcome to your dashboard, from here you are able to view your address book as well as past orders.</p>
                 </div>
 
@@ -27,20 +81,14 @@ class AccountHome extends React.Component {
                     <div>
                         <h3 className="inner-info">Account Information</h3>
                         <p className="contact-info">Contact Information</p>
-                        <p className="name">Forrest Willow</p>
-                        <p className="name">plantlyfe@gmail.com</p>
-                        {/* ^^^dummy text// need to fix this!! */}
+                        <p className="name">{currentUser.first_name} {currentUser.last_name}</p>
+                        <p className="name">{currentUser.email}</p>
                     </div>
                     <div>
                         <h3 className="inner-info">Address Book</h3>
-                        <Link className="manage-addresses" to="/addresses">Manage Addresses (3)</Link>
-                        {/* ^need to make the address number dynamic */}
-                        <p className="rig-for-manage-address-space">427 Garden St</p>
-                        <p>Apt 7E</p>
-                        <p>Brooklyn, NY</p>
-                        <p>United States</p>
-                        <p>11206</p>
-                        <p>919.723.6142</p>
+                        {addOrManageAddress()}
+                        {hasAddress()}
+
                     </div>
                 </div>
 
@@ -56,7 +104,9 @@ class AccountHome extends React.Component {
                     {/* <div className="underline-filler"></div> */}
                     {/* or make two separate grids with an underline on the top one! */}
                 <div className="order-info">
-                    <Link className="order-number" to="/orders">#40985</Link>
+                    <Link className="order-number" to="/account">#40985</Link>
+                    {/* <Link className="order-number" to="/orders">#40985</Link> */}
+                    {/* will eventually link to /orders, but for NOW /account */}
                     <p>May 14, 2021</p>
                     <p>paid</p>
                     <p>partial</p>

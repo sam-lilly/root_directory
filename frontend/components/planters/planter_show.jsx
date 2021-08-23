@@ -57,7 +57,7 @@ class PlanterShow extends React.Component {
                 <p>NYC Area Local Delivery Only</p> */}
                 <i class="fas fa-shipping-fast" id="building">&nbsp;&nbsp;</i>
                 {/* <i className="fas fa-building" id="building">&nbsp;&nbsp;</i> */}
-                <p>Ships NationWide. Free Shipping over $49</p>
+                <p>Ships Nation Wide. Free Shipping over $49</p>
 
 
                 {/* <i className="fas fa-truck"></i> */}
