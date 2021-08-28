@@ -1,0 +1,30 @@
+THINGS TO DO
+
+FRONTEND
+
+add search reducer to entities reducer
+reducer, actions, api utils, search container
+
+actions*
+components*
+reducers*
+utils*
+
+need to add it to the entities reducer*
+
+*add route from container on app.jsx
+*does not need its own route bcz no /Searchs
+*need to put it inside somewhere else??? bcz modal
+
+*add searchbar container to the header
+
+
+BACKEND
+
+need routes in config
+MVC models views controller
+*dont need model
+need SearchsController
+*index route
+need Searchs views
+*jbuilder index

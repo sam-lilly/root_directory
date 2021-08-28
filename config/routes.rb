@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     resources :blogs, only: [:index, :show]
     resources :plant_dbs, only: [:index, :show]
     resources :contacts, only: [:create]
+    resources :searches, only: [:index]
   end
 
 

@@ -83,7 +83,6 @@ const App = () => (
             {/* <p>hiii, im the footer :)</p>
             <p>cool stuff will go here</p> */}
 
-
             <div className="lil-icon">
                 <a href="https://github.com/samantha-lilly"><i className="fab fa-github"></i></a>
                 {/* <i className="fab fa-linkedin"></i> */}
