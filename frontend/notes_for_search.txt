@@ -10,7 +10,17 @@ components*
 reducers*
 utils*
 
-need to add it to the entities reducer*
+*ORDER*
+utils**
+actions**
+reducer**
+component
+
+
+ADDING TEMPORARY ROUTE FOR SEARCH TO TEST
+FUNCTIONALITY BEFORE ADDING TO HEADER
+
+need to add it to the entities reducer**CHECK
 
 *add route from container on app.jsx
 *does not need its own route bcz no /Searchs
@@ -21,7 +31,7 @@ need to add it to the entities reducer*
 
 BACKEND
 
-need routes in config
+need routes in config*
 MVC models views controller
 *dont need model
 need SearchsController
